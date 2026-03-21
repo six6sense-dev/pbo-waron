@@ -192,13 +192,19 @@ export default function App() {
     const calcOK = baseRates.ok[classIndex] * surchargeFactor;
     const calcKamar = SHARED_RATES.kamar[classIndex];
     const calcVisite = SHARED_RATES.visite[classIndex];
-    const calcAdmin = SHARED_RATES.admin[classIndex];
     
     // Kalkulasi Addon
     const calcAddons = medical.selectedAddons.reduce((sum, addonId) => {
       const addon = ADDONS.find(a => a.id === addonId);
       return sum + (addon ? addon.defaultPrice : 0);
     }, 0);
+    
+    // Hitung subtotal tanpa admin untuk perhitungan admin 5%
+    const calcAdmin = (calcOperator + calcAsisten + calcAnestesi + calcAnak + calcOK + 
+                       (SHARED_RATES.kamar[classIndex] * patient.days) + 
+                       (proc.hasBaby ? 1000000 * patient.days : 0) + 
+                       (SHARED_RATES.visite[classIndex] * patient.days) * (1 + 1 + (proc.hasBaby && medical.anakIdx !== 0 ? 1 : 0)) + 
+                       proc.obat + proc.alat + calcAddons) * 0.05;
 
     setCosts({
       operator: calcOperator,
@@ -532,7 +538,7 @@ export default function App() {
                         {/* Administrasi */}
                         <tr className="bg-[#FCFAF5] print:bg-transparent"><td colSpan="2" className="py-2 px-4 font-bold text-[#5C4033] print:text-black uppercase">5. Administrasi</td></tr>
                         <tr>
-                          <td className="py-2.5 px-4 pl-8">Administrasi Rumah Sakit</td>
+                          <td className="py-2.5 px-4 pl-8">Administrasi Rumah Sakit (5%)</td>
                           <td className="py-2.5 px-4 text-right font-medium">{formatRp(costs.admin)}</td>
                         </tr>
                       </tbody>
