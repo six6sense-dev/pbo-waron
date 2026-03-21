@@ -260,7 +260,7 @@ export default function App() {
         <div className="bg-[#5C4033] text-white p-6 print:bg-white print:text-black print:border-b-4 print:border-[#5C4033] flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-4 w-full md:w-auto">
             <img 
-              src="https://ui-avatars.com/api/?name=Waron+Hospital&background=fff&color=5C4033&rounded=true&bold=true&size=128" 
+              src="https://www.waronhospital.com/assets/logo-waron-full-C8co1Cvy.png" 
               alt="Logo Waron Hospital Surabaya" 
               className="h-12 md:h-14 w-auto object-contain bg-white rounded-lg p-1.5 shadow-sm print:shadow-none print:h-12 print:bg-transparent print:p-0"
             />
