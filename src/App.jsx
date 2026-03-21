@@ -273,6 +273,10 @@ export default function App() {
             <div>
               <h1 className="text-3xl font-bold tracking-tight">WARON HOSPITAL</h1>
               <p className="text-[#E2D4C8] print:text-gray-600 font-medium">Sistem Perkiraan Biaya Operasi</p>
+              <div className="hidden print:block text-[10px] print:text-gray-700 mt-1 leading-snug">
+                <p>Jl. Kaliwaron No.100, Mojo, Gubeng, Surabaya, East Java</p>
+                <p>Email: info@waronhospital.com | Call Center: 0800-1505-500 | IGD: (031) 99218902</p>
+              </div>
             </div>
           </div>
           <div className="flex w-full md:w-auto items-center gap-3 print:hidden">
@@ -576,6 +580,14 @@ export default function App() {
                       <p className="mb-20">Yang Menerima Penjelasan</p>
                       <p className="font-bold underline text-black">( {patient.name || "______________________"} )</p>
                     </div>
+                  </div>
+
+                  {/* Footer dengan Informasi Kontak - Hanya untuk Print */}
+                  <div className="hidden print:block border-t-2 border-black mt-8 pt-4 text-center text-[9px] text-gray-700">
+                    <p className="font-bold text-black mb-1">WARON HOSPITAL SURABAYA</p>
+                    <p>Jl. Kaliwaron No.100, Mojo, Gubeng, Surabaya, East Java</p>
+                    <p>Email: info@waronhospital.com | Call Center: 0800-1505-500</p>
+                    <p>IGD (Emergency): (031) 99218902</p>
                   </div>
 
                 </div>
