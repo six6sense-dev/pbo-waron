@@ -129,7 +129,7 @@ const ADDONS = [
 ];
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('pbo'); // 'pbo' | 'prices'
+  const [activeTab, setActiveTab] = useState('pbo'); // 'pbo' | 'prices' | 'master'
   const [procedureKey, setProcedureKey] = useState("SC");
   
   const [patient, setPatient] = useState({
@@ -302,6 +302,12 @@ export default function App() {
             className={`flex items-center gap-2 px-6 py-4 font-bold text-sm transition-all border-b-4 whitespace-nowrap ${activeTab === 'prices' ? 'border-[#5C4033] text-[#5C4033] bg-white' : 'border-transparent text-[#8C7A6B] hover:text-[#5C4033] hover:bg-[#EAE3D5]'}`}
           >
             <List size={18} /> Daftar Harga & Referensi
+          </button>
+          <button 
+            onClick={() => setActiveTab('master')} 
+            className={`flex items-center gap-2 px-6 py-4 font-bold text-sm transition-all border-b-4 whitespace-nowrap ${activeTab === 'master' ? 'border-[#5C4033] text-[#5C4033] bg-white' : 'border-transparent text-[#8C7A6B] hover:text-[#5C4033] hover:bg-[#EAE3D5]'}`}
+          >
+            <Tags size={18} /> Master Data
           </button>
         </div>
 
@@ -719,6 +725,180 @@ export default function App() {
                       </span>
                     </div>
                   ))}
+                </div>
+              </div>
+
+            </div>
+          )}
+
+          {/* =========================================
+              VIEW 3: MASTER DATA MANAGEMENT
+             ========================================= */}
+          {activeTab === 'master' && (
+            <div className="animate-in fade-in duration-300 space-y-8">
+              
+              <div className="text-center pb-6 border-b-2 border-[#EAE3D5]">
+                <h2 className="text-2xl font-bold uppercase tracking-wider text-[#4A3B32]">Master Data Management</h2>
+                <p className="text-[#8C7A6B] font-medium mt-1">Kelola Data Golongan, Tindakan, dan Dokter</p>
+              </div>
+
+              {/* Section 1: Daftar Golongan */}
+              <div className="bg-white rounded-xl border border-[#EAE3D5] overflow-hidden shadow-sm">
+                <div className="bg-[#5C4033] p-4 text-white">
+                  <h3 className="font-bold text-lg flex items-center gap-2"><Tags size={20}/> Daftar Golongan & Tarif Dasar</h3>
+                </div>
+                <div className="p-6">
+                  <div className="mb-4 flex justify-between items-center">
+                    <p className="text-sm text-[#8C7A6B]">Kelola tarif dasar jasa medis berdasarkan golongan</p>
+                    <button className="bg-[#8B5E3C] hover:bg-[#A3734F] text-white px-4 py-2 rounded-lg font-bold text-sm transition-all">
+                      + Tambah Golongan
+                    </button>
+                  </div>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left text-sm">
+                      <thead className="bg-[#F0E7DA] text-[#5C4033]">
+                        <tr>
+                          <th className="py-3 px-4 font-bold">Golongan</th>
+                          <th className="py-3 px-4 font-bold">Jasa Operator (Rp)</th>
+                          <th className="py-3 px-4 font-bold">Sewa OK (Rp)</th>
+                          <th className="py-3 px-4 font-bold text-center">Aksi</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-[#F0EAE1]">
+                        {Object.entries(TARIFF_RATES).map(([gol, rates]) => (
+                          <tr key={gol} className="hover:bg-[#FCFAF5] transition-colors">
+                            <td className="py-3 px-4 font-bold text-[#4A3B32]">{gol}</td>
+                            <td className="py-3 px-4">
+                              <div className="space-y-1">
+                                {CLASSES.map((cls, i) => (
+                                  <div key={i} className="text-xs">
+                                    <span className="text-[#8C7A6B]">{cls}:</span> {formatRp(rates.op[i])}
+                                  </div>
+                                ))}
+                              </div>
+                            </td>
+                            <td className="py-3 px-4">
+                              <div className="space-y-1">
+                                {CLASSES.map((cls, i) => (
+                                  <div key={i} className="text-xs">
+                                    <span className="text-[#8C7A6B]">{cls}:</span> {formatRp(rates.ok[i])}
+                                  </div>
+                                ))}
+                              </div>
+                            </td>
+                            <td className="py-3 px-4 text-center">
+                              <button className="text-[#8B5E3C] hover:text-[#5C4033] font-bold text-sm mr-2">Edit</button>
+                              <button className="text-red-600 hover:text-red-800 font-bold text-sm">Hapus</button>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              {/* Section 2: Daftar Tindakan */}
+              <div className="bg-white rounded-xl border border-[#EAE3D5] overflow-hidden shadow-sm">
+                <div className="bg-[#5C4033] p-4 text-white">
+                  <h3 className="font-bold text-lg flex items-center gap-2"><Activity size={20}/> Daftar Nama Tindakan</h3>
+                </div>
+                <div className="p-6">
+                  <div className="mb-4 flex justify-between items-center">
+                    <p className="text-sm text-[#8C7A6B]">Kelola daftar tindakan medis dengan parameter lengkap</p>
+                    <button className="bg-[#8B5E3C] hover:bg-[#A3734F] text-white px-4 py-2 rounded-lg font-bold text-sm transition-all">
+                      + Tambah Tindakan
+                    </button>
+                  </div>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left text-sm">
+                      <thead className="bg-[#F0E7DA] text-[#5C4033]">
+                        <tr>
+                          <th className="py-3 px-4 font-bold">ID</th>
+                          <th className="py-3 px-4 font-bold">Kategori</th>
+                          <th className="py-3 px-4 font-bold">Nama Tindakan</th>
+                          <th className="py-3 px-4 font-bold">Golongan</th>
+                          <th className="py-3 px-4 font-bold">Lama Inap</th>
+                          <th className="py-3 px-4 font-bold">Alat (Rp)</th>
+                          <th className="py-3 px-4 font-bold">Obat (Rp)</th>
+                          <th className="py-3 px-4 font-bold text-center">Aksi</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-[#F0EAE1]">
+                        {PROCEDURES.map((proc, i) => (
+                          <tr key={i} className="hover:bg-[#FCFAF5] transition-colors">
+                            <td className="py-3 px-4 font-mono text-xs text-[#8C7A6B]">{proc.id}</td>
+                            <td className="py-3 px-4 text-[#8C7A6B] text-xs font-semibold">{proc.category}</td>
+                            <td className="py-3 px-4 font-bold text-[#4A3B32]">{proc.name} {proc.hasBaby && <Baby size={14} className="inline text-blue-500 ml-1"/>}</td>
+                            <td className="py-3 px-4"><span className="bg-[#F0E7DA] text-[#5C4033] px-2 py-1 rounded text-xs font-bold">{proc.gol}</span></td>
+                            <td className="py-3 px-4 text-center font-bold">{proc.days} Hari</td>
+                            <td className="py-3 px-4 text-right text-[#8C7A6B]">{formatRp(proc.alat)}</td>
+                            <td className="py-3 px-4 text-right text-[#8C7A6B]">{formatRp(proc.obat)}</td>
+                            <td className="py-3 px-4 text-center">
+                              <button className="text-[#8B5E3C] hover:text-[#5C4033] font-bold text-sm mr-2">Edit</button>
+                              <button className="text-red-600 hover:text-red-800 font-bold text-sm">Hapus</button>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              {/* Section 3: Daftar Dokter */}
+              <div className="bg-white rounded-xl border border-[#EAE3D5] overflow-hidden shadow-sm">
+                <div className="bg-[#5C4033] p-4 text-white">
+                  <h3 className="font-bold text-lg flex items-center gap-2"><User size={20}/> Daftar Dokter</h3>
+                </div>
+                <div className="p-6">
+                  <div className="mb-4 flex justify-between items-center">
+                    <p className="text-sm text-[#8C7A6B]">Kelola daftar dokter berdasarkan spesialisasi</p>
+                    <button className="bg-[#8B5E3C] hover:bg-[#A3734F] text-white px-4 py-2 rounded-lg font-bold text-sm transition-all">
+                      + Tambah Dokter
+                    </button>
+                  </div>
+                  
+                  {/* Sub-tabs untuk jenis dokter */}
+                  <div className="mb-6 border-b border-[#EAE3D5]">
+                    <div className="flex gap-4">
+                      <button className="pb-2 px-1 border-b-2 border-[#5C4033] text-[#5C4033] font-bold">Dokter Operator</button>
+                      <button className="pb-2 px-1 border-b-2 border-transparent text-[#8C7A6B] hover:text-[#5C4033]">Dokter Asisten</button>
+                      <button className="pb-2 px-1 border-b-2 border-transparent text-[#8C7A6B] hover:text-[#5C4033]">Dokter Anestesi</button>
+                      <button className="pb-2 px-1 border-b-2 border-transparent text-[#8C7A6B] hover:text-[#5C4033]">Dokter Anak</button>
+                    </div>
+                  </div>
+
+                  {/* Tabel Dokter Operator */}
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left text-sm">
+                      <thead className="bg-[#F0E7DA] text-[#5C4033]">
+                        <tr>
+                          <th className="py-3 px-4 font-bold">No</th>
+                          <th className="py-3 px-4 font-bold">Nama Dokter</th>
+                          <th className="py-3 px-4 font-bold">Multiplier</th>
+                          <th className="py-3 px-4 font-bold text-center">Aksi</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-[#F0EAE1]">
+                        {DOCTORS_OP.map((doc, i) => (
+                          <tr key={i} className="hover:bg-[#FCFAF5] transition-colors">
+                            <td className="py-3 px-4 text-center font-bold text-[#8C7A6B]">{i + 1}</td>
+                            <td className="py-3 px-4 font-medium text-[#4A3B32]">{doc.name}</td>
+                            <td className="py-3 px-4">
+                              <span className={`text-xs font-bold px-2 py-1 rounded ${doc.multiplier > 1.0 ? 'bg-amber-100 text-amber-800' : 'bg-slate-100 text-slate-600'}`}>
+                                x{doc.multiplier.toFixed(1)}
+                              </span>
+                            </td>
+                            <td className="py-3 px-4 text-center">
+                              <button className="text-[#8B5E3C] hover:text-[#5C4033] font-bold text-sm mr-2">Edit</button>
+                              <button className="text-red-600 hover:text-red-800 font-bold text-sm">Hapus</button>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
 
