@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Calculator, Printer, User, Hospital, Activity, Syringe, Baby, CheckSquare, Stethoscope, Download, FileText, List, Tags } from 'lucide-react';
+import { Calculator, Printer, User, Hospital, Activity, Syringe, Baby, CheckSquare, Stethoscope, Download, FileText, List, Tags, LogIn, Settings, LogOut, Shield, Users } from 'lucide-react';
 
 const CLASSES = ["KELAS III", "KELAS II", "KELAS I", "VIP", "VVIP", "PENTHOUSE", "ODC"];
 
@@ -128,8 +128,92 @@ const ADDONS = [
   { id: "NICU", label: "Observasi NICU / Perina (Est 1 Hari)", defaultPrice: 7110000 },
 ];
 
+// USER MANAGEMENT SYSTEM
+const USERS = [
+  { id: 1, username: 'admin', password: 'admin123', role: 'admin', name: 'Administrator', email: 'admin@waronhospital.com' },
+  { id: 2, username: 'staff1', password: 'staff123', role: 'staff', name: 'Staff PBO 1', email: 'staff1@waronhospital.com' },
+  { id: 3, username: 'staff2', password: 'staff123', role: 'staff', name: 'Staff PBO 2', email: 'staff2@waronhospital.com' },
+];
+
 export default function App() {
   const [activeTab, setActiveTab] = useState('pbo'); // 'pbo' | 'prices' | 'master'
+  
+  // Authentication State
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [loginForm, setLoginForm] = useState({ username: '', password: '' });
+  const [loginError, setLoginError] = useState('');
+  const [showLogin, setShowLogin] = useState(false);
+  
+  // User Management State (Admin only)
+  const [userList, setUserList] = useState(USERS);
+  const [newUser, setNewUser] = useState({ username: '', password: '', role: 'staff', name: '', email: '' });
+  const [editingUser, setEditingUser] = useState(null);
+
+  // Check authentication on mount
+  useEffect(() => {
+    const savedUser = localStorage.getItem('currentUser');
+    if (savedUser) {
+      const user = JSON.parse(savedUser);
+      setCurrentUser(user);
+      setIsLoggedIn(true);
+    }
+  }, []);
+
+  // Authentication Functions
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const user = userList.find(u => u.username === loginForm.username && u.password === loginForm.password);
+    
+    if (user) {
+      setCurrentUser(user);
+      setIsLoggedIn(true);
+      setShowLogin(false);
+      setLoginError('');
+      setLoginForm({ username: '', password: '' });
+      localStorage.setItem('currentUser', JSON.stringify(user));
+    } else {
+      setLoginError('Username atau password salah');
+    }
+  };
+
+  const handleLogout = () => {
+    setCurrentUser(null);
+    setIsLoggedIn(false);
+    setActiveTab('pbo');
+    localStorage.removeItem('currentUser');
+  };
+
+  // User Management Functions (Admin only)
+  const addUser = () => {
+    if (!newUser.username || !newUser.password || !newUser.name) {
+      alert('Semua field harus diisi!');
+      return;
+    }
+    
+    const newUserData = {
+      ...newUser,
+      id: Date.now()
+    };
+    
+    setUserList([...userList, newUserData]);
+    setNewUser({ username: '', password: '', role: 'staff', name: '', email: '' });
+  };
+
+  const updateUser = () => {
+    if (!editingUser) return;
+    
+    setUserList(userList.map(user => 
+      user.id === editingUser.id ? editingUser : user
+    ));
+    setEditingUser(null);
+  };
+
+  const deleteUser = (userId) => {
+    if (confirm('Apakah Anda yakin ingin menghapus user ini?')) {
+      setUserList(userList.filter(user => user.id !== userId));
+    }
+  };
   const [procedureKey, setProcedureKey] = useState("SC");
   
   const [patient, setPatient] = useState({
@@ -280,6 +364,23 @@ export default function App() {
             </div>
           </div>
           <div className="flex w-full md:w-auto items-center gap-3 print:hidden">
+            {/* User Info & Auth Buttons */}
+            {isLoggedIn ? (
+              <div className="flex items-center gap-3">
+                <div className="text-right">
+                  <p className="text-sm font-bold">{currentUser.name}</p>
+                  <p className="text-xs text-[#E2D4C8] capitalize">{currentUser.role === 'admin' ? 'Administrator' : 'Staff PBO'}</p>
+                </div>
+                <button onClick={handleLogout} className="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-bold transition-all shadow-sm">
+                  <LogOut size={16} /> Logout
+                </button>
+              </div>
+            ) : (
+              <button onClick={() => setShowLogin(true)} className="flex items-center justify-center gap-2 bg-[#8B5E3C] hover:bg-[#A3734F] text-white px-4 py-2 rounded-lg font-bold transition-all shadow-sm">
+                <LogIn size={16} /> Login
+              </button>
+            )}
+            
             <button onClick={handleDownloadPDF} className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-white text-[#5C4033] border border-[#DCCDBE] hover:bg-[#F0E7DA] px-5 py-2.5 rounded-lg font-bold transition-all shadow-sm disabled:opacity-50">
               <Download size={20} /> Unduh PDF
             </button>
@@ -288,6 +389,75 @@ export default function App() {
             </button>
           </div>
         </div>
+
+        {/* Login Modal */}
+        {showLogin && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6">
+              <div className="text-center mb-6">
+                <Shield size={48} className="mx-auto text-[#5C4033] mb-2" />
+                <h2 className="text-2xl font-bold text-[#4A3B32]">Login Portal</h2>
+                <p className="text-[#8C7A6B] text-sm">Sistem Perkiraan Biaya Operasi</p>
+              </div>
+              
+              <form onSubmit={handleLogin} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-bold text-[#5C4033] mb-1">Username</label>
+                  <input
+                    type="text"
+                    value={loginForm.username}
+                    onChange={(e) => setLoginForm({...loginForm, username: e.target.value})}
+                    className="w-full p-3 border border-[#EAE3D5] rounded-lg focus:ring-2 focus:ring-[#8B5E3C] focus:outline-none"
+                    placeholder="Masukkan username"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-bold text-[#5C4033] mb-1">Password</label>
+                  <input
+                    type="password"
+                    value={loginForm.password}
+                    onChange={(e) => setLoginForm({...loginForm, password: e.target.value})}
+                    className="w-full p-3 border border-[#EAE3D5] rounded-lg focus:ring-2 focus:ring-[#8B5E3C] focus:outline-none"
+                    placeholder="Masukkan password"
+                    required
+                  />
+                </div>
+                
+                {loginError && (
+                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-2 rounded-lg text-sm">
+                    {loginError}
+                  </div>
+                )}
+                
+                <div className="flex gap-3 pt-2">
+                  <button
+                    type="submit"
+                    className="flex-1 bg-[#5C4033] hover:bg-[#4A3228] text-white py-3 rounded-lg font-bold transition-all"
+                  >
+                    Login
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setShowLogin(false)}
+                    className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 py-3 rounded-lg font-bold transition-all"
+                  >
+                    Batal
+                  </button>
+                </div>
+              </form>
+              
+              <div className="mt-6 pt-4 border-t border-[#EAE3D5]">
+                <p className="text-xs text-[#8C7A6B] text-center">
+                  <strong>Demo Accounts:</strong><br/>
+                  Admin: admin / admin123<br/>
+                  Staff: staff1 / staff123
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Tab Navigation */}
         <div className="bg-[#F0E7DA] border-b border-[#DCCDBE] px-6 md:px-8 py-0 flex gap-1 overflow-x-auto print:hidden">
@@ -303,12 +473,22 @@ export default function App() {
           >
             <List size={18} /> Daftar Harga & Referensi
           </button>
-          <button 
-            onClick={() => setActiveTab('master')} 
-            className={`flex items-center gap-2 px-6 py-4 font-bold text-sm transition-all border-b-4 whitespace-nowrap ${activeTab === 'master' ? 'border-[#5C4033] text-[#5C4033] bg-white' : 'border-transparent text-[#8C7A6B] hover:text-[#5C4033] hover:bg-[#EAE3D5]'}`}
-          >
-            <Tags size={18} /> Master Data
-          </button>
+          {isLoggedIn && (
+            <button 
+              onClick={() => setActiveTab('master')} 
+              className={`flex items-center gap-2 px-6 py-4 font-bold text-sm transition-all border-b-4 whitespace-nowrap ${activeTab === 'master' ? 'border-[#5C4033] text-[#5C4033] bg-white' : 'border-transparent text-[#8C7A6B] hover:text-[#5C4033] hover:bg-[#EAE3D5]'}`}
+            >
+              <Tags size={18} /> Master Data
+            </button>
+          )}
+          {isLoggedIn && currentUser?.role === 'admin' && (
+            <button 
+              onClick={() => setActiveTab('settings')} 
+              className={`flex items-center gap-2 px-6 py-4 font-bold text-sm transition-all border-b-4 whitespace-nowrap ${activeTab === 'settings' ? 'border-[#5C4033] text-[#5C4033] bg-white' : 'border-transparent text-[#8C7A6B] hover:text-[#5C4033] hover:bg-[#EAE3D5]'}`}
+            >
+              <Settings size={18} /> Settings
+            </button>
+          )}
         </div>
 
         <div className="p-6 md:p-8">
@@ -734,7 +914,7 @@ export default function App() {
           {/* =========================================
               VIEW 3: MASTER DATA MANAGEMENT
              ========================================= */}
-          {activeTab === 'master' && (
+          {activeTab === 'master' && isLoggedIn && (
             <div className="animate-in fade-in duration-300 space-y-8">
               
               <div className="text-center pb-6 border-b-2 border-[#EAE3D5]">
@@ -898,6 +1078,219 @@ export default function App() {
                         ))}
                       </tbody>
                     </table>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          )}
+
+          {/* =========================================
+              VIEW 4: ADMIN SETTINGS
+             ========================================= */}
+          {activeTab === 'settings' && currentUser?.role === 'admin' && (
+            <div className="animate-in fade-in duration-300 space-y-8">
+              
+              <div className="text-center pb-6 border-b-2 border-[#EAE3D5]">
+                <h2 className="text-2xl font-bold uppercase tracking-wider text-[#4A3B32]">Admin Settings</h2>
+                <p className="text-[#8C7A6B] font-medium mt-1">Kelola User, Role, dan Sistem</p>
+              </div>
+
+              {/* Section 1: User Management */}
+              <div className="bg-white rounded-xl border border-[#EAE3D5] overflow-hidden shadow-sm">
+                <div className="bg-[#5C4033] p-4 text-white">
+                  <h3 className="font-bold text-lg flex items-center gap-2"><Users size={20}/> User Management</h3>
+                </div>
+                <div className="p-6">
+                  
+                  {/* Add New User Form */}
+                  <div className="mb-6 p-4 bg-[#F0E7DA] rounded-lg border border-[#DCCDBE]">
+                    <h4 className="font-bold text-[#5C4033] mb-3">Tambah User Baru</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      <input
+                        type="text"
+                        placeholder="Username"
+                        value={newUser.username}
+                        onChange={(e) => setNewUser({...newUser, username: e.target.value})}
+                        className="p-2 border border-[#EAE3D5] rounded-md focus:ring-2 focus:ring-[#8B5E3C] focus:outline-none"
+                      />
+                      <input
+                        type="password"
+                        placeholder="Password"
+                        value={newUser.password}
+                        onChange={(e) => setNewUser({...newUser, password: e.target.value})}
+                        className="p-2 border border-[#EAE3D5] rounded-md focus:ring-2 focus:ring-[#8B5E3C] focus:outline-none"
+                      />
+                      <select
+                        value={newUser.role}
+                        onChange={(e) => setNewUser({...newUser, role: e.target.value})}
+                        className="p-2 border border-[#EAE3D5] rounded-md focus:ring-2 focus:ring-[#8B5E3C] focus:outline-none"
+                      >
+                        <option value="staff">Staff PBO</option>
+                        <option value="admin">Administrator</option>
+                      </select>
+                      <input
+                        type="text"
+                        placeholder="Nama Lengkap"
+                        value={newUser.name}
+                        onChange={(e) => setNewUser({...newUser, name: e.target.value})}
+                        className="p-2 border border-[#EAE3D5] rounded-md focus:ring-2 focus:ring-[#8B5E3C] focus:outline-none"
+                      />
+                      <input
+                        type="email"
+                        placeholder="Email"
+                        value={newUser.email}
+                        onChange={(e) => setNewUser({...newUser, email: e.target.value})}
+                        className="p-2 border border-[#EAE3D5] rounded-md focus:ring-2 focus:ring-[#8B5E3C] focus:outline-none"
+                      />
+                      <button
+                        onClick={addUser}
+                        className="bg-[#5C4033] hover:bg-[#4A3228] text-white px-4 py-2 rounded-lg font-bold transition-all"
+                      >
+                        + Tambah User
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Edit User Form */}
+                  {editingUser && (
+                    <div className="mb-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
+                      <h4 className="font-bold text-amber-800 mb-3">Edit User: {editingUser.username}</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <input
+                          type="text"
+                          placeholder="Username"
+                          value={editingUser.username}
+                          onChange={(e) => setEditingUser({...editingUser, username: e.target.value})}
+                          className="p-2 border border-amber-300 rounded-md focus:ring-2 focus:ring-amber-500 focus:outline-none"
+                        />
+                        <input
+                          type="password"
+                          placeholder="Password Baru (kosongkan jika tidak diubah)"
+                          value={editingUser.password}
+                          onChange={(e) => setEditingUser({...editingUser, password: e.target.value})}
+                          className="p-2 border border-amber-300 rounded-md focus:ring-2 focus:ring-amber-500 focus:outline-none"
+                        />
+                        <select
+                          value={editingUser.role}
+                          onChange={(e) => setEditingUser({...editingUser, role: e.target.value})}
+                          className="p-2 border border-amber-300 rounded-md focus:ring-2 focus:ring-amber-500 focus:outline-none"
+                        >
+                          <option value="staff">Staff PBO</option>
+                          <option value="admin">Administrator</option>
+                        </select>
+                        <input
+                          type="text"
+                          placeholder="Nama Lengkap"
+                          value={editingUser.name}
+                          onChange={(e) => setEditingUser({...editingUser, name: e.target.value})}
+                          className="p-2 border border-amber-300 rounded-md focus:ring-2 focus:ring-amber-500 focus:outline-none"
+                        />
+                        <input
+                          type="email"
+                          placeholder="Email"
+                          value={editingUser.email}
+                          onChange={(e) => setEditingUser({...editingUser, email: e.target.value})}
+                          className="p-2 border border-amber-300 rounded-md focus:ring-2 focus:ring-amber-500 focus:outline-none"
+                        />
+                        <div className="flex gap-2">
+                          <button
+                            onClick={updateUser}
+                            className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg font-bold transition-all flex-1"
+                          >
+                            Update
+                          </button>
+                          <button
+                            onClick={() => setEditingUser(null)}
+                            className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-bold transition-all"
+                          >
+                            Batal
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* User List Table */}
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left text-sm">
+                      <thead className="bg-[#F0E7DA] text-[#5C4033]">
+                        <tr>
+                          <th className="py-3 px-4 font-bold">Username</th>
+                          <th className="py-3 px-4 font-bold">Nama</th>
+                          <th className="py-3 px-4 font-bold">Role</th>
+                          <th className="py-3 px-4 font-bold">Email</th>
+                          <th className="py-3 px-4 font-bold">Status</th>
+                          <th className="py-3 px-4 font-bold text-center">Aksi</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-[#F0EAE1]">
+                        {userList.map((user) => (
+                          <tr key={user.id} className="hover:bg-[#FCFAF5] transition-colors">
+                            <td className="py-3 px-4 font-mono text-[#4A3B32]">{user.username}</td>
+                            <td className="py-3 px-4 font-medium text-[#4A3B32]">{user.name}</td>
+                            <td className="py-3 px-4">
+                              <span className={`text-xs font-bold px-2 py-1 rounded ${
+                                user.role === 'admin' ? 'bg-red-100 text-red-800' : 'bg-blue-100 text-blue-800'
+                              }`}>
+                                {user.role === 'admin' ? 'Administrator' : 'Staff PBO'}
+                              </span>
+                            </td>
+                            <td className="py-3 px-4 text-[#8C7A6B]">{user.email}</td>
+                            <td className="py-3 px-4">
+                              <span className={`text-xs font-bold px-2 py-1 rounded ${
+                                user.id === currentUser?.id ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-600'
+                              }`}>
+                                {user.id === currentUser?.id ? 'Active' : 'Inactive'}
+                              </span>
+                            </td>
+                            <td className="py-3 px-4 text-center">
+                              <button
+                                onClick={() => setEditingUser(user)}
+                                className="text-[#8B5E3C] hover:text-[#5C4033] font-bold text-sm mr-2"
+                              >
+                                Edit
+                              </button>
+                              {user.id !== currentUser?.id && (
+                                <button
+                                  onClick={() => deleteUser(user.id)}
+                                  className="text-red-600 hover:text-red-800 font-bold text-sm"
+                                >
+                                  Hapus
+                                </button>
+                              )}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              {/* Section 2: System Information */}
+              <div className="bg-white rounded-xl border border-[#EAE3D5] overflow-hidden shadow-sm">
+                <div className="bg-[#5C4033] p-4 text-white">
+                  <h3 className="font-bold text-lg flex items-center gap-2"><Shield size={20}/> System Information</h3>
+                </div>
+                <div className="p-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-4">
+                      <h4 className="font-bold text-[#5C4033]">Application Info</h4>
+                      <div className="space-y-2 text-sm">
+                        <p><span className="font-semibold">Version:</span> 1.0.0</p>
+                        <p><span className="font-semibold">Last Updated:</span> {new Date().toLocaleDateString('id-ID')}</p>
+                        <p><span className="font-semibold">Environment:</span> Production</p>
+                      </div>
+                    </div>
+                    <div className="space-y-4">
+                      <h4 className="font-bold text-[#5C4033]">User Statistics</h4>
+                      <div className="space-y-2 text-sm">
+                        <p><span className="font-semibold">Total Users:</span> {userList.length}</p>
+                        <p><span className="font-semibold">Admin Users:</span> {userList.filter(u => u.role === 'admin').length}</p>
+                        <p><span className="font-semibold">Staff Users:</span> {userList.filter(u => u.role === 'staff').length}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
