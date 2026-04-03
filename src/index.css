@@ -1,1 +1,139 @@
 @import "tailwindcss";
+
+/* Medical Blue/Teal Theme - Clear and readable */
+:root {
+  --color-primary-brown: #1E293B;
+  --color-accent-gold: #16A085;
+  --color-dark-brown: #0F172A;
+  --color-light-cream: #F0FAFC;
+  --color-text: #0F172A;
+  --color-text-muted: #64748B;
+  --color-bg-light: #F8FBFF;
+  --color-white: #FFFFFF;
+  --color-cream: #E0F4FA;
+  --color-gold: #42C59E;
+  --color-orange: #34D399;
+}
+
+/* Smooth transitions and animations */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Gradient backgrounds for visual appeal */
+.bg-gradient-brown {
+  background: linear-gradient(135deg, #0F172A 0%, #16A085 100%);
+}
+
+.bg-gradient-cream {
+  background: linear-gradient(135deg, #FFFFFF 0%, #E0F4FA 100%);
+}
+
+/* Button hover effects with clinic dashboard style */
+button {
+  border-radius: 1rem;
+  border: 1px solid transparent;
+  background-color: var(--color-accent-gold);
+  color: var(--color-dark-brown);
+  padding: 0.85rem 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  box-shadow: 0 14px 32px rgba(16, 160, 133, 0.16);
+  transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease, border-color 150ms ease;
+}
+
+/* Navy text utility for white-on-white replacements */
+.text-navy {
+  color: #0F2657 !important;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background-color: var(--color-gold);
+  border-color: rgba(16, 160, 133, 0.25);
+  box-shadow: 0 16px 36px rgba(16, 160, 133, 0.18);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 8px 18px rgba(16, 160, 133, 0.14);
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  background-color: rgba(136, 165, 191, 0.25);
+  color: var(--color-dark-brown);
+  box-shadow: none;
+}
+
+.button-secondary,
+button.secondary {
+  background-color: transparent;
+  color: var(--color-dark-brown);
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+.button-outline,
+button.outline {
+  background-color: transparent;
+  color: var(--color-accent-gold);
+  border-color: var(--color-accent-gold);
+}
+
+/* Focus styles with clinic teal accent */
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(22, 160, 133, 0.16);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(31, 41, 55, 0.12);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F5F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8D6E63;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F59E0B;
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: rgb(202, 202, 202);
+  }
+  
+  button, .no-print {
+    display: none !important;
+  }
+}
+
