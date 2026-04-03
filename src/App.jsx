@@ -800,16 +800,16 @@ export default function App() {
                      costs.alat + costs.admin + costs.addonTotal;
 
   return (
-    <div className={`min-h-screen bg-cream-50 p-4 md:p-8 font-sans text-slate-900 ${!isLoggedIn ? 'print:hidden' : ''}`}>
-      <div className="max-w-6xl mx-auto bg-cream-100 rounded-xl shadow-lg border border-cream-200 overflow-hidden print:shadow-none print:w-full print:max-w-full print:bg-white">
+    <div className={`min-h-screen bg-medical-blue-50 p-4 md:p-8 font-sans text-slate-900 ${!isLoggedIn ? 'print:hidden' : ''}`}>
+      <div className="max-w-6xl mx-auto bg-medical-blue-100 rounded-xl shadow-lg border border-medical-blue-200 overflow-hidden print:shadow-none print:w-full print:max-w-full print:bg-medical-blue-50">
         
         {/* Header - Tema Dark Chocolate */}
-        <div className="bg-slate-900 text-white p-6 print:bg-white print:text-black print:border-b-4 print:border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="bg-medical-blue-600 text-navy p-6 print:bg-medical-blue-50 print:text-black print:border-b-4 print:border-medical-blue-600 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-4 w-full md:w-auto">
             <img 
               src="https://www.waronhospital.com/assets/logo-waron-full-C8co1Cvy.png" 
               alt="Logo Waron Hospital Surabaya" 
-              className="h-12 md:h-14 w-auto object-contain bg-cream-50 rounded-lg p-1.5 shadow-sm print:shadow-none print:h-12 print:bg-transparent print:p-0"
+              className="h-12 md:h-14 w-auto object-contain bg-medical-blue-50 rounded-lg p-1.5 shadow-sm print:shadow-none print:h-12 print:bg-transparent print:p-0"
             />
             <div>
               <h1 className="text-3xl font-bold tracking-tight">WARON HOSPITAL</h1>
@@ -828,12 +828,12 @@ export default function App() {
                   <p className="text-sm font-bold">{currentUser.name}</p>
                   <p className="text-xs text-brown-600 capitalize">{currentUser.role === 'admin' ? 'Administrator' : 'Staff PBO'}</p>
                 </div>
-                <button onClick={handleLogout} className="flex items-center justify-center gap-2 bg-brown-600 hover:bg-brown-700 text-white px-4 py-2 rounded-lg font-bold transition-all shadow-sm">
+                <button onClick={handleLogout} className="flex items-center justify-center gap-2 bg-medical-blue-600 hover:bg-brown-700 text-navy px-4 py-2 rounded-lg font-bold transition-all shadow-sm">
                   <LogOut size={16} /> Logout
                 </button>
               </div>
             ) : (
-              <button onClick={() => setShowLogin(true)} className="flex items-center justify-center gap-2 bg-brown-600 hover:bg-brown-700 text-white px-4 py-2 rounded-lg font-bold transition-all shadow-sm">
+              <button onClick={() => setShowLogin(true)} className="flex items-center justify-center gap-2 bg-medical-blue-600 hover:bg-brown-700 text-navy px-4 py-2 rounded-lg font-bold transition-all shadow-sm">
                 <LogIn size={16} /> Login
               </button>
             )}
@@ -841,10 +841,10 @@ export default function App() {
             {/* Print buttons only for logged-in users */}
             {isLoggedIn && (
               <>
-                <button onClick={handleDownloadPDF} className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-cream-50 text-slate-950 font-bold border border-cream-200 hover:bg-cream-100 px-5 py-2.5 rounded-lg transition-all shadow-sm disabled:opacity-50">
+                <button onClick={handleDownloadPDF} className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-medical-blue-50 text-slate-950 font-bold border border-medical-blue-200 hover:bg-medical-blue-100 px-5 py-2.5 rounded-lg transition-all shadow-sm disabled:opacity-50">
                   <Download size={20} /> Unduh PDF
                 </button>
-                <button onClick={() => window.print()} className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-gold-600 hover:bg-gold-700 text-white px-5 py-2.5 rounded-lg font-bold transition-all shadow-md">
+                <button onClick={() => window.print()} className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-gold-600 hover:bg-gold-700 text-navy px-5 py-2.5 rounded-lg font-bold transition-all shadow-md">
                   <Printer size={20} /> Cetak
                 </button>
               </>
@@ -855,9 +855,9 @@ export default function App() {
         {/* Login Modal */}
         {showLogin && (
           <div className="fixed inset-0 bg-slate-950/80 flex items-center justify-center z-50 p-4">
-            <div className="bg-cream-100 border border-cream-200 rounded-3xl shadow-2xl max-w-md w-full overflow-hidden">
-              <div className="bg-gradient-to-r from-sky-600 to-teal-600 text-white p-6 text-center">
-                <Shield size={52} className="mx-auto mb-3 text-white" />
+            <div className="bg-medical-blue-100 border border-medical-blue-200 rounded-3xl shadow-2xl max-w-md w-full overflow-hidden">
+              <div className="bg-gradient-to-r from-sky-600 to-teal-600 text-navy p-6 text-center">
+                <Shield size={52} className="mx-auto mb-3 text-navy" />
                 <h2 className="text-2xl font-semibold">Portal Klinik</h2>
                 <p className="text-sm opacity-90 mt-1">Masuk untuk mengakses estimasi biaya dan data pasien</p>
               </div>
@@ -869,7 +869,7 @@ export default function App() {
                       type="text"
                       value={loginForm.username}
                       onChange={(e) => setLoginForm({...loginForm, username: e.target.value})}
-                      className="w-full p-3 border border-cream-300 rounded-xl bg-white text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+                      className="w-full p-3 border border-medical-blue-300 rounded-xl bg-medical-blue-50 text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-medical-blue-500 focus:border-medical-blue-500 outline-none"
                       placeholder="Masukkan username"
                       required
                     />
@@ -881,7 +881,7 @@ export default function App() {
                       type="password"
                       value={loginForm.password}
                       onChange={(e) => setLoginForm({...loginForm, password: e.target.value})}
-                      className="w-full p-3 border border-cream-300 rounded-xl bg-white text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+                      className="w-full p-3 border border-medical-blue-300 rounded-xl bg-medical-blue-50 text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-medical-blue-500 focus:border-medical-blue-500 outline-none"
                       placeholder="Masukkan password"
                       required
                     />
@@ -896,21 +896,21 @@ export default function App() {
                   <div className="flex gap-3 pt-2">
                     <button
                       type="submit"
-                      className="flex-1 bg-sky-600 hover:bg-sky-700 text-white py-3 rounded-xl font-semibold transition-all shadow-sm"
+                      className="flex-1 bg-sky-600 hover:bg-sky-700 text-navy py-3 rounded-xl font-semibold transition-all shadow-sm"
                     >
                       Masuk
                     </button>
                     <button
                       type="button"
                       onClick={() => setShowLogin(false)}
-                      className="flex-1 bg-cream-200 hover:bg-cream-300 text-slate-800 py-3 rounded-xl font-semibold transition-all"
+                      className="flex-1 bg-medical-blue-200 hover:bg-medical-blue-300 text-slate-800 py-3 rounded-xl font-semibold transition-all"
                     >
                       Batal
                     </button>
                   </div>
                 </form>
                 
-                <div className="mt-6 pt-4 border-t border-cream-200">
+                <div className="mt-6 pt-4 border-t border-medical-blue-200">
                   <p className="text-xs text-slate-800 font-semibold text-center leading-relaxed">
                     Developed by Hendra Winata SP
                   </p>
@@ -921,27 +921,27 @@ export default function App() {
         )}
 
         {/* Tab Navigation */}
-        <div className="bg-cream-100 border-b border-cream-200 px-6 md:px-8 py-0 flex gap-1 overflow-x-auto print:hidden">
+        <div className="bg-medical-blue-100 border-b border-medical-blue-200 px-6 md:px-8 py-0 flex gap-1 overflow-x-auto print:hidden">
           <button 
             onClick={() => setActiveTab('pbo')} 
-            className={`flex items-center gap-2 px-6 py-4 font-bold text-sm transition-all border-b-4 whitespace-nowrap ${activeTab === 'pbo' ? 'border-slate-900 text-slate-900 bg-cream-100 border-b-4' : 'border-transparent text-slate-800 hover:text-slate-900 hover:bg-cream-50'}`}
+            className={`flex items-center gap-2 px-6 py-4 font-bold text-sm transition-all border-b-4 whitespace-nowrap ${activeTab === 'pbo' ? 'border-slate-900 text-slate-900 bg-medical-blue-100 border-b-4' : 'border-transparent text-slate-800 hover:text-slate-900 hover:bg-medical-blue-50'}`}
           >
             <Calculator size={18} /> Kalkulator PBO
           </button>
           <button 
             onClick={() => setActiveTab('prices')} 
-            className={`flex items-center gap-2 px-6 py-4 font-bold text-sm transition-all border-b-4 whitespace-nowrap ${activeTab === 'prices' ? 'border-slate-900 text-slate-900 bg-cream-100 border-b-4' : 'border-transparent text-slate-800 hover:text-slate-900 hover:bg-cream-50'}`}
+            className={`flex items-center gap-2 px-6 py-4 font-bold text-sm transition-all border-b-4 whitespace-nowrap ${activeTab === 'prices' ? 'border-slate-900 text-slate-900 bg-medical-blue-100 border-b-4' : 'border-transparent text-slate-800 hover:text-slate-900 hover:bg-medical-blue-50'}`}
           >
             <List size={18} /> Daftar Harga & Referensi
           </button>
           {isLoggedIn && (
             <button 
               onClick={() => setActiveTab('chat')} 
-              className={`flex items-center gap-2 px-6 py-4 font-bold text-sm transition-all border-b-4 whitespace-nowrap ${activeTab === 'chat' ? 'border-slate-900 text-slate-900 bg-cream-100 border-b-4' : 'border-transparent text-slate-800 hover:text-slate-900 hover:bg-cream-50'}`}
+              className={`flex items-center gap-2 px-6 py-4 font-bold text-sm transition-all border-b-4 whitespace-nowrap ${activeTab === 'chat' ? 'border-slate-900 text-slate-900 bg-medical-blue-100 border-b-4' : 'border-transparent text-slate-800 hover:text-slate-900 hover:bg-medical-blue-50'}`}
             >
               <MessageCircle size={18} /> Chat
               {unreadChatCount > 0 && (
-                <span className="inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-600 rounded-full ml-1">
+                <span className="inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-navy bg-red-600 rounded-full ml-1">
                   {unreadChatCount}
                 </span>
               )}
@@ -950,7 +950,7 @@ export default function App() {
           {isLoggedIn && (
             <button 
               onClick={() => setActiveTab('master')} 
-              className={`flex items-center gap-2 px-6 py-4 font-bold text-sm transition-all border-b-4 whitespace-nowrap ${activeTab === 'master' ? 'border-slate-900 text-slate-900 bg-cream-100 border-b-4' : 'border-transparent text-slate-800 hover:text-slate-900 hover:bg-cream-50'}`}
+              className={`flex items-center gap-2 px-6 py-4 font-bold text-sm transition-all border-b-4 whitespace-nowrap ${activeTab === 'master' ? 'border-slate-900 text-slate-900 bg-medical-blue-100 border-b-4' : 'border-transparent text-slate-800 hover:text-slate-900 hover:bg-medical-blue-50'}`}
             >
               <Tags size={18} /> Master Data
             </button>
@@ -958,7 +958,7 @@ export default function App() {
           {isLoggedIn && currentUser?.role === 'admin' && (
             <button 
               onClick={() => setActiveTab('settings')} 
-              className={`flex items-center gap-2 px-6 py-4 font-bold text-sm transition-all border-b-4 whitespace-nowrap ${activeTab === 'settings' ? 'border-slate-900 text-slate-900 bg-cream-100 border-b-4' : 'border-transparent text-slate-800 hover:text-slate-900 hover:bg-cream-50'}`}
+              className={`flex items-center gap-2 px-6 py-4 font-bold text-sm transition-all border-b-4 whitespace-nowrap ${activeTab === 'settings' ? 'border-slate-900 text-slate-900 bg-medical-blue-100 border-b-4' : 'border-transparent text-slate-800 hover:text-slate-900 hover:bg-medical-blue-50'}`}
             >
               <Settings size={18} /> Settings
             </button>
@@ -966,7 +966,7 @@ export default function App() {
           {isLoggedIn && currentUser?.role === 'admin' && (
             <button 
               onClick={() => setActiveTab('history')} 
-              className={`flex items-center gap-2 px-6 py-4 font-bold text-sm transition-all border-b-4 whitespace-nowrap ${activeTab === 'history' ? 'border-slate-900 text-slate-900 bg-cream-100 border-b-4' : 'border-transparent text-slate-800 hover:text-slate-900 hover:bg-cream-50'}`}
+              className={`flex items-center gap-2 px-6 py-4 font-bold text-sm transition-all border-b-4 whitespace-nowrap ${activeTab === 'history' ? 'border-slate-900 text-slate-900 bg-medical-blue-100 border-b-4' : 'border-transparent text-slate-800 hover:text-slate-900 hover:bg-medical-blue-50'}`}
             >
               <FileText size={18} /> History PBO
             </button>
@@ -997,14 +997,14 @@ export default function App() {
                 <div className="lg:col-span-4 space-y-6 print:hidden">
                   
                   {/* Jenis Tindakan & Identitas */}
-                  <div className="bg-cream-100 p-5 rounded-xl border border-cream-200">
+                  <div className="bg-medical-blue-100 p-5 rounded-xl border border-medical-blue-200">
                     <h3 className="font-bold text-brown-800 flex items-center gap-2 mb-4 border-b border-gray-200 pb-2"><FileText size={18}/> Layanan & Identitas</h3>
                     <div className="space-y-4">
                       
                       {/* Pilihan Tindakan Terpadu */}
-                      <div className="bg-cream-50 p-3 rounded-lg border border-gray-200">
+                      <div className="bg-medical-blue-50 p-3 rounded-lg border border-gray-200">
                         <label className="text-xs font-bold text-brown-800 uppercase block mb-1">Jenis Tindakan Operasi / Medis</label>
-                        <select value={procedureKey} onChange={handleProcedureChange} className="w-full p-2 border border-gray-200 rounded-md text-sm font-bold text-slate-900 bg-cream-50 focus:ring-2 focus:ring-brown-600 outline-none">
+                        <select value={procedureKey} onChange={handleProcedureChange} className="w-full p-2 border border-gray-200 rounded-md text-sm font-bold text-slate-900 bg-medical-blue-50 focus:ring-2 focus:ring-brown-600 outline-none">
                           {categories.map(cat => (
                             <optgroup key={cat} label={cat}>
                               {PROCEDURES.filter(p => p.category === cat).map(proc => (
@@ -1023,25 +1023,25 @@ export default function App() {
                       <div className="grid grid-cols-2 gap-3">
                         <div>
                           <label className="text-xs font-bold text-brown-600 uppercase">Kelas Inap</label>
-                          <select value={patient.classType} onChange={e => setPatient({...patient, classType: e.target.value})} className="w-full p-2 border border-gray-200 rounded-md text-sm font-bold text-slate-900 bg-cream-50 focus:ring-2 focus:ring-brown-600 outline-none">
+                          <select value={patient.classType} onChange={e => setPatient({...patient, classType: e.target.value})} className="w-full p-2 border border-gray-200 rounded-md text-sm font-bold text-slate-900 bg-medical-blue-50 focus:ring-2 focus:ring-brown-600 outline-none">
                             {CLASSES.map(c => <option key={c} value={c}>{c}</option>)}
                           </select>
                         </div>
-                        <div><label className="text-xs font-bold text-brown-600 uppercase">Lama (Hari)</label><input type="number" value={patient.days} onChange={e => setPatient({...patient, days: Number(e.target.value)})} className="w-full p-2 border border-gray-200 rounded-md text-sm font-medium bg-cream-50 focus:ring-2 focus:ring-brown-600 outline-none" /></div>
+                        <div><label className="text-xs font-bold text-brown-600 uppercase">Lama (Hari)</label><input type="number" value={patient.days} onChange={e => setPatient({...patient, days: Number(e.target.value)})} className="w-full p-2 border border-gray-200 rounded-md text-sm font-medium bg-medical-blue-50 focus:ring-2 focus:ring-brown-600 outline-none" /></div>
                       </div>
                     </div>
                   </div>
 
                   {/* Tim Dokter */}
-                  <div className="bg-cream-100 p-5 rounded-xl border border-cream-200">
-                    <h3 className="font-bold text-slate-900 flex items-center gap-2 mb-4 border-b border-cream-200 pb-2"><Activity size={18}/> Tim Medis & Kondisi</h3>
+                  <div className="bg-medical-blue-100 p-5 rounded-xl border border-medical-blue-200">
+                    <h3 className="font-bold text-slate-900 flex items-center gap-2 mb-4 border-b border-medical-blue-200 pb-2"><Activity size={18}/> Tim Medis & Kondisi</h3>
                     <div className="space-y-4">
                       <div className="flex flex-col md:flex-row gap-3">
-                        <div className="bg-cream-50 p-3 rounded-lg border border-cream-200 flex items-center justify-between flex-1">
+                        <div className="bg-medical-blue-50 p-3 rounded-lg border border-medical-blue-200 flex items-center justify-between flex-1">
                           <label className="font-bold text-gold-700 cursor-pointer flex-1 text-sm">Tindakan CITO</label>
                           <input type="checkbox" checked={medical.isCyto} onChange={e => setMedical({...medical, isCyto: e.target.checked})} className="w-5 h-5 accent-gold-600 rounded" />
                         </div>
-                        <div className="bg-cream-50 p-3 rounded-lg border border-cream-200 flex items-center justify-between flex-1">
+                        <div className="bg-medical-blue-50 p-3 rounded-lg border border-medical-blue-200 flex items-center justify-between flex-1">
                           <label className="font-bold text-brown-800 cursor-pointer flex-1 text-sm">Holiday Rate</label>
                           <input type="checkbox" checked={medical.isHoliday} onChange={e => setMedical({...medical, isHoliday: e.target.checked})} className="w-5 h-5 accent-orange-600 rounded" />
                         </div>
@@ -1068,9 +1068,9 @@ export default function App() {
                       </div>
                       
                       {activeProcedure.hasBaby && (
-                        <div className="bg-cream-50 p-2 rounded border border-blue-100">
+                        <div className="bg-medical-blue-50 p-2 rounded border border-blue-100">
                           <label className="text-xs font-bold text-blue-700 uppercase flex gap-1 items-center"><Baby size={14}/> Dokter Anak (Sp.A)</label>
-                          <select value={medical.anakIdx} onChange={e => setMedical({...medical, anakIdx: Number(e.target.value)})} className="w-full p-2 mt-1 border border-blue-200 rounded-md text-sm font-medium bg-cream-50 focus:ring-2 focus:ring-blue-400 outline-none">
+                          <select value={medical.anakIdx} onChange={e => setMedical({...medical, anakIdx: Number(e.target.value)})} className="w-full p-2 mt-1 border border-blue-200 rounded-md text-sm font-medium bg-medical-blue-50 focus:ring-2 focus:ring-blue-400 outline-none">
                             {DOCTORS_AK.map((d, i) => <option key={i} value={i}>{d}</option>)}
                           </select>
                         </div>
@@ -1079,11 +1079,11 @@ export default function App() {
                   </div>
 
                   {/* Tindakan Tambahan / Penyulit */}
-                  <div className="bg-cream-100 p-5 rounded-xl border border-cream-200">
-                    <h3 className="font-bold text-slate-900 flex items-center gap-2 mb-4 border-b border-cream-200 pb-2"><CheckSquare size={18}/> Tindakan Tambahan / Penyulit</h3>
+                  <div className="bg-medical-blue-100 p-5 rounded-xl border border-medical-blue-200">
+                    <h3 className="font-bold text-slate-900 flex items-center gap-2 mb-4 border-b border-medical-blue-200 pb-2"><CheckSquare size={18}/> Tindakan Tambahan / Penyulit</h3>
                     <div className="space-y-2">
                       {ADDONS.map(addon => (
-                        <label key={addon.id} className="flex items-center gap-3 p-2 hover:bg-cream-50 rounded-lg cursor-pointer transition-colors border border-transparent hover:border-gray-200">
+                        <label key={addon.id} className="flex items-center gap-3 p-2 hover:bg-medical-blue-50 rounded-lg cursor-pointer transition-colors border border-transparent hover:border-gray-200">
                           <input type="checkbox" checked={medical.selectedAddons.includes(addon.id)} onChange={() => toggleAddon(addon.id)} className="w-4 h-4 accent-gold-600 rounded"/>
                           <span className="text-sm font-medium flex-1 text-brown-800">{addon.label}</span>
                           <span className="text-xs font-bold text-brown-600">+{formatRp(addon.defaultPrice)}</span>
@@ -1120,8 +1120,8 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div className="bg-cream-100 rounded-xl border border-cream-200 print:border-none overflow-hidden">
-                    <div className="bg-cream-50 p-4 border-b border-cream-200 print:bg-white print:p-0 print:mb-2">
+                  <div className="bg-medical-blue-100 rounded-xl border border-medical-blue-200 print:border-none overflow-hidden">
+                    <div className="bg-medical-blue-50 p-4 border-b border-medical-blue-200 print:bg-medical-blue-50 print:p-0 print:mb-2">
                       <h3 className="font-bold text-lg flex items-center gap-2 text-brown-800"><Calculator size={20} className="text-brown-600"/> Rincian Biaya Estimasi</h3>
                     </div>
                     
@@ -1143,7 +1143,7 @@ export default function App() {
                     <table className="w-full text-left text-sm print:text-[13px]">
                       <tbody className="divide-y divide-gray-200 print:divide-black">
                         {/* Jasa Medis */}
-                        <tr className="bg-cream-50 print:bg-transparent"><td colSpan="2" className="py-2 px-4 font-bold text-brown-800 print:text-black uppercase">1. Jasa Medis Dokter</td></tr>
+                        <tr className="bg-medical-blue-50 print:bg-transparent"><td colSpan="2" className="py-2 px-4 font-bold text-brown-800 print:text-black uppercase">1. Jasa Medis Dokter</td></tr>
                         <tr>
                           <td className="py-2.5 px-4 pl-8">Jasa Dokter Operator ({activeProcedure.gol})</td>
                           <td className="py-2.5 px-4 text-right font-medium">{formatRp(costs.operator)}</td>
@@ -1172,7 +1172,7 @@ export default function App() {
                         </tr>
 
                         {/* Tindakan & Ruangan */}
-                        <tr className="bg-cream-50 print:bg-transparent"><td colSpan="2" className="py-2 px-4 font-bold text-brown-800 print:text-black uppercase">2. Tindakan & Kamar Perawatan</td></tr>
+                        <tr className="bg-medical-blue-50 print:bg-transparent"><td colSpan="2" className="py-2 px-4 font-bold text-brown-800 print:text-black uppercase">2. Tindakan & Kamar Perawatan</td></tr>
                         <tr>
                           <td className="py-2.5 px-4 pl-8">Sewa Kamar Operasi (OK) / Ruang Tindakan</td>
                           <td className="py-2.5 px-4 text-right font-medium">{formatRp(costs.ok)}</td>
@@ -1198,18 +1198,18 @@ export default function App() {
                         )}
 
                         {/* Obat & BMHP */}
-                        <tr className="bg-cream-50 print:bg-transparent"><td colSpan="2" className="py-2 px-4 font-bold text-brown-800 print:text-black uppercase">3. Farmasi & Penunjang Medis</td></tr>
+                        <tr className="bg-medical-blue-50 print:bg-transparent"><td colSpan="2" className="py-2 px-4 font-bold text-brown-800 print:text-black uppercase">3. Farmasi & Penunjang Medis</td></tr>
                         <tr>
                           <td className="py-2.5 px-4 pl-8">Estimasi Obat, Lab & BMHP (Dapat disesuaikan)</td>
                           <td className="py-2.5 px-4 text-right font-medium">
-                            <input type="number" value={costs.obat} onChange={e => setCosts({...costs, obat: Number(e.target.value)})} className="w-32 text-right border-b border-gray-200 focus:outline-none focus:border-gold-500 print:border-none print:w-auto bg-cream-50 print:bg-transparent font-bold text-brown-800" />
+                            <input type="number" value={costs.obat} onChange={e => setCosts({...costs, obat: Number(e.target.value)})} className="w-32 text-right border-b border-gray-200 focus:outline-none focus:border-gold-500 print:border-none print:w-auto bg-medical-blue-50 print:bg-transparent font-bold text-brown-800" />
                           </td>
                         </tr>
 
                         {/* Tindakan Tambahan (Jika Ada) */}
                         {medical.selectedAddons.length > 0 && (
                           <React.Fragment>
-                            <tr className="bg-cream-50 print:bg-transparent"><td colSpan="2" className="py-2 px-4 font-bold text-brown-800 print:text-black uppercase">4. Tindakan Tambahan / Penyulit</td></tr>
+                            <tr className="bg-medical-blue-50 print:bg-transparent"><td colSpan="2" className="py-2 px-4 font-bold text-brown-800 print:text-black uppercase">4. Tindakan Tambahan / Penyulit</td></tr>
                             {medical.selectedAddons.map(id => {
                               const addon = ADDONS.find(a => a.id === id);
                               return (
@@ -1223,7 +1223,7 @@ export default function App() {
                         )}
 
                         {/* Administrasi */}
-                        <tr className="bg-cream-50 print:bg-transparent"><td colSpan="2" className="py-2 px-4 font-bold text-brown-800 print:text-black uppercase">5. Administrasi</td></tr>
+                        <tr className="bg-medical-blue-50 print:bg-transparent"><td colSpan="2" className="py-2 px-4 font-bold text-brown-800 print:text-black uppercase">5. Administrasi</td></tr>
                         <tr>
                           <td className="py-2.5 px-4 pl-8">Administrasi Rumah Sakit (5%)</td>
                           <td className="py-2.5 px-4 text-right font-medium">{formatRp(costs.admin)}</td>
@@ -1290,13 +1290,13 @@ export default function App() {
               </div>
 
               {/* Tabel 1: Tarif Dasar Jasmed & OK per Golongan */}
-              <div className="bg-cream-100 rounded-xl border border-cream-200 overflow-hidden shadow-sm">
-                <div className="bg-brown-600 p-4 text-white">
+              <div className="bg-medical-blue-100 rounded-xl border border-medical-blue-200 overflow-hidden shadow-sm">
+                <div className="bg-medical-blue-600 p-4 text-navy">
                   <h3 className="font-bold text-lg flex items-center gap-2"><FileText size={20}/> Tarif Dasar Operasi & Jasmed (Rp)</h3>
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-sm whitespace-nowrap">
-                    <thead className="bg-cream-50 text-brown-800 border-b border-gray-200">
+                    <thead className="bg-medical-blue-50 text-brown-800 border-b border-gray-200">
                       <tr>
                         <th className="py-3 px-4 font-bold">Kategori Tarif</th>
                         {CLASSES.map(c => <th key={c} className="py-3 px-4 font-bold text-right">{c}</th>)}
@@ -1305,13 +1305,13 @@ export default function App() {
                     <tbody className="divide-y divide-gray-200">
                       {Object.keys(TARIFF_RATES).map((gol) => (
                         <React.Fragment key={gol}>
-                          <tr className="hover:bg-cream-100 transition-colors">
-                            <td className="py-3 px-4 font-semibold text-brown-800 bg-cream-50">{gol} - Jasmed Operator</td>
+                          <tr className="hover:bg-medical-blue-100 transition-colors">
+                            <td className="py-3 px-4 font-semibold text-brown-800 bg-medical-blue-50">{gol} - Jasmed Operator</td>
                             {TARIFF_RATES[gol].op.map((harga, i) => (
                               <td key={`op-${i}`} className="py-3 px-4 text-right">{formatRp(harga)}</td>
                             ))}
                           </tr>
-                          <tr className="hover:bg-cream-100 transition-colors">
+                          <tr className="hover:bg-medical-blue-100 transition-colors">
                             <td className="py-3 px-4 font-semibold text-brown-600">{gol} - Sewa OK / Tindakan</td>
                             {TARIFF_RATES[gol].ok.map((harga, i) => (
                               <td key={`ok-${i}`} className="py-3 px-4 text-right text-brown-600">{formatRp(harga)}</td>
@@ -1325,28 +1325,28 @@ export default function App() {
               </div>
 
               {/* Tabel 2: Tarif Fasilitas Kamar dll */}
-              <div className="bg-cream-100 rounded-xl border border-cream-200 overflow-hidden shadow-sm">
-                <div className="bg-slate-900 p-4 text-white">
+              <div className="bg-medical-blue-100 rounded-xl border border-medical-blue-200 overflow-hidden shadow-sm">
+                <div className="bg-slate-900 p-4 text-navy">
                   <h3 className="font-bold text-lg flex items-center gap-2"><Hospital size={20}/> Tarif Fasilitas & Administrasi (Rp)</h3>
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-sm whitespace-nowrap">
-                    <thead className="bg-cream-50 text-brown-800 border-b border-gray-200">
+                    <thead className="bg-medical-blue-50 text-brown-800 border-b border-gray-200">
                       <tr>
                         <th className="py-3 px-4 font-bold">Komponen</th>
                         {CLASSES.map(c => <th key={c} className="py-3 px-4 font-bold text-right">{c}</th>)}
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-200">
-                      <tr className="hover:bg-cream-100 transition-colors">
+                      <tr className="hover:bg-medical-blue-100 transition-colors">
                         <td className="py-3 px-4 font-semibold text-brown-800">Kamar Perawatan (Per Malam)</td>
                         {SHARED_RATES.kamar.map((harga, i) => <td key={i} className="py-3 px-4 text-right">{formatRp(harga)}</td>)}
                       </tr>
-                      <tr className="hover:bg-cream-100 transition-colors">
+                      <tr className="hover:bg-medical-blue-100 transition-colors">
                         <td className="py-3 px-4 font-semibold text-brown-800">Visite Dokter Spesialis (Per Visit)</td>
                         {SHARED_RATES.visite.map((harga, i) => <td key={i} className="py-3 px-4 text-right">{formatRp(harga)}</td>)}
                       </tr>
-                      <tr className="hover:bg-cream-100 transition-colors">
+                      <tr className="hover:bg-medical-blue-100 transition-colors">
                         <td className="py-3 px-4 font-semibold text-brown-800">Biaya Administrasi Rumah Sakit</td>
                         {SHARED_RATES.admin.map((harga, i) => <td key={i} className="py-3 px-4 text-right">{formatRp(harga)}</td>)}
                       </tr>
@@ -1356,13 +1356,13 @@ export default function App() {
               </div>
 
               {/* Tabel 3: Daftar Referensi Tindakan */}
-              <div className="bg-cream-100 rounded-xl border border-cream-200 overflow-hidden shadow-sm">
-                <div className="bg-slate-900 p-4 text-white">
+              <div className="bg-medical-blue-100 rounded-xl border border-medical-blue-200 overflow-hidden shadow-sm">
+                <div className="bg-slate-900 p-4 text-navy">
                   <h3 className="font-bold text-lg flex items-center gap-2"><Tags size={20}/> Daftar Referensi Tindakan & Standar Inap</h3>
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-sm whitespace-nowrap">
-                    <thead className="bg-cream-50 text-brown-800 border-b border-gray-200">
+                    <thead className="bg-medical-blue-50 text-brown-800 border-b border-gray-200">
                       <tr>
                         <th className="py-3 px-4 font-bold">Kategori</th>
                         <th className="py-3 px-4 font-bold">Nama Tindakan</th>
@@ -1374,10 +1374,10 @@ export default function App() {
                     </thead>
                     <tbody className="divide-y divide-gray-200">
                       {PROCEDURES.map((proc, i) => (
-                        <tr key={i} className="hover:bg-cream-100 transition-colors">
+                        <tr key={i} className="hover:bg-medical-blue-100 transition-colors">
                           <td className="py-3 px-4 text-brown-600 text-xs font-semibold">{proc.category}</td>
                           <td className="py-3 px-4 font-bold text-brown-800">{proc.name} {proc.hasBaby && <Baby size={14} className="inline text-blue-500 ml-1"/>}</td>
-                          <td className="py-3 px-4"><span className="bg-cream-50 text-brown-800 px-2 py-1 rounded text-xs font-bold">{proc.gol}</span></td>
+                          <td className="py-3 px-4"><span className="bg-medical-blue-50 text-brown-800 px-2 py-1 rounded text-xs font-bold">{proc.gol}</span></td>
                           <td className="py-3 px-4 text-center font-bold">{proc.days} Hari</td>
                           <td className="py-3 px-4 text-right text-brown-600">{formatRp(proc.alat)}</td>
                           <td className="py-3 px-4 text-right text-brown-600">{formatRp(proc.obat)}</td>
@@ -1389,15 +1389,15 @@ export default function App() {
               </div>
 
               {/* Tabel 4: Daftar Referensi Dokter */}
-              <div className="bg-cream-100 rounded-xl border border-cream-200 overflow-hidden shadow-sm">
-                <div className="bg-slate-900 p-4 text-white">
+              <div className="bg-medical-blue-100 rounded-xl border border-medical-blue-200 overflow-hidden shadow-sm">
+                <div className="bg-slate-900 p-4 text-navy">
                   <h3 className="font-bold text-lg flex items-center gap-2"><User size={20}/> Referensi Dokter Operator & Multiplier</h3>
                 </div>
                 <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
                   {DOCTORS_OP.map((doc, i) => (
                     <div key={i} className="flex justify-between items-center p-3 border-b border-dashed border-brown-200">
                       <span className="font-medium text-brown-800 text-sm">{doc.name}</span>
-                      <span className={`text-xs font-bold px-2 py-1 rounded ${doc.multiplier > 1.0 ? 'bg-cream-50 text-brown-800' : 'bg-cream-100 text-brown-600'}`}>
+                      <span className={`text-xs font-bold px-2 py-1 rounded ${doc.multiplier > 1.0 ? 'bg-medical-blue-50 text-brown-800' : 'bg-medical-blue-100 text-brown-600'}`}>
                         x{doc.multiplier.toFixed(1)}
                       </span>
                     </div>
@@ -1421,7 +1421,7 @@ export default function App() {
 
               {/* Edit Forms */}
               {editingGolongan && (
-                <div className="bg-cream-50 border border-cream-200 rounded-xl p-6 mb-6">
+                <div className="bg-medical-blue-50 border border-medical-blue-200 rounded-xl p-6 mb-6">
                   <h3 className="font-bold text-lg text-brown-800 mb-4">Edit Golongan: {editingGolongan}</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
@@ -1438,7 +1438,7 @@ export default function App() {
                                 updated[i] = Number(e.target.value);
                                 setNewGolongan({...newGolongan, op: updated});
                               }}
-                              className="flex-1 p-2 border border-cream-200 rounded focus:ring-2 focus:ring-brown-600 focus:outline-none"
+                              className="flex-1 p-2 border border-medical-blue-200 rounded focus:ring-2 focus:ring-brown-600 focus:outline-none"
                             />
                           </div>
                         ))}
@@ -1458,7 +1458,7 @@ export default function App() {
                                 updated[i] = Number(e.target.value);
                                 setNewGolongan({...newGolongan, ok: updated});
                               }}
-                              className="flex-1 p-2 border border-cream-200 rounded focus:ring-2 focus:ring-brown-600 focus:outline-none"
+                              className="flex-1 p-2 border border-medical-blue-200 rounded focus:ring-2 focus:ring-brown-600 focus:outline-none"
                             />
                           </div>
                         ))}
@@ -1468,13 +1468,13 @@ export default function App() {
                   <div className="flex gap-3 mt-6">
                     <button
                       onClick={saveEditGolongan}
-                      className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-lg font-bold transition-all"
+                      className="bg-orange-600 hover:bg-orange-700 text-navy px-6 py-2 rounded-lg font-bold transition-all"
                     >
                       Simpan Perubahan
                     </button>
                     <button
                       onClick={() => setEditingGolongan(null)}
-                      className="bg-brown-500 hover:bg-brown-700 text-white px-6 py-2 rounded-lg font-bold transition-all"
+                      className="bg-brown-500 hover:bg-brown-700 text-navy px-6 py-2 rounded-lg font-bold transition-all"
                     >
                       Batal
                     </button>
@@ -1483,7 +1483,7 @@ export default function App() {
               )}
 
               {editingTindakan && (
-                <div className="bg-cream-50 border border-cream-200 rounded-xl p-6 mb-6">
+                <div className="bg-medical-blue-50 border border-medical-blue-200 rounded-xl p-6 mb-6">
                   <h3 className="font-bold text-lg text-blue-800 mb-4">Edit Tindakan: {newTindakan.name}</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <div>
@@ -1567,13 +1567,13 @@ export default function App() {
                   <div className="flex gap-3 mt-6">
                     <button
                       onClick={saveEditTindakan}
-                      className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-bold transition-all"
+                      className="bg-blue-600 hover:bg-blue-700 text-navy px-6 py-2 rounded-lg font-bold transition-all"
                     >
                       Simpan Perubahan
                     </button>
                     <button
                       onClick={() => setEditingTindakan(null)}
-                      className="bg-brown-500 hover:bg-brown-700 text-white px-6 py-2 rounded-lg font-bold transition-all"
+                      className="bg-brown-500 hover:bg-brown-700 text-navy px-6 py-2 rounded-lg font-bold transition-all"
                     >
                       Batal
                     </button>
@@ -1610,13 +1610,13 @@ export default function App() {
                   <div className="flex gap-3 mt-6">
                     <button
                       onClick={saveEditDokter}
-                      className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-bold transition-all"
+                      className="bg-green-600 hover:bg-green-700 text-navy px-6 py-2 rounded-lg font-bold transition-all"
                     >
                       Simpan Perubahan
                     </button>
                     <button
                       onClick={() => setEditingDokter(null)}
-                      className="bg-brown-500 hover:bg-brown-700 text-white px-6 py-2 rounded-lg font-bold transition-all"
+                      className="bg-brown-500 hover:bg-brown-700 text-navy px-6 py-2 rounded-lg font-bold transition-all"
                     >
                       Batal
                     </button>
@@ -1625,20 +1625,20 @@ export default function App() {
               )}
 
               {/* Section 1: Daftar Golongan */}
-              <div className="bg-cream-100 rounded-xl border border-cream-200 overflow-hidden shadow-sm">
-                <div className="bg-brown-600 p-4 text-white">
+              <div className="bg-medical-blue-100 rounded-xl border border-medical-blue-200 overflow-hidden shadow-sm">
+                <div className="bg-medical-blue-600 p-4 text-navy">
                   <h3 className="font-bold text-lg flex items-center gap-2"><Tags size={20}/> Daftar Golongan & Tarif Dasar</h3>
                 </div>
                 <div className="p-6">
                   <div className="mb-4 flex justify-between items-center">
                     <p className="text-sm text-brown-800">Kelola tarif dasar jasa medis berdasarkan golongan</p>
-                    <button className="bg-brown-600 hover:bg-brown-700 text-white px-4 py-2 rounded-lg font-bold text-sm transition-all">
+                    <button className="bg-medical-blue-600 hover:bg-brown-700 text-navy px-4 py-2 rounded-lg font-bold text-sm transition-all">
                       + Tambah Golongan
                     </button>
                   </div>
                   <div className="overflow-x-auto">
                     <table className="w-full text-left text-sm">
-                      <thead className="bg-cream-50 text-brown-800">
+                      <thead className="bg-medical-blue-50 text-brown-800">
                         <tr>
                           <th className="py-3 px-4 font-bold">Golongan</th>
                           <th className="py-3 px-4 font-bold">Jasa Operator (Rp)</th>
@@ -1648,7 +1648,7 @@ export default function App() {
                       </thead>
                       <tbody className="divide-y divide-gray-200">
                         {Object.entries(TARIFF_RATES).map(([gol, rates]) => (
-                          <tr key={gol} className="hover:bg-cream-100 transition-colors">
+                          <tr key={gol} className="hover:bg-medical-blue-100 transition-colors">
                             <td className="py-3 px-4 font-bold text-brown-800">{gol}</td>
                             <td className="py-3 px-4">
                               <div className="space-y-1">
@@ -1691,20 +1691,20 @@ export default function App() {
               </div>
 
               {/* Section 2: Daftar Tindakan */}
-              <div className="bg-cream-100 rounded-xl border border-cream-200 overflow-hidden shadow-sm">
-                <div className="bg-brown-600 p-4 text-white">
+              <div className="bg-medical-blue-100 rounded-xl border border-medical-blue-200 overflow-hidden shadow-sm">
+                <div className="bg-medical-blue-600 p-4 text-navy">
                   <h3 className="font-bold text-lg flex items-center gap-2"><Activity size={20}/> Daftar Nama Tindakan</h3>
                 </div>
                 <div className="p-6">
                   <div className="mb-4 flex justify-between items-center">
                     <p className="text-sm text-brown-800">Kelola daftar tindakan medis dengan parameter lengkap</p>
-                    <button className="bg-brown-600 hover:bg-brown-700 text-white px-4 py-2 rounded-lg font-bold text-sm transition-all">
+                    <button className="bg-medical-blue-600 hover:bg-brown-700 text-navy px-4 py-2 rounded-lg font-bold text-sm transition-all">
                       + Tambah Tindakan
                     </button>
                   </div>
                   <div className="overflow-x-auto">
                     <table className="w-full text-left text-sm">
-                      <thead className="bg-cream-50 text-brown-800">
+                      <thead className="bg-medical-blue-50 text-brown-800">
                         <tr>
                           <th className="py-3 px-4 font-bold">ID</th>
                           <th className="py-3 px-4 font-bold">Kategori</th>
@@ -1718,11 +1718,11 @@ export default function App() {
                       </thead>
                       <tbody className="divide-y divide-gray-200">
                         {PROCEDURES.map((proc, i) => (
-                          <tr key={i} className="hover:bg-cream-100 transition-colors">
+                          <tr key={i} className="hover:bg-medical-blue-100 transition-colors">
                             <td className="py-3 px-4 font-mono text-xs text-brown-600">{proc.id}</td>
                             <td className="py-3 px-4 text-brown-600 text-xs font-semibold">{proc.category}</td>
                             <td className="py-3 px-4 font-bold text-brown-800">{proc.name} {proc.hasBaby && <Baby size={14} className="inline text-blue-500 ml-1"/>}</td>
-                            <td className="py-3 px-4"><span className="bg-cream-50 text-brown-800 px-2 py-1 rounded text-xs font-bold">{proc.gol}</span></td>
+                            <td className="py-3 px-4"><span className="bg-medical-blue-50 text-brown-800 px-2 py-1 rounded text-xs font-bold">{proc.gol}</span></td>
                             <td className="py-3 px-4 text-center font-bold">{proc.days} Hari</td>
                             <td className="py-3 px-4 text-right text-brown-600">{formatRp(proc.alat)}</td>
                             <td className="py-3 px-4 text-right text-brown-600">{formatRp(proc.obat)}</td>
@@ -1749,14 +1749,14 @@ export default function App() {
               </div>
 
               {/* Section 3: Daftar Dokter */}
-              <div className="bg-cream-100 rounded-xl border border-cream-200 overflow-hidden shadow-sm">
-                <div className="bg-brown-600 p-4 text-white">
+              <div className="bg-medical-blue-100 rounded-xl border border-medical-blue-200 overflow-hidden shadow-sm">
+                <div className="bg-medical-blue-600 p-4 text-navy">
                   <h3 className="font-bold text-lg flex items-center gap-2"><User size={20}/> Daftar Dokter</h3>
                 </div>
                 <div className="p-6">
                   <div className="mb-4 flex justify-between items-center">
                     <p className="text-sm text-brown-800">Kelola daftar dokter berdasarkan spesialisasi</p>
-                    <button className="bg-brown-600 hover:bg-brown-700 text-white px-4 py-2 rounded-lg font-bold text-sm transition-all">
+                    <button className="bg-medical-blue-600 hover:bg-brown-700 text-navy px-4 py-2 rounded-lg font-bold text-sm transition-all">
                       + Tambah Dokter
                     </button>
                   </div>
@@ -1774,7 +1774,7 @@ export default function App() {
                   {/* Tabel Dokter Operator */}
                   <div className="overflow-x-auto">
                     <table className="w-full text-left text-sm">
-                      <thead className="bg-cream-50 text-brown-800">
+                      <thead className="bg-medical-blue-50 text-brown-800">
                         <tr>
                           <th className="py-3 px-4 font-bold">No</th>
                           <th className="py-3 px-4 font-bold">Nama Dokter</th>
@@ -1784,11 +1784,11 @@ export default function App() {
                       </thead>
                       <tbody className="divide-y divide-gray-200">
                         {DOCTORS_OP.map((doc, i) => (
-                          <tr key={i} className="hover:bg-cream-100 transition-colors">
+                          <tr key={i} className="hover:bg-medical-blue-100 transition-colors">
                             <td className="py-3 px-4 text-center font-bold text-brown-600">{i + 1}</td>
                             <td className="py-3 px-4 font-medium text-brown-800">{doc.name}</td>
                             <td className="py-3 px-4">
-                              <span className={`text-xs font-bold px-2 py-1 rounded ${doc.multiplier > 1.0 ? 'bg-cream-50 text-brown-800' : 'bg-cream-100 text-slate-800 font-semibold'}`}>
+                              <span className={`text-xs font-bold px-2 py-1 rounded ${doc.multiplier > 1.0 ? 'bg-medical-blue-50 text-brown-800' : 'bg-medical-blue-100 text-slate-800 font-semibold'}`}>
                                 x{doc.multiplier.toFixed(1)}
                               </span>
                             </td>
@@ -1830,8 +1830,8 @@ export default function App() {
               <div className="space-y-6">
 
                 {/* Online Users Status */}
-                <div className="bg-cream-100 rounded-xl border border-cream-200 overflow-hidden">
-                  <div className="bg-brown-600 p-4 text-white">
+                <div className="bg-medical-blue-100 rounded-xl border border-medical-blue-200 overflow-hidden">
+                  <div className="bg-medical-blue-600 p-4 text-navy">
                     <h3 className="font-bold text-lg flex items-center gap-2"><Users size={20}/> Status Online Users</h3>
                   </div>
                   <div className="p-6">
@@ -1844,7 +1844,7 @@ export default function App() {
                           <div key={user.id} className={`p-4 rounded-lg border-2 transition-all ${
                             isOnline
                               ? 'border-green-300 bg-green-50'
-                              : 'border-gray-200 bg-cream-50'
+                              : 'border-gray-200 bg-medical-blue-50'
                           }`}>
                             <div className="flex items-center justify-between">
                               <div>
@@ -1871,8 +1871,8 @@ export default function App() {
                 </div>
 
                 {/* PBO Generation History */}
-                <div className="bg-cream-100 rounded-xl border border-cream-200 overflow-hidden">
-                  <div className="bg-brown-600 p-4 text-white">
+                <div className="bg-medical-blue-100 rounded-xl border border-medical-blue-200 overflow-hidden">
+                  <div className="bg-medical-blue-600 p-4 text-navy">
                     <h3 className="font-bold text-lg flex items-center gap-2"><FileText size={20}/> Riwayat Generate PBO</h3>
                   </div>
                   <div className="p-6">
@@ -1884,7 +1884,7 @@ export default function App() {
                     ) : (
                       <div className="overflow-x-auto">
                         <table className="w-full text-left text-sm">
-                          <thead className="bg-cream-50 text-brown-800">
+                          <thead className="bg-medical-blue-50 text-brown-800">
                             <tr>
                               <th className="py-3 px-4 font-bold">Tanggal & Waktu</th>
                               <th className="py-3 px-4 font-bold">User</th>
@@ -1897,7 +1897,7 @@ export default function App() {
                           </thead>
                           <tbody className="divide-y divide-gray-200">
                             {pboHistory.map(entry => (
-                              <tr key={entry.id} className="hover:bg-cream-100 transition-colors">
+                              <tr key={entry.id} className="hover:bg-medical-blue-100 transition-colors">
                                 <td className="py-3 px-4">
                                   <div className="text-sm font-medium text-brown-800">
                                     {new Date(entry.timestamp).toLocaleDateString('id-ID', {
@@ -1923,7 +1923,7 @@ export default function App() {
                                   <div className="text-xs text-brown-600">{entry.procedureId}</div>
                                 </td>
                                 <td className="py-3 px-4">
-                                  <span className="text-xs font-bold px-2 py-1 bg-cream-50 text-brown-800 rounded">
+                                  <span className="text-xs font-bold px-2 py-1 bg-medical-blue-50 text-brown-800 rounded">
                                     {entry.golongan}
                                   </span>
                                 </td>
@@ -1961,8 +1961,8 @@ export default function App() {
                 
                 {/* User List Sidebar */}
                 <div className="lg:col-span-1">
-                  <div className="bg-cream-100 rounded-xl border border-cream-200 overflow-hidden">
-                    <div className="bg-brown-600 p-4 text-white">
+                  <div className="bg-medical-blue-100 rounded-xl border border-medical-blue-200 overflow-hidden">
+                    <div className="bg-medical-blue-600 p-4 text-navy">
                       <h3 className="font-bold text-lg flex items-center gap-2"><Users size={20}/> Users</h3>
                     </div>
                     <div className="p-4 max-h-96 overflow-y-auto">
@@ -1980,8 +1980,8 @@ export default function App() {
                             }}
                             className={`w-full text-left p-3 rounded-lg mb-2 transition-all ${
                               selectedChatUser?.id === user.id 
-                                ? 'bg-gold-600 text-white' 
-                                : 'bg-cream-100 hover:bg-cream-200 text-slate-950 font-semibold'
+                                ? 'bg-gold-600 text-navy' 
+                                : 'bg-medical-blue-100 hover:bg-medical-blue-200 text-slate-950 font-semibold'
                             }`}
                           >
                             <div className="flex items-center justify-between">
@@ -1991,7 +1991,7 @@ export default function App() {
                               </div>
                               <div className="flex items-center gap-2">
                                 {unreadCount > 0 && (
-                                  <span className="inline-flex items-center justify-center w-5 h-5 text-[10px] font-bold text-white bg-red-600 rounded-full">
+                                  <span className="inline-flex items-center justify-center w-5 h-5 text-[10px] font-bold text-navy bg-red-600 rounded-full">
                                     {unreadCount}
                                   </span>
                                 )}
@@ -2011,10 +2011,10 @@ export default function App() {
 
                 {/* Chat Area */}
                 <div className="lg:col-span-3">
-                  <div className="bg-cream-100 rounded-xl border border-cream-200 overflow-hidden h-[600px] flex flex-col">
+                  <div className="bg-medical-blue-100 rounded-xl border border-medical-blue-200 overflow-hidden h-[600px] flex flex-col">
                     
                     {/* Chat Header */}
-                    <div className="bg-brown-600 p-4 text-white">
+                    <div className="bg-medical-blue-600 p-4 text-navy">
                       <h3 className="font-bold text-lg flex items-center gap-2">
                         <MessageCircle size={20}/>
                         {selectedChatUser ? `Chat dengan ${selectedChatUser.name}` : 'Pilih user untuk memulai chat'}
@@ -2022,7 +2022,7 @@ export default function App() {
                     </div>
 
                     {/* Messages Area */}
-                    <div className="flex-1 p-4 overflow-y-auto bg-cream-50">
+                    <div className="flex-1 p-4 overflow-y-auto bg-navy">
                       {selectedChatUser ? (
                         <div className="space-y-4">
                           {getChatWithUser(selectedChatUser.id).map(message => {
@@ -2033,8 +2033,8 @@ export default function App() {
                               <div key={message.id} className={`flex ${isFromMe ? 'justify-end' : 'justify-start'}`}>
                                 <div className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
                                   isFromMe 
-                                    ? 'bg-gold-600 text-white' 
-                                    : 'bg-cream-100 border border-cream-200 text-slate-950 font-semibold shadow-sm'
+                                    ? 'bg-gold-600 text-navy' 
+                                    : 'bg-medical-blue-200 border border-medical-blue-300 text-slate-950 font-semibold shadow-sm'
                                 }`}>
                                   <div className="text-xs font-semibold text-slate-700 mb-1">
                                     {sender.name} • {new Date(message.timestamp).toLocaleString('id-ID')}
@@ -2047,7 +2047,7 @@ export default function App() {
                                   {message.files && message.files.length > 0 && (
                                     <div className="space-y-2">
                                       {message.files.map(file => (
-                                        <div key={file.id} className="flex items-center gap-2 p-2 bg-black bg-opacity-10 rounded">
+                                        <div key={file.id} className="flex items-center gap-2 p-2 bg-medical-blue-300 bg-opacity-80 rounded">
                                           {file.type.startsWith('image/') ? (
                                             <Image size={16} />
                                           ) : (
@@ -2091,13 +2091,13 @@ export default function App() {
 
                     {/* Message Input */}
                     {selectedChatUser && (
-                      <div className="p-4 border-t border-cream-200 bg-cream-50 flex gap-2">
+                      <div className="p-4 border-t border-medical-blue-300 bg-medical-blue-100 flex gap-2">
                         
                         {/* Selected Files Preview */}
                         {selectedFiles.length > 0 && (
                           <div className="mb-3 flex flex-wrap gap-2">
                             {selectedFiles.map(file => (
-                              <div key={file.id} className="flex items-center gap-2 bg-cream-100 border border-cream-300 rounded-lg p-2 shadow-sm">
+                              <div key={file.id} className="flex items-center gap-2 bg-medical-blue-200 border border-medical-blue-400 rounded-lg p-2 shadow-sm">
                                 {file.type.startsWith('image/') ? (
                                   <Image size={16} className="text-brown-600" />
                                 ) : (
@@ -2125,7 +2125,7 @@ export default function App() {
                             className="flex-1 p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-brown-600 outline-none"
                           />
                           
-                          <label className="flex items-center justify-center w-12 h-12 bg-cream-100 border border-cream-300 rounded-lg cursor-pointer hover:bg-cream-200 transition-colors shadow-sm">
+                          <label className="flex items-center justify-center w-12 h-12 bg-medical-blue-100 border border-medical-blue-300 rounded-lg cursor-pointer hover:bg-medical-blue-200 transition-colors shadow-sm">
                             <Paperclip size={20} className="text-brown-600" />
                             <input
                               type="file"
@@ -2139,7 +2139,7 @@ export default function App() {
                           <button
                             onClick={sendMessage}
                             disabled={!newMessage.trim() && selectedFiles.length === 0}
-                            className="flex items-center justify-center w-12 h-12 bg-gold-600 hover:bg-gold-700 disabled:bg-cream-400 text-white rounded-lg transition-colors"
+                            className="flex items-center justify-center w-12 h-12 bg-gold-600 hover:bg-gold-700 disabled:bg-cream-400 text-navy rounded-lg transition-colors"
                           >
                             <Send size={20} />
                           </button>
@@ -2168,14 +2168,14 @@ export default function App() {
               </div>
 
               {/* Section 1: User Management */}
-              <div className="bg-cream-100 rounded-xl border border-cream-200 overflow-hidden shadow-sm">
-                <div className="bg-brown-600 p-4 text-white">
+              <div className="bg-medical-blue-100 rounded-xl border border-medical-blue-200 overflow-hidden shadow-sm">
+                <div className="bg-medical-blue-600 p-4 text-navy">
                   <h3 className="font-bold text-lg flex items-center gap-2"><Users size={20}/> User Management</h3>
                 </div>
                 <div className="p-6">
                   
                   {/* Add New User Form */}
-                  <div className="mb-6 p-4 bg-cream-50 rounded-lg border border-gray-200">
+                  <div className="mb-6 p-4 bg-medical-blue-50 rounded-lg border border-gray-200">
                     <h4 className="font-bold text-brown-800 mb-3">Tambah User Baru</h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                       <input
@@ -2216,7 +2216,7 @@ export default function App() {
                       />
                       <button
                         onClick={addUser}
-                        className="bg-brown-600 hover:bg-brown-900 text-white px-4 py-2 rounded-lg font-bold transition-all"
+                        className="bg-medical-blue-600 hover:bg-brown-900 text-navy px-4 py-2 rounded-lg font-bold transition-all"
                       >
                         + Tambah User
                       </button>
@@ -2225,7 +2225,7 @@ export default function App() {
 
                   {/* Edit User Form */}
                   {editingUser && (
-                    <div className="mb-6 p-4 bg-cream-50 rounded-lg border border-cream-200">
+                    <div className="mb-6 p-4 bg-medical-blue-50 rounded-lg border border-medical-blue-200">
                       <h4 className="font-bold text-brown-800 mb-3">Edit User: {editingUser.username}</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         <input
@@ -2233,19 +2233,19 @@ export default function App() {
                           placeholder="Username"
                           value={editingUser.username}
                           onChange={(e) => setEditingUser({...editingUser, username: e.target.value})}
-                          className="p-2 border border-cream-200 rounded-md focus:ring-2 focus:ring-brown-600 focus:outline-none"
+                          className="p-2 border border-medical-blue-200 rounded-md focus:ring-2 focus:ring-brown-600 focus:outline-none"
                         />
                         <input
                           type="password"
                           placeholder="Password Baru (kosongkan jika tidak diubah)"
                           value={editingUser.password}
                           onChange={(e) => setEditingUser({...editingUser, password: e.target.value})}
-                          className="p-2 border border-cream-200 rounded-md focus:ring-2 focus:ring-brown-600 focus:outline-none"
+                          className="p-2 border border-medical-blue-200 rounded-md focus:ring-2 focus:ring-brown-600 focus:outline-none"
                         />
                         <select
                           value={editingUser.role}
                           onChange={(e) => setEditingUser({...editingUser, role: e.target.value})}
-                          className="p-2 border border-cream-200 rounded-md focus:ring-2 focus:ring-brown-600 focus:outline-none"
+                          className="p-2 border border-medical-blue-200 rounded-md focus:ring-2 focus:ring-brown-600 focus:outline-none"
                         >
                           <option value="staff">Staff PBO</option>
                           <option value="admin">Administrator</option>
@@ -2255,25 +2255,25 @@ export default function App() {
                           placeholder="Nama Lengkap"
                           value={editingUser.name}
                           onChange={(e) => setEditingUser({...editingUser, name: e.target.value})}
-                          className="p-2 border border-cream-200 rounded-md focus:ring-2 focus:ring-brown-600 focus:outline-none"
+                          className="p-2 border border-medical-blue-200 rounded-md focus:ring-2 focus:ring-brown-600 focus:outline-none"
                         />
                         <input
                           type="email"
                           placeholder="Email"
                           value={editingUser.email}
                           onChange={(e) => setEditingUser({...editingUser, email: e.target.value})}
-                          className="p-2 border border-cream-200 rounded-md focus:ring-2 focus:ring-brown-600 focus:outline-none"
+                          className="p-2 border border-medical-blue-200 rounded-md focus:ring-2 focus:ring-brown-600 focus:outline-none"
                         />
                         <div className="flex gap-2">
                           <button
                             onClick={updateUser}
-                            className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg font-bold transition-all flex-1"
+                            className="bg-orange-600 hover:bg-orange-700 text-navy px-4 py-2 rounded-lg font-bold transition-all flex-1"
                           >
                             Update
                           </button>
                           <button
                             onClick={() => setEditingUser(null)}
-                            className="bg-cream-300 hover:bg-cream-400 text-slate-900 px-4 py-2 rounded-lg font-bold transition-all"
+                            className="bg-medical-blue-300 hover:bg-cream-400 text-slate-900 px-4 py-2 rounded-lg font-bold transition-all"
                           >
                             Batal
                           </button>
@@ -2285,7 +2285,7 @@ export default function App() {
                   {/* User List Table */}
                   <div className="overflow-x-auto">
                     <table className="w-full text-left text-sm">
-                      <thead className="bg-cream-50 text-brown-800">
+                      <thead className="bg-medical-blue-50 text-brown-800">
                         <tr>
                           <th className="py-3 px-4 font-bold">Username</th>
                           <th className="py-3 px-4 font-bold">Nama</th>
@@ -2297,12 +2297,12 @@ export default function App() {
                       </thead>
                       <tbody className="divide-y divide-gray-200">
                         {userList.map((user) => (
-                          <tr key={user.id} className="hover:bg-cream-100 transition-colors">
+                          <tr key={user.id} className="hover:bg-medical-blue-100 transition-colors">
                             <td className="py-3 px-4 font-mono text-brown-800">{user.username}</td>
                             <td className="py-3 px-4 font-medium text-brown-800">{user.name}</td>
                             <td className="py-3 px-4">
                               <span className={`text-xs font-bold px-2 py-1 rounded ${
-                                user.role === 'admin' ? 'bg-cream-100 text-brown-800' : 'bg-cream-100 text-brown-700'
+                                user.role === 'admin' ? 'bg-medical-blue-100 text-brown-800' : 'bg-medical-blue-100 text-brown-700'
                               }`}>
                                 {user.role === 'admin' ? 'Administrator' : 'Staff PBO'}
                               </span>
@@ -2340,8 +2340,8 @@ export default function App() {
               </div>
 
               {/* Section 2: System Information */}
-              <div className="bg-cream-100 rounded-xl border border-cream-200 overflow-hidden shadow-sm">
-                <div className="bg-brown-600 p-4 text-white">
+              <div className="bg-medical-blue-100 rounded-xl border border-medical-blue-200 overflow-hidden shadow-sm">
+                <div className="bg-medical-blue-600 p-4 text-navy">
                   <h3 className="font-bold text-lg flex items-center gap-2"><Shield size={20}/> System Information</h3>
                 </div>
                 <div className="p-6">
@@ -2367,8 +2367,8 @@ export default function App() {
               </div>
 
               {/* Section 3: Database Management */}
-              <div className="bg-cream-100 rounded-xl border border-cream-200 overflow-hidden shadow-sm">
-                <div className="bg-brown-600 p-4 text-white">
+              <div className="bg-medical-blue-100 rounded-xl border border-medical-blue-200 overflow-hidden shadow-sm">
+                <div className="bg-medical-blue-600 p-4 text-navy">
                   <h3 className="font-bold text-lg flex items-center gap-2"><FileText size={20}/> Database Management</h3>
                 </div>
                 <div className="p-6">
@@ -2387,7 +2387,7 @@ export default function App() {
                       <div className="space-y-3">
                         <button
                           onClick={downloadDatabaseTemplate}
-                          className="w-full bg-gold-600 hover:bg-gold-700 text-white px-4 py-3 rounded-lg font-bold transition-all flex items-center justify-center gap-2"
+                          className="w-full bg-gold-600 hover:bg-gold-700 text-navy px-4 py-3 rounded-lg font-bold transition-all flex items-center justify-center gap-2"
                         >
                           <Download size={18} />
                           Download Template Database
@@ -2405,7 +2405,7 @@ export default function App() {
                             className={`w-full px-4 py-3 rounded-lg font-bold transition-all flex items-center justify-center gap-2 ${
                               isUploading 
                                 ? 'bg-gray-400 cursor-not-allowed' 
-                                : 'bg-green-600 hover:bg-green-700 text-white'
+                                : 'bg-green-600 hover:bg-green-700 text-navy'
                             }`}
                             disabled={isUploading}
                           >
@@ -2425,7 +2425,7 @@ export default function App() {
 
                         <button
                           onClick={syncToGoogleDrive}
-                          className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg font-bold transition-all flex items-center justify-center gap-2"
+                          className="w-full bg-blue-600 hover:bg-blue-700 text-navy px-4 py-3 rounded-lg font-bold transition-all flex items-center justify-center gap-2"
                         >
                           <Shield size={18} />
                           Sync to Google Drive
@@ -2434,7 +2434,7 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div className="mt-6 p-4 bg-cream-50 border border-cream-200 rounded-lg">
+                  <div className="mt-6 p-4 bg-medical-blue-50 border border-medical-blue-200 rounded-lg">
                     <h5 className="font-bold text-brown-800 mb-2">📋 Instruksi Database Management:</h5>
                     <ul className="text-sm text-brown-800 space-y-1">
                       <li>• <strong>Download Template:</strong> Unduh template CSV untuk mengedit database</li>
@@ -2455,4 +2455,6 @@ export default function App() {
     </div>
   );
 }
+
+
 
