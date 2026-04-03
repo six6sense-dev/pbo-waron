@@ -1068,9 +1068,9 @@ export default function App() {
                       </div>
                       
                       {activeProcedure.hasBaby && (
-                        <div className="bg-medical-blue-50 p-2 rounded border border-blue-100">
+                        <div className="bg-medical-blue-50 p-2 rounded border border-medical-blue-100">
                           <label className="text-xs font-bold text-medical-blue-700 uppercase flex gap-1 items-center"><Baby size={14}/> Dokter Anak (Sp.A)</label>
-                          <select value={medical.anakIdx} onChange={e => setMedical({...medical, anakIdx: Number(e.target.value)})} className="w-full p-2 mt-1 border border-blue-200 rounded-md text-sm font-medium bg-medical-blue-50 focus:ring-2 focus:ring-blue-400 outline-none">
+                          <select value={medical.anakIdx} onChange={e => setMedical({...medical, anakIdx: Number(e.target.value)})} className="w-full p-2 mt-1 border border-medical-blue-200 rounded-md text-sm font-medium bg-medical-blue-50 focus:ring-2 focus:ring-medical-blue-600 outline-none">
                             {DOCTORS_AK.map((d, i) => <option key={i} value={i}>{d}</option>)}
                           </select>
                         </div>
@@ -1083,7 +1083,7 @@ export default function App() {
                     <h3 className="font-bold text-slate-900 flex items-center gap-2 mb-4 border-b border-medical-blue-200 pb-2"><CheckSquare size={18}/> Tindakan Tambahan / Penyulit</h3>
                     <div className="space-y-2">
                       {ADDONS.map(addon => (
-                        <label key={addon.id} className="flex items-center gap-3 p-2 hover:bg-medical-blue-50 rounded-lg cursor-pointer transition-colors border border-transparent hover:border-gray-200">
+                        <label key={addon.id} className="flex items-center gap-3 p-2 hover:bg-medical-blue-50 rounded-lg cursor-pointer transition-colors border border-transparent hover:border-medical-blue-200">
                           <input type="checkbox" checked={medical.selectedAddons.includes(addon.id)} onChange={() => toggleAddon(addon.id)} className="w-4 h-4 accent-medical-blue-600 rounded"/>
                           <span className="text-sm font-medium flex-1 text-medical-blue-900">{addon.label}</span>
                           <span className="text-xs font-bold text-medical-blue-700">+{formatRp(addon.defaultPrice)}</span>
@@ -2139,7 +2139,7 @@ export default function App() {
                           <button
                             onClick={sendMessage}
                             disabled={!newMessage.trim() && selectedFiles.length === 0}
-                            className="flex items-center justify-center w-12 h-12 bg-medical-blue-600 hover:bg-medical-blue-700 disabled:bg-cream-400 text-navy rounded-lg transition-colors"
+                            className="flex items-center justify-center w-12 h-12 bg-medical-blue-600 hover:bg-medical-blue-700 disabled:bg-medical-blue-100 text-navy rounded-lg transition-colors"
                           >
                             <Send size={20} />
                           </button>
@@ -2273,7 +2273,7 @@ export default function App() {
                           </button>
                           <button
                             onClick={() => setEditingUser(null)}
-                            className="bg-medical-blue-300 hover:bg-cream-400 text-slate-900 px-4 py-2 rounded-lg font-bold transition-all"
+                            className="bg-medical-blue-300 hover:bg-medical-blue-100 text-slate-900 px-4 py-2 rounded-lg font-bold transition-all"
                           >
                             Batal
                           </button>
@@ -2455,6 +2455,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
