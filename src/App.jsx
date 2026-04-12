@@ -45,12 +45,14 @@ export default function App() {
     const url = `/api${endpoint}`;
     const response = await fetch(url, { ...options, headers });
     
+    // Read body once (can't read twice)
+    const bodyText = await response.text();
+    
     let data;
     try {
-      data = await response.json();
+      data = bodyText ? JSON.parse(bodyText) : {};
     } catch (e) {
-      const text = await response.text();
-      throw new Error(`Invalid JSON response: ${text || '(empty response)'}`);
+      throw new Error(`Invalid JSON response: ${bodyText || '(empty response)'}`);
     }
     
     if (!response.ok) {

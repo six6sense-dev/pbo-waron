@@ -6,6 +6,9 @@ import {
   extractClassMultipliersLocal,
   getDoctorMultiplierLocal,
 } from './local-db.js';
+import {
+  getMemoryDB,
+} from './memory-db.js';
 
 const DEFAULT_CLASSES = ['KELAS III', 'KELAS II', 'KELAS I', 'VIP', 'VVIP', 'PENTHOUSE', 'ODC'];
 
@@ -101,7 +104,24 @@ function simplifyProcedure(row, index) {
 }
 
 export async function loadSpreadsheetDatabase() {
-  // Try local database first if enabled
+  // Priority 1: In-memory database (Vercel serverless)
+  if (process.env.USE_IN_MEMORY_DB === 'true') {
+    console.log('⚡ Using in-memory database (USE_IN_MEMORY_DB=true)');
+    const memDb = getMemoryDB();
+    return {
+      isMemory: true,
+      spreadsheetId: 'MEMORY_DB',
+      sheets: {
+        users: memDb.users || [],
+        procedures: memDb.procedures || [],
+      },
+      sheetNames: ['users', 'procedures'],
+      classMultipliers: memDb.classMultipliers || {},
+      doctorMultipliers: { standard: 1.0, specialist: 1.3, consultant: 1.5 },
+    };
+  }
+
+  // Priority 2: Local database file
   if (process.env.USE_LOCAL_DB === 'true') {
     console.log('📁 Using local database (USE_LOCAL_DB=true)');
     const localDb = await loadLocalDatabase();
@@ -120,7 +140,7 @@ export async function loadSpreadsheetDatabase() {
     }
   }
 
-  // Fall back to Google Sheets (production)
+  // Priority 3: Google Sheets (optional)
   try {
     console.log('☁️ Using Google Sheets database');
     const sheets = getSheetsClient();
@@ -141,8 +161,23 @@ export async function loadSpreadsheetDatabase() {
     return { spreadsheetId, sheets: map, sheetNames: sheetTitles };
   } catch (error) {
     console.error('❌ Google Sheets error:', error.message);
-    console.log('💡 Hint: Set USE_LOCAL_DB=true in .env.local to use local database instead');
-    throw new Error('Failed to load database. Set USE_LOCAL_DB=true to use local mode.');
+    // Fallback to memory database if available
+    if (process.env.USE_IN_MEMORY_DB !== 'false') {
+      console.log('⚠️ Falling back to in-memory database');
+      const memDb = getMemoryDB();
+      return {
+        isMemory: true,
+        spreadsheetId: 'MEMORY_DB',
+        sheets: {
+          users: memDb.users || [],
+          procedures: memDb.procedures || [],
+        },
+        sheetNames: ['users', 'procedures'],
+        classMultipliers: memDb.classMultipliers || {},
+        doctorMultipliers: { standard: 1.0, specialist: 1.3, consultant: 1.5 },
+      };
+    }
+    throw new Error('Failed to load database. Please check your environment configuration.');
   }
 }
 
@@ -284,8 +319,8 @@ export function calculatePbo(params, db) {
 export function buildBootstrapPayload(db, driveFiles = []) {
   let procedures, classMultipliers;
 
-  // Handle local database
-  if (db.isLocal) {
+  // Handle any database type (memory, local, or sheets)
+  if (db.isMemory || db.isLocal) {
     procedures = db.sheets.procedures || [];
     classMultipliers = db.classMultipliers || {};
   } else {
@@ -308,7 +343,7 @@ export function buildBootstrapPayload(db, driveFiles = []) {
       totalSheets: db.sheetNames.length,
       averageTariff: avgTarif,
       driveFiles: driveFiles.length,
-      dataSource: db.isLocal ? 'Local JSON' : 'Google Sheets',
+      dataSource: db.isMemory ? 'In-Memory (Vercel)' : (db.isLocal ? 'Local JSON' : 'Google Sheets'),
     },
     driveFiles,
   };
