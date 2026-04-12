@@ -1,0 +1,6299 @@
+{
+  "generatedAt": "2026-04-12T13:35:34.466Z",
+  "sourceFile": "C:/Users/waron hospital/Downloads/PBO (TINDAKAN)  (1).xlsx",
+  "sheetNames": [
+    "MASTER DATA",
+    "Data Admin Role",
+    "CAMPURAN MASTER DATA",
+    "PBO MANUAL",
+    "IPM",
+    "PBO IPM UBAH DISINI",
+    "OAE RANAP",
+    "NICU ICU PERINA",
+    "IUFD OK(RANAP)",
+    "CURRETASE",
+    "SECTIO CAESAREA(SC)",
+    "SC + MOWSTERIL",
+    "SC GEMELI",
+    "SC GEMELI+MOWSTERIL",
+    "MIOM + SC + MOWSTERIL",
+    "MIOM+SC",
+    "PARTUS NORMAL",
+    "MOW(STERIL)",
+    "Aspirasi Kista Ovarium",
+    "HISTEREKTOMI + KISTA + MIOM",
+    "CIRLAGE - LIGASI CERVIX",
+    "HISTEROSKOPI Resectoscope ",
+    "AFF Pen Clavicula",
+    "LAPAROSCOPY KISTEKTOMI DAN MIOM",
+    "LAPAROS - ROBOTIC",
+    "GOL 3+3",
+    "GOL. KHUSUS+3",
+    "LAP.MIOM DAN KISTA",
+    "LAPC. ENDOMETRIOSIS+ADENOMIOSIS",
+    "LAPAROSCOPY LVL",
+    "MIOMEKTOMI",
+    "HISTEROSKOPI OPERATIF",
+    "NEVUS+FLAP",
+    "HIPOSPADIA",
+    "POLIPEKTOMI (ODC)",
+    "LAPAROSCOPY APPENDICTOMY",
+    "LAPAROSCOPY OVARIUM + MIOM",
+    "LAPAROSCOPY OVARIUM BILATERAL",
+    "LAPAROSCOPY PRP + SECRETUM INJ",
+    "laparoscopy diagnostic",
+    "REPAIR KOLPOPERIOR",
+    "KURETASE",
+    "AFF IUD",
+    "AFF CERCLAGE",
+    "SIRKUMSISI",
+    "Laparoscopy kista + hidrosalpin",
+    "LAPAROSCOPY ENDOMETRIOSIS",
+    "LAPAROTOMI + BEDAH DIGESTIF",
+    "LAPAROTOMI MIOMEKTOMI",
+    "LAPAROTOMI (2)",
+    "LAPAROTOMI",
+    " KISTEKTOMI",
+    "LAPAROSCOPY  LASER",
+    "LAPAROSCOPY",
+    "Odontektomi ",
+    "WIDE EKSISI DI CHEEK",
+    "HISTEREKTOMI"
+  ],
+  "roomClasses": [
+    "KELAS III",
+    "KELAS II",
+    "KELAS I",
+    "VIP",
+    "VVIP",
+    "PENTHOUSE"
+  ],
+  "golonganTariffs": {
+    "GOLONGAN I": {
+      "KELAS III": 105000000,
+      "KELAS II": 135000000,
+      "KELAS I": 165000000,
+      "VIP": 225000000,
+      "VVIP": 300000000,
+      "PENTHOUSE": 450000000
+    },
+    "GOLONGAN II": {
+      "KELAS III": 240000000,
+      "KELAS II": 300000000,
+      "KELAS I": 405000000,
+      "VIP": 600000000,
+      "VVIP": 690000000,
+      "PENTHOUSE": 810000000
+    },
+    "GOLONGAN III": {
+      "KELAS III": 450000000,
+      "KELAS II": 525000000,
+      "KELAS I": 570000000,
+      "VIP": 720000000,
+      "VVIP": 900000000,
+      "PENTHOUSE": 1050000000
+    },
+    "GOLONGAN KHUSUS": {
+      "KELAS III": 468750000,
+      "KELAS II": 600000000,
+      "KELAS I": 690000000,
+      "VIP": 870000000,
+      "VVIP": 1110000000,
+      "PENTHOUSE": 1290000000
+    },
+    "GOLONGAN IIA": {
+      "KELAS III": 240000000,
+      "KELAS II": 300000000,
+      "KELAS I": 405000000,
+      "VIP": 600000000,
+      "VVIP": 690000000,
+      "PENTHOUSE": 810000000
+    },
+    "GOLONGAN II NORMAL": {
+      "KELAS III": 0,
+      "KELAS II": 0,
+      "KELAS I": 0,
+      "VIP": 0,
+      "VVIP": 0,
+      "PENTHOUSE": 0
+    }
+  },
+  "procedures": [
+    {
+      "id": "PROC-0001",
+      "name": "IUFD",
+      "category": "IUFD OK(RANAP)",
+      "gol": "Golongan II",
+      "days": 2,
+      "op": 13500000,
+      "ok": 5900000,
+      "alat": 5000000,
+      "obat": 5000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 0,
+      "baseTariff": 48940000,
+      "classTariffs": {
+        "KELAS III": 36060000,
+        "KELAS II": 40380000,
+        "KELAS I": 48940000,
+        "VIP": 62080000,
+        "VVIP": 76240000,
+        "PENTHOUSE": 88900000
+      },
+      "sourceSheet": "IUFD OK(RANAP)",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 10000000,
+            "KELAS I": 13500000,
+            "VIP": 20000000,
+            "VVIP": 23000000,
+            "PENTHOUSE": 27000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Operation Room Golongan II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4800000,
+            "KELAS II": 5400000,
+            "KELAS I": 5900000,
+            "VIP": 6500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7600000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 5000000,
+            "KELAS II": 5000000,
+            "KELAS I": 5000000,
+            "VIP": 5000000,
+            "VVIP": 5000000,
+            "PENTHOUSE": 5000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 5000000,
+            "KELAS II": 5000000,
+            "KELAS I": 5000000,
+            "VIP": 5000000,
+            "VVIP": 5000000,
+            "PENTHOUSE": 5000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Isolation Room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 3500000,
+            "KELAS II": 3500000,
+            "KELAS I": 3500000,
+            "VIP": 3500000,
+            "VVIP": 3500000,
+            "PENTHOUSE": 3500000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "DOKTER OPERATOR",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 1040000000,
+            "KELAS II": 1300000000,
+            "KELAS I": 1755000000,
+            "VIP": 2600000000,
+            "VVIP": 2990000000,
+            "PENTHOUSE": 3510000000
+          }
+        },
+        {
+          "name": "DOKTER ANASTESI",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 312000000,
+            "KELAS II": 390000000,
+            "KELAS I": 526500000,
+            "VIP": 780000000,
+            "VVIP": 897000000,
+            "PENTHOUSE": 1053000000
+          }
+        },
+        {
+          "name": "DOKTER ANAK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 312000000,
+            "KELAS II": 390000000,
+            "KELAS I": 526500000,
+            "VIP": 780000000,
+            "VVIP": 897000000,
+            "PENTHOUSE": 1053000000
+          }
+        },
+        {
+          "name": "KAMAR OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 630000000,
+            "KELAS II": 702000000,
+            "KELAS I": 767000000,
+            "VIP": 845000000,
+            "VVIP": 910000000,
+            "PENTHOUSE": 988000000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0002",
+      "name": "SECTIO CAESAREA (SC)",
+      "category": "IUFD OK(RANAP)",
+      "gol": "Golongan II",
+      "days": 2,
+      "op": 13500000,
+      "ok": 5900000,
+      "alat": 3500000,
+      "obat": 8000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 2522000,
+      "baseTariff": 52962000,
+      "classTariffs": {
+        "KELAS III": 39438000,
+        "KELAS II": 43974000,
+        "KELAS I": 52962000,
+        "VIP": 69279000,
+        "VVIP": 88347000,
+        "PENTHOUSE": 101640000
+      },
+      "sourceSheet": "IUFD OK(RANAP)",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 10000000,
+            "KELAS I": 13500000,
+            "VIP": 20000000,
+            "VVIP": 23000000,
+            "PENTHOUSE": 27000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Operation Room Golongan II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4800000,
+            "KELAS II": 5400000,
+            "KELAS I": 5900000,
+            "VIP": 6500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7600000
+          }
+        },
+        {
+          "name": "Pain management (PNB preop/postop/OutPatient/PCA)",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 0,
+            "KELAS II": 0,
+            "KELAS I": 0,
+            "VIP": 2400000,
+            "VVIP": 2900000,
+            "PENTHOUSE": 2900000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3500000,
+            "KELAS II": 3500000,
+            "KELAS I": 3500000,
+            "VIP": 3500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 8000000,
+            "KELAS I": 8000000,
+            "VIP": 8000000,
+            "VVIP": 8000000,
+            "PENTHOUSE": 8000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Baby room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 3500000,
+            "KELAS II": 3500000,
+            "KELAS I": 3500000,
+            "VIP": 3500000,
+            "VVIP": 3500000,
+            "PENTHOUSE": 3500000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "administrasi",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 1878000,
+            "KELAS II": 2094000,
+            "KELAS I": 2522000,
+            "VIP": 3299000,
+            "VVIP": 4207000,
+            "PENTHOUSE": 4840000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0003",
+      "name": "CURRETASE",
+      "category": "CURRETASE",
+      "gol": "Golongan II",
+      "days": 2,
+      "op": 13500000,
+      "ok": 5900000,
+      "alat": 5000000,
+      "obat": 5000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 0,
+      "baseTariff": 48940000,
+      "classTariffs": {
+        "KELAS III": 36060000,
+        "KELAS II": 40380000,
+        "KELAS I": 48940000,
+        "VIP": 62080000,
+        "VVIP": 76240000,
+        "PENTHOUSE": 88900000
+      },
+      "sourceSheet": "CURRETASE",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 10000000,
+            "KELAS I": 13500000,
+            "VIP": 20000000,
+            "VVIP": 23000000,
+            "PENTHOUSE": 27000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Operation Room Golongan II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4800000,
+            "KELAS II": 5400000,
+            "KELAS I": 5900000,
+            "VIP": 6500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7600000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 5000000,
+            "KELAS II": 5000000,
+            "KELAS I": 5000000,
+            "VIP": 5000000,
+            "VVIP": 5000000,
+            "PENTHOUSE": 5000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 5000000,
+            "KELAS II": 5000000,
+            "KELAS I": 5000000,
+            "VIP": 5000000,
+            "VVIP": 5000000,
+            "PENTHOUSE": 5000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Isolation Room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 3500000,
+            "KELAS II": 3500000,
+            "KELAS I": 3500000,
+            "VIP": 3500000,
+            "VVIP": 3500000,
+            "PENTHOUSE": 3500000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0004",
+      "name": "SECTIO CAESAREA (SC)",
+      "category": "CURRETASE",
+      "gol": "Golongan II",
+      "days": 2,
+      "op": 13500000,
+      "ok": 5900000,
+      "alat": 3500000,
+      "obat": 8000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 2522000,
+      "baseTariff": 52962000,
+      "classTariffs": {
+        "KELAS III": 39438000,
+        "KELAS II": 43974000,
+        "KELAS I": 52962000,
+        "VIP": 69279000,
+        "VVIP": 88347000,
+        "PENTHOUSE": 101640000
+      },
+      "sourceSheet": "CURRETASE",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 10000000,
+            "KELAS I": 13500000,
+            "VIP": 20000000,
+            "VVIP": 23000000,
+            "PENTHOUSE": 27000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Operation Room Golongan II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4800000,
+            "KELAS II": 5400000,
+            "KELAS I": 5900000,
+            "VIP": 6500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7600000
+          }
+        },
+        {
+          "name": "Pain management (PNB preop/postop/OutPatient/PCA)",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 0,
+            "KELAS II": 0,
+            "KELAS I": 0,
+            "VIP": 2400000,
+            "VVIP": 2900000,
+            "PENTHOUSE": 2900000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3500000,
+            "KELAS II": 3500000,
+            "KELAS I": 3500000,
+            "VIP": 3500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 8000000,
+            "KELAS I": 8000000,
+            "VIP": 8000000,
+            "VVIP": 8000000,
+            "PENTHOUSE": 8000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Baby room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 3500000,
+            "KELAS II": 3500000,
+            "KELAS I": 3500000,
+            "VIP": 3500000,
+            "VVIP": 3500000,
+            "PENTHOUSE": 3500000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "administrasi",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 1878000,
+            "KELAS II": 2094000,
+            "KELAS I": 2522000,
+            "VIP": 3299000,
+            "VVIP": 4207000,
+            "PENTHOUSE": 4840000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0005",
+      "name": "SECTIO CAESAREA (SC)",
+      "category": "SECTIO CAESAREA(SC)",
+      "gol": "Golongan IIA",
+      "days": 2,
+      "op": 17000000,
+      "ok": 6900000,
+      "alat": 5000000,
+      "obat": 7000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 0,
+      "baseTariff": 52940000,
+      "classTariffs": {
+        "KELAS III": 38560000,
+        "KELAS II": 44380000,
+        "KELAS I": 52940000,
+        "VIP": 62580000,
+        "VVIP": 76740000,
+        "PENTHOUSE": 89400000
+      },
+      "sourceSheet": "SECTIO CAESAREA(SC)",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 10000000,
+            "KELAS II": 13500000,
+            "KELAS I": 17000000,
+            "VIP": 20000000,
+            "VVIP": 23000000,
+            "PENTHOUSE": 27000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Operation Room Golongan IIA",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 5800000,
+            "KELAS II": 6400000,
+            "KELAS I": 6900000,
+            "VIP": 7500000,
+            "VVIP": 8000000,
+            "PENTHOUSE": 8600000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 5000000,
+            "KELAS II": 5000000,
+            "KELAS I": 5000000,
+            "VIP": 5000000,
+            "VVIP": 5000000,
+            "PENTHOUSE": 5000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 7000000,
+            "KELAS II": 7000000,
+            "KELAS I": 7000000,
+            "VIP": 7000000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Baby room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1000000,
+            "KELAS II": 1000000,
+            "KELAS I": 1000000,
+            "VIP": 1000000,
+            "VVIP": 1000000,
+            "PENTHOUSE": 1000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "DOKTER OPERATOR",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 13000000,
+            "KELAS II": 17550000,
+            "KELAS I": 22100000,
+            "VIP": 26000000,
+            "VVIP": 29900000,
+            "PENTHOUSE": 35100000
+          }
+        },
+        {
+          "name": "DOKTER ANASTESI",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3120000,
+            "KELAS II": 3900000,
+            "KELAS I": 5265000,
+            "VIP": 7800000,
+            "VVIP": 8970000,
+            "PENTHOUSE": 10530000
+          }
+        },
+        {
+          "name": "DOKTER ANAK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3120000,
+            "KELAS II": 3900000,
+            "KELAS I": 5265000,
+            "VIP": 7800000,
+            "VVIP": 8970000,
+            "PENTHOUSE": 10530000
+          }
+        },
+        {
+          "name": "KAMAR OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 7540000,
+            "KELAS II": 8320000,
+            "KELAS I": 8970000,
+            "VIP": 9750000,
+            "VVIP": 10400000,
+            "PENTHOUSE": 11180000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0006",
+      "name": "SECTIO CAESAREA (SC) + MOW (STERIL)",
+      "category": "SC + MOWSTERIL",
+      "gol": "Golongan II",
+      "days": 2,
+      "op": 18500000,
+      "ok": 5900000,
+      "alat": 5000000,
+      "obat": 10000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 0,
+      "baseTariff": 56440000,
+      "classTariffs": {
+        "KELAS III": 40560000,
+        "KELAS II": 44880000,
+        "KELAS I": 56440000,
+        "VIP": 66580000,
+        "VVIP": 80740000,
+        "PENTHOUSE": 93400000
+      },
+      "sourceSheet": "SC + MOWSTERIL",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 13000000,
+            "KELAS II": 15000000,
+            "KELAS I": 18500000,
+            "VIP": 25000000,
+            "VVIP": 28000000,
+            "PENTHOUSE": 32000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Operation Room Golongan II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4800000,
+            "KELAS II": 5400000,
+            "KELAS I": 5900000,
+            "VIP": 6500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7600000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 5000000,
+            "KELAS II": 5000000,
+            "KELAS I": 5000000,
+            "VIP": 5000000,
+            "VVIP": 5000000,
+            "PENTHOUSE": 5000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 7000000,
+            "KELAS II": 7000000,
+            "KELAS I": 10000000,
+            "VIP": 7000000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Baby room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1000000,
+            "KELAS II": 1000000,
+            "KELAS I": 1000000,
+            "VIP": 1000000,
+            "VVIP": 1000000,
+            "PENTHOUSE": 1000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "DOKTER OPERATOR",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 16900000,
+            "KELAS II": 19500000,
+            "KELAS I": 24050000,
+            "VIP": 32500000,
+            "VVIP": 36400000,
+            "PENTHOUSE": 41600000
+          }
+        },
+        {
+          "name": "DOKTER ANASTESI",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3120000,
+            "KELAS II": 3900000,
+            "KELAS I": 5265000,
+            "VIP": 7800000,
+            "VVIP": 8970000,
+            "PENTHOUSE": 10530000
+          }
+        },
+        {
+          "name": "DOKTER ANAK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3120000,
+            "KELAS II": 3900000,
+            "KELAS I": 5265000,
+            "VIP": 7800000,
+            "VVIP": 8970000,
+            "PENTHOUSE": 10530000
+          }
+        },
+        {
+          "name": "KAMAR OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 6300000,
+            "KELAS II": 7020000,
+            "KELAS I": 7670000,
+            "VIP": 8450000,
+            "VVIP": 9100000,
+            "PENTHOUSE": 9880000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0007",
+      "name": "SECTIO CAESAREA (SC)",
+      "category": "SC + MOWSTERIL",
+      "gol": "Golongan II",
+      "days": 2,
+      "op": 13500000,
+      "ok": 5900000,
+      "alat": 3500000,
+      "obat": 8000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 2397000,
+      "baseTariff": 50337000,
+      "classTariffs": {
+        "KELAS III": 36813000,
+        "KELAS II": 41349000,
+        "KELAS I": 50337000,
+        "VIP": 66654000,
+        "VVIP": 85722000,
+        "PENTHOUSE": 99015000
+      },
+      "sourceSheet": "SC + MOWSTERIL",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 10000000,
+            "KELAS I": 13500000,
+            "VIP": 20000000,
+            "VVIP": 23000000,
+            "PENTHOUSE": 27000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Operation Room Golongan II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4800000,
+            "KELAS II": 5400000,
+            "KELAS I": 5900000,
+            "VIP": 6500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7600000
+          }
+        },
+        {
+          "name": "Pain management (PNB preop/postop/OutPatient/PCA)",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 0,
+            "KELAS II": 0,
+            "KELAS I": 0,
+            "VIP": 2400000,
+            "VVIP": 2900000,
+            "PENTHOUSE": 2900000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3500000,
+            "KELAS II": 3500000,
+            "KELAS I": 3500000,
+            "VIP": 3500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 8000000,
+            "KELAS I": 8000000,
+            "VIP": 8000000,
+            "VVIP": 8000000,
+            "PENTHOUSE": 8000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Baby room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1000000,
+            "KELAS II": 1000000,
+            "KELAS I": 1000000,
+            "VIP": 1000000,
+            "VVIP": 1000000,
+            "PENTHOUSE": 1000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "administrasi",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 1753000,
+            "KELAS II": 1969000,
+            "KELAS I": 2397000,
+            "VIP": 3174000,
+            "VVIP": 4082000,
+            "PENTHOUSE": 4715000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0008",
+      "name": "SC GEMELI",
+      "category": "SC GEMELI",
+      "gol": "Golongan IIA",
+      "days": 2,
+      "op": 22100000,
+      "ok": 6900000,
+      "alat": 10000000,
+      "obat": 15000000,
+      "kamar": 3500000,
+      "visite": 5920000,
+      "admin": 0,
+      "baseTariff": 75545000,
+      "classTariffs": {
+        "KELAS III": 58220000,
+        "KELAS II": 65490000,
+        "KELAS I": 75545000,
+        "VIP": 87940000,
+        "VVIP": 103760000,
+        "PENTHOUSE": 118560000
+      },
+      "sourceSheet": "SC GEMELI",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 13000000,
+            "KELAS II": 17550000,
+            "KELAS I": 22100000,
+            "VIP": 26000000,
+            "VVIP": 29900000,
+            "PENTHOUSE": 35100000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3120000,
+            "KELAS II": 3900000,
+            "KELAS I": 4050000,
+            "VIP": 7800000,
+            "VVIP": 8970000,
+            "PENTHOUSE": 10530000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3120000,
+            "KELAS II": 3900000,
+            "KELAS I": 6075000,
+            "VIP": 7800000,
+            "VVIP": 8970000,
+            "PENTHOUSE": 10530000
+          }
+        },
+        {
+          "name": "Operation Room Golongan IIA",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 5800000,
+            "KELAS II": 6400000,
+            "KELAS I": 6900000,
+            "VIP": 7500000,
+            "VVIP": 8000000,
+            "PENTHOUSE": 8600000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 10000000,
+            "KELAS II": 10000000,
+            "KELAS I": 10000000,
+            "VIP": 10000000,
+            "VVIP": 10000000,
+            "PENTHOUSE": 10000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 15000000,
+            "KELAS II": 15000000,
+            "KELAS I": 15000000,
+            "VIP": 15000000,
+            "VVIP": 15000000,
+            "PENTHOUSE": 15000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Baby room",
+          "quantity": 4,
+          "prices": {
+            "KELAS III": 2000000,
+            "KELAS II": 2000000,
+            "KELAS I": 2000000,
+            "VIP": 2000000,
+            "VVIP": 2000000,
+            "PENTHOUSE": 2000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 4,
+          "prices": {
+            "KELAS III": 2440000,
+            "KELAS II": 2520000,
+            "KELAS I": 2960000,
+            "VIP": 3520000,
+            "VVIP": 3960000,
+            "PENTHOUSE": 4400000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "DOKTER OPERATOR",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 16900000,
+            "KELAS II": 22815000,
+            "KELAS I": 28730000,
+            "VIP": 33800000,
+            "VVIP": 38870000,
+            "PENTHOUSE": 45630000
+          }
+        },
+        {
+          "name": "DOKTER ANASTESI",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4056000,
+            "KELAS II": 5070000,
+            "KELAS I": 5265000,
+            "VIP": 10140000,
+            "VVIP": 11661000,
+            "PENTHOUSE": 13689000
+          }
+        },
+        {
+          "name": "DOKTER ANAK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4056000,
+            "KELAS II": 5070000,
+            "KELAS I": 7897500,
+            "VIP": 10140000,
+            "VVIP": 11661000,
+            "PENTHOUSE": 13689000
+          }
+        },
+        {
+          "name": "KAMAR OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 7540000,
+            "KELAS II": 8320000,
+            "KELAS I": 8970000,
+            "VIP": 9750000,
+            "VVIP": 10400000,
+            "PENTHOUSE": 11180000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0009",
+      "name": "SECTIO CAESAREA (SC)",
+      "category": "SC GEMELI",
+      "gol": "Golongan II",
+      "days": 2,
+      "op": 17000000,
+      "ok": 6900000,
+      "alat": 3500000,
+      "obat": 8000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 2622000,
+      "baseTariff": 55062000,
+      "classTariffs": {
+        "KELAS III": 39963000,
+        "KELAS II": 46074000,
+        "KELAS I": 55062000,
+        "VIP": 67704000,
+        "VVIP": 86772000,
+        "PENTHOUSE": 100065000
+      },
+      "sourceSheet": "SC GEMELI",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 10000000,
+            "KELAS II": 13500000,
+            "KELAS I": 17000000,
+            "VIP": 20000000,
+            "VVIP": 23000000,
+            "PENTHOUSE": 27000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Operation Room Golongan II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 5800000,
+            "KELAS II": 6400000,
+            "KELAS I": 6900000,
+            "VIP": 7500000,
+            "VVIP": 8000000,
+            "PENTHOUSE": 8600000
+          }
+        },
+        {
+          "name": "Pain management (PNB preop/postop/OutPatient/PCA)",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 0,
+            "KELAS II": 0,
+            "KELAS I": 0,
+            "VIP": 2400000,
+            "VVIP": 2900000,
+            "PENTHOUSE": 2900000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3500000,
+            "KELAS II": 3500000,
+            "KELAS I": 3500000,
+            "VIP": 3500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 8000000,
+            "KELAS I": 8000000,
+            "VIP": 8000000,
+            "VVIP": 8000000,
+            "PENTHOUSE": 8000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Baby room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1000000,
+            "KELAS II": 1000000,
+            "KELAS I": 1000000,
+            "VIP": 1000000,
+            "VVIP": 1000000,
+            "PENTHOUSE": 1000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "administrasi",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 1903000,
+            "KELAS II": 2194000,
+            "KELAS I": 2622000,
+            "VIP": 3224000,
+            "VVIP": 4132000,
+            "PENTHOUSE": 4765000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0010",
+      "name": "SC GEMELI + MOW(STERIL)",
+      "category": "SC GEMELI+MOWSTERIL",
+      "gol": "Golongan II",
+      "days": 2,
+      "op": 27100000,
+      "ok": 5900000,
+      "alat": 5000000,
+      "obat": 10000000,
+      "kamar": 3500000,
+      "visite": 5920000,
+      "admin": 0,
+      "baseTariff": 69950000,
+      "classTariffs": {
+        "KELAS III": 52220000,
+        "KELAS II": 59490000,
+        "KELAS I": 69950000,
+        "VIP": 81940000,
+        "VVIP": 97760000,
+        "PENTHOUSE": 112560000
+      },
+      "sourceSheet": "SC GEMELI+MOWSTERIL",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 18000000,
+            "KELAS II": 22550000,
+            "KELAS I": 27100000,
+            "VIP": 31000000,
+            "VVIP": 34900000,
+            "PENTHOUSE": 40100000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3120000,
+            "KELAS II": 3900000,
+            "KELAS I": 5265000,
+            "VIP": 7800000,
+            "VVIP": 8970000,
+            "PENTHOUSE": 10530000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3120000,
+            "KELAS II": 3900000,
+            "KELAS I": 5265000,
+            "VIP": 7800000,
+            "VVIP": 8970000,
+            "PENTHOUSE": 10530000
+          }
+        },
+        {
+          "name": "Operation Room Golongan II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4800000,
+            "KELAS II": 5400000,
+            "KELAS I": 5900000,
+            "VIP": 6500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7600000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 5000000,
+            "KELAS II": 5000000,
+            "KELAS I": 5000000,
+            "VIP": 5000000,
+            "VVIP": 5000000,
+            "PENTHOUSE": 5000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 10000000,
+            "KELAS II": 10000000,
+            "KELAS I": 10000000,
+            "VIP": 10000000,
+            "VVIP": 10000000,
+            "PENTHOUSE": 10000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Baby room",
+          "quantity": 4,
+          "prices": {
+            "KELAS III": 2000000,
+            "KELAS II": 2000000,
+            "KELAS I": 2000000,
+            "VIP": 2000000,
+            "VVIP": 2000000,
+            "PENTHOUSE": 2000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 4,
+          "prices": {
+            "KELAS III": 2440000,
+            "KELAS II": 2520000,
+            "KELAS I": 2960000,
+            "VIP": 3520000,
+            "VVIP": 3960000,
+            "PENTHOUSE": 4400000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "DOKTER OPERATOR",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 23400000,
+            "KELAS II": 29315000,
+            "KELAS I": 35230000,
+            "VIP": 40300000,
+            "VVIP": 45370000,
+            "PENTHOUSE": 52130000
+          }
+        },
+        {
+          "name": "DOKTER ANASTESI",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4056000,
+            "KELAS II": 5070000,
+            "KELAS I": 6844500,
+            "VIP": 10140000,
+            "VVIP": 11661000,
+            "PENTHOUSE": 13689000
+          }
+        },
+        {
+          "name": "DOKTER ANAK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4056000,
+            "KELAS II": 5070000,
+            "KELAS I": 6844500,
+            "VIP": 10140000,
+            "VVIP": 11661000,
+            "PENTHOUSE": 13689000
+          }
+        },
+        {
+          "name": "KAMAR OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 6300000,
+            "KELAS II": 7020000,
+            "KELAS I": 7670000,
+            "VIP": 8450000,
+            "VVIP": 9100000,
+            "PENTHOUSE": 9880000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0011",
+      "name": "SECTIO CAESAREA (SC)",
+      "category": "SC GEMELI+MOWSTERIL",
+      "gol": "Golongan II",
+      "days": 2,
+      "op": 13500000,
+      "ok": 5900000,
+      "alat": 3500000,
+      "obat": 8000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 2397000,
+      "baseTariff": 50337000,
+      "classTariffs": {
+        "KELAS III": 36813000,
+        "KELAS II": 41349000,
+        "KELAS I": 50337000,
+        "VIP": 66654000,
+        "VVIP": 85722000,
+        "PENTHOUSE": 99015000
+      },
+      "sourceSheet": "SC GEMELI+MOWSTERIL",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 10000000,
+            "KELAS I": 13500000,
+            "VIP": 20000000,
+            "VVIP": 23000000,
+            "PENTHOUSE": 27000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Operation Room Golongan II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4800000,
+            "KELAS II": 5400000,
+            "KELAS I": 5900000,
+            "VIP": 6500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7600000
+          }
+        },
+        {
+          "name": "Pain management (PNB preop/postop/OutPatient/PCA)",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 0,
+            "KELAS II": 0,
+            "KELAS I": 0,
+            "VIP": 2400000,
+            "VVIP": 2900000,
+            "PENTHOUSE": 2900000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3500000,
+            "KELAS II": 3500000,
+            "KELAS I": 3500000,
+            "VIP": 3500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 8000000,
+            "KELAS I": 8000000,
+            "VIP": 8000000,
+            "VVIP": 8000000,
+            "PENTHOUSE": 8000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Baby room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1000000,
+            "KELAS II": 1000000,
+            "KELAS I": 1000000,
+            "VIP": 1000000,
+            "VVIP": 1000000,
+            "PENTHOUSE": 1000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "administrasi",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 1753000,
+            "KELAS II": 1969000,
+            "KELAS I": 2397000,
+            "VIP": 3174000,
+            "VVIP": 4082000,
+            "PENTHOUSE": 4715000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0012",
+      "name": "SECTIO CAESAREA (SC) + MOW (STERIL) + MIOM",
+      "category": "MIOM + SC + MOWSTERIL",
+      "gol": "Golongan III",
+      "days": 2,
+      "op": 32500000,
+      "ok": 11200000,
+      "alat": 5000000,
+      "obat": 7000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 0,
+      "baseTariff": 74390000,
+      "classTariffs": {
+        "KELAS III": 67260000,
+        "KELAS II": 74430000,
+        "KELAS I": 74390000,
+        "VIP": 87530000,
+        "VVIP": 107340000,
+        "PENTHOUSE": 124250000
+      },
+      "sourceSheet": "MIOM + SC + MOWSTERIL",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 25000000,
+            "KELAS II": 29250000,
+            "KELAS I": 32500000,
+            "VIP": 39000000,
+            "VVIP": 46500000,
+            "PENTHOUSE": 53500000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4500000,
+            "KELAS II": 5250000,
+            "KELAS I": 5700000,
+            "VIP": 7200000,
+            "VVIP": 9000000,
+            "PENTHOUSE": 10500000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Operation Room Golongan III",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 9400000,
+            "KELAS II": 10450000,
+            "KELAS I": 11200000,
+            "VIP": 12250000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 14550000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 10000000,
+            "KELAS II": 10000000,
+            "KELAS I": 5000000,
+            "VIP": 5000000,
+            "VVIP": 5000000,
+            "PENTHOUSE": 5000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 10000000,
+            "KELAS II": 10000000,
+            "KELAS I": 7000000,
+            "VIP": 7000000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Baby room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1000000,
+            "KELAS II": 1000000,
+            "KELAS I": 1000000,
+            "VIP": 1000000,
+            "VVIP": 1000000,
+            "PENTHOUSE": 1000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "DOKTER OPERATOR",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 0,
+            "KELAS II": 38025000,
+            "KELAS I": 42250000,
+            "VIP": 50700000,
+            "VVIP": 60450000,
+            "PENTHOUSE": 69550000
+          }
+        },
+        {
+          "name": "DOKTER ANASTESI",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3120000,
+            "KELAS II": 3900000,
+            "KELAS I": 5265000,
+            "VIP": 7800000,
+            "VVIP": 8970000,
+            "PENTHOUSE": 10530000
+          }
+        },
+        {
+          "name": "DOKTER ANAK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3120000,
+            "KELAS II": 3900000,
+            "KELAS I": 5265000,
+            "VIP": 7800000,
+            "VVIP": 8970000,
+            "PENTHOUSE": 10530000
+          }
+        },
+        {
+          "name": "KAMAR OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 7540000,
+            "KELAS II": 8320000,
+            "KELAS I": 8970000,
+            "VIP": 9750000,
+            "VVIP": 10400000,
+            "PENTHOUSE": 11180000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0013",
+      "name": "SECTIO CAESAREA (SC)",
+      "category": "MIOM + SC + MOWSTERIL",
+      "gol": "Golongan II",
+      "days": 2,
+      "op": 19000000,
+      "ok": 7750000,
+      "alat": 3500000,
+      "obat": 8000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 2847000,
+      "baseTariff": 59787000,
+      "classTariffs": {
+        "KELAS III": 48153000,
+        "KELAS II": 53529000,
+        "KELAS I": 59787000,
+        "VIP": 74214000,
+        "VVIP": 97377000,
+        "PENTHOUSE": 112350000
+      },
+      "sourceSheet": "MIOM + SC + MOWSTERIL",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 15000000,
+            "KELAS II": 17500000,
+            "KELAS I": 19000000,
+            "VIP": 24000000,
+            "VVIP": 30000000,
+            "PENTHOUSE": 35000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4500000,
+            "KELAS II": 5250000,
+            "KELAS I": 5700000,
+            "VIP": 7200000,
+            "VVIP": 9000000,
+            "PENTHOUSE": 10500000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Operation Room Golongan II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 6500000,
+            "KELAS II": 7250000,
+            "KELAS I": 7750000,
+            "VIP": 8500000,
+            "VVIP": 9000000,
+            "PENTHOUSE": 10250000
+          }
+        },
+        {
+          "name": "Pain management (PNB preop/postop/OutPatient/PCA)",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 0,
+            "KELAS II": 0,
+            "KELAS I": 0,
+            "VIP": 2400000,
+            "VVIP": 2900000,
+            "PENTHOUSE": 2900000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3500000,
+            "KELAS II": 3500000,
+            "KELAS I": 3500000,
+            "VIP": 3500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 8000000,
+            "KELAS I": 8000000,
+            "VIP": 8000000,
+            "VVIP": 8000000,
+            "PENTHOUSE": 8000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Baby room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1000000,
+            "KELAS II": 1000000,
+            "KELAS I": 1000000,
+            "VIP": 1000000,
+            "VVIP": 1000000,
+            "PENTHOUSE": 1000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "administrasi",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2293000,
+            "KELAS II": 2549000,
+            "KELAS I": 2847000,
+            "VIP": 3534000,
+            "VVIP": 4637000,
+            "PENTHOUSE": 5000000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0014",
+      "name": "SECTIO CAESAREA (SC) + MIOM",
+      "category": "MIOM+SC",
+      "gol": "Golongan III",
+      "days": 2,
+      "op": 27500000,
+      "ok": 11200000,
+      "alat": 5000000,
+      "obat": 8000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 0,
+      "baseTariff": 70390000,
+      "classTariffs": {
+        "KELAS III": 55260000,
+        "KELAS II": 62430000,
+        "KELAS I": 70390000,
+        "VIP": 83530000,
+        "VVIP": 103340000,
+        "PENTHOUSE": 120250000
+      },
+      "sourceSheet": "MIOM+SC",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 20000000,
+            "KELAS II": 24250000,
+            "KELAS I": 27500000,
+            "VIP": 34000000,
+            "VVIP": 41500000,
+            "PENTHOUSE": 48500000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4500000,
+            "KELAS II": 5250000,
+            "KELAS I": 5700000,
+            "VIP": 7200000,
+            "VVIP": 9000000,
+            "PENTHOUSE": 10500000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Operation Room Golongan III",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 9400000,
+            "KELAS II": 10450000,
+            "KELAS I": 11200000,
+            "VIP": 12250000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 14550000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 5000000,
+            "KELAS II": 5000000,
+            "KELAS I": 5000000,
+            "VIP": 5000000,
+            "VVIP": 5000000,
+            "PENTHOUSE": 5000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 8000000,
+            "KELAS I": 8000000,
+            "VIP": 8000000,
+            "VVIP": 8000000,
+            "PENTHOUSE": 8000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Baby room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1000000,
+            "KELAS II": 1000000,
+            "KELAS I": 1000000,
+            "VIP": 1000000,
+            "VVIP": 1000000,
+            "PENTHOUSE": 1000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "DOKTER OPERATOR",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 26000000,
+            "KELAS II": 31525000,
+            "KELAS I": 35750000,
+            "VIP": 44200000,
+            "VVIP": 53950000,
+            "PENTHOUSE": 63050000
+          }
+        },
+        {
+          "name": "DOKTER ANASTESI",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 5850000,
+            "KELAS II": 6825000,
+            "KELAS I": 7410000,
+            "VIP": 9360000,
+            "VVIP": 11700000,
+            "PENTHOUSE": 13650000
+          }
+        },
+        {
+          "name": "DOKTER ANAK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3120000,
+            "KELAS II": 3900000,
+            "KELAS I": 5265000,
+            "VIP": 7800000,
+            "VVIP": 8970000,
+            "PENTHOUSE": 10530000
+          }
+        },
+        {
+          "name": "KAMAR OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 12220000,
+            "KELAS II": 13585000,
+            "KELAS I": 14560000,
+            "VIP": 15925000,
+            "VVIP": 16900000,
+            "PENTHOUSE": 18915000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0015",
+      "name": "SECTIO CAESAREA (SC)",
+      "category": "MIOM+SC",
+      "gol": "Golongan II",
+      "days": 2,
+      "op": 19000000,
+      "ok": 7750000,
+      "alat": 3500000,
+      "obat": 8000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 2847000,
+      "baseTariff": 59787000,
+      "classTariffs": {
+        "KELAS III": 48153000,
+        "KELAS II": 53529000,
+        "KELAS I": 59787000,
+        "VIP": 74214000,
+        "VVIP": 97377000,
+        "PENTHOUSE": 112350000
+      },
+      "sourceSheet": "MIOM+SC",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 15000000,
+            "KELAS II": 17500000,
+            "KELAS I": 19000000,
+            "VIP": 24000000,
+            "VVIP": 30000000,
+            "PENTHOUSE": 35000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4500000,
+            "KELAS II": 5250000,
+            "KELAS I": 5700000,
+            "VIP": 7200000,
+            "VVIP": 9000000,
+            "PENTHOUSE": 10500000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Operation Room Golongan II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 6500000,
+            "KELAS II": 7250000,
+            "KELAS I": 7750000,
+            "VIP": 8500000,
+            "VVIP": 9000000,
+            "PENTHOUSE": 10250000
+          }
+        },
+        {
+          "name": "Pain management (PNB preop/postop/OutPatient/PCA)",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 0,
+            "KELAS II": 0,
+            "KELAS I": 0,
+            "VIP": 2400000,
+            "VVIP": 2900000,
+            "PENTHOUSE": 2900000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3500000,
+            "KELAS II": 3500000,
+            "KELAS I": 3500000,
+            "VIP": 3500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 8000000,
+            "KELAS I": 8000000,
+            "VIP": 8000000,
+            "VVIP": 8000000,
+            "PENTHOUSE": 8000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Baby room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1000000,
+            "KELAS II": 1000000,
+            "KELAS I": 1000000,
+            "VIP": 1000000,
+            "VVIP": 1000000,
+            "PENTHOUSE": 1000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "administrasi",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2293000,
+            "KELAS II": 2549000,
+            "KELAS I": 2847000,
+            "VIP": 3534000,
+            "VVIP": 4637000,
+            "PENTHOUSE": 5000000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0016",
+      "name": "PARTUS NORMAL",
+      "category": "PARTUS NORMAL",
+      "gol": "Golongan IIA",
+      "days": 2,
+      "op": 17000000,
+      "ok": 5000000,
+      "alat": 3000000,
+      "obat": 5000000,
+      "kamar": 3500000,
+      "visite": 3660000,
+      "admin": 0,
+      "baseTariff": 46260000,
+      "classTariffs": {
+        "KELAS III": 32920000,
+        "KELAS II": 38200000,
+        "KELAS I": 46260000,
+        "VIP": 57420000,
+        "VVIP": 69080000,
+        "PENTHOUSE": 81140000
+      },
+      "sourceSheet": "PARTUS NORMAL",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 10000000,
+            "KELAS II": 13500000,
+            "KELAS I": 17000000,
+            "VIP": 20000000,
+            "VVIP": 23000000,
+            "PENTHOUSE": 27000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Labor & delivery Room",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 5000000,
+            "KELAS II": 5000000,
+            "KELAS I": 5000000,
+            "VIP": 5000000,
+            "VVIP": 5000000,
+            "PENTHOUSE": 5000000
+          }
+        },
+        {
+          "name": "SEWA ALAT VK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3000000,
+            "KELAS II": 3000000,
+            "KELAS I": 3000000,
+            "VIP": 5000000,
+            "VVIP": 3000000,
+            "PENTHOUSE": 3000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi VK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 5000000,
+            "KELAS II": 5000000,
+            "KELAS I": 5000000,
+            "VIP": 5000000,
+            "VVIP": 5000000,
+            "PENTHOUSE": 5000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Baby room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1000000,
+            "KELAS II": 1000000,
+            "KELAS I": 1000000,
+            "VIP": 1000000,
+            "VVIP": 1000000,
+            "PENTHOUSE": 1000000
+          }
+        },
+        {
+          "name": "Visite - by Specialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 940000,
+            "KELAS II": 1000000,
+            "KELAS I": 1220000,
+            "VIP": 1540000,
+            "VVIP": 1760000,
+            "PENTHOUSE": 1980000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 940000,
+            "KELAS II": 1000000,
+            "KELAS I": 1220000,
+            "VIP": 1540000,
+            "VVIP": 1760000,
+            "PENTHOUSE": 1980000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by Specialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 940000,
+            "KELAS II": 1000000,
+            "KELAS I": 1220000,
+            "VIP": 1540000,
+            "VVIP": 1760000,
+            "PENTHOUSE": 1980000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0017",
+      "name": "SECTIO CAESAREA (SC)",
+      "category": "PARTUS NORMAL",
+      "gol": "Golongan II",
+      "days": 2,
+      "op": 17000000,
+      "ok": 0,
+      "alat": 3500000,
+      "obat": 8000000,
+      "kamar": 3500000,
+      "visite": 3660000,
+      "admin": 2238000,
+      "baseTariff": 46998000,
+      "classTariffs": {
+        "KELAS III": 32991000,
+        "KELAS II": 38535000,
+        "KELAS I": 46998000,
+        "VIP": 59136000,
+        "VVIP": 77679000,
+        "PENTHOUSE": 90342000
+      },
+      "sourceSheet": "PARTUS NORMAL",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 10000000,
+            "KELAS II": 13500000,
+            "KELAS I": 17000000,
+            "VIP": 20000000,
+            "VVIP": 23000000,
+            "PENTHOUSE": 27000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Pain management (PNB preop/postop/OutPatient/PCA)",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 0,
+            "KELAS II": 0,
+            "KELAS I": 0,
+            "VIP": 2400000,
+            "VVIP": 2900000,
+            "PENTHOUSE": 2900000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3500000,
+            "KELAS II": 3500000,
+            "KELAS I": 3500000,
+            "VIP": 3500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 8000000,
+            "KELAS I": 8000000,
+            "VIP": 8000000,
+            "VVIP": 8000000,
+            "PENTHOUSE": 8000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Baby room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1000000,
+            "KELAS II": 1000000,
+            "KELAS I": 1000000,
+            "VIP": 1000000,
+            "VVIP": 1000000,
+            "PENTHOUSE": 1000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 940000,
+            "KELAS II": 1000000,
+            "KELAS I": 1220000,
+            "VIP": 1540000,
+            "VVIP": 1760000,
+            "PENTHOUSE": 1980000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 940000,
+            "KELAS II": 1000000,
+            "KELAS I": 1220000,
+            "VIP": 1540000,
+            "VVIP": 1760000,
+            "PENTHOUSE": 1980000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 940000,
+            "KELAS II": 1000000,
+            "KELAS I": 1220000,
+            "VIP": 1540000,
+            "VVIP": 1760000,
+            "PENTHOUSE": 1980000
+          }
+        },
+        {
+          "name": "administrasi",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 1571000,
+            "KELAS II": 1835000,
+            "KELAS I": 2238000,
+            "VIP": 2816000,
+            "VVIP": 3699000,
+            "PENTHOUSE": 4302000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0018",
+      "name": "MOW (STERIL)",
+      "category": "MOW(STERIL)",
+      "gol": "Golongan II",
+      "days": 2,
+      "op": 13500000,
+      "ok": 5900000,
+      "alat": 5000000,
+      "obat": 7000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 0,
+      "baseTariff": 44390000,
+      "classTariffs": {
+        "KELAS III": 33160000,
+        "KELAS II": 36880000,
+        "KELAS I": 44390000,
+        "VIP": 55580000,
+        "VVIP": 68840000,
+        "PENTHOUSE": 80300000
+      },
+      "sourceSheet": "MOW(STERIL)",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 10000000,
+            "KELAS I": 13500000,
+            "VIP": 20000000,
+            "VVIP": 23000000,
+            "PENTHOUSE": 27000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Operation Room Golongan II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4800000,
+            "KELAS II": 5400000,
+            "KELAS I": 5900000,
+            "VIP": 6500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7600000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 5000000,
+            "KELAS II": 5000000,
+            "KELAS I": 5000000,
+            "VIP": 5000000,
+            "VVIP": 5000000,
+            "PENTHOUSE": 5000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 7000000,
+            "KELAS II": 7000000,
+            "KELAS I": 7000000,
+            "VIP": 7000000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Baby room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1000000,
+            "KELAS II": 1000000,
+            "KELAS I": 1000000,
+            "VIP": 1000000,
+            "VVIP": 1000000,
+            "PENTHOUSE": 1000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "DOKTER OPERATOR",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 10400000,
+            "KELAS II": 13000000,
+            "KELAS I": 17550000,
+            "VIP": 26000000,
+            "VVIP": 29900000,
+            "PENTHOUSE": 35100000
+          }
+        },
+        {
+          "name": "DOKTER ANASTESI",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3120000,
+            "KELAS II": 3900000,
+            "KELAS I": 5265000,
+            "VIP": 7800000,
+            "VVIP": 8970000,
+            "PENTHOUSE": 10530000
+          }
+        },
+        {
+          "name": "KAMAR OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 6300000,
+            "KELAS II": 7020000,
+            "KELAS I": 7670000,
+            "VIP": 8450000,
+            "VVIP": 9100000,
+            "PENTHOUSE": 9880000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0019",
+      "name": "SECTIO CAESAREA (SC)",
+      "category": "MOW(STERIL)",
+      "gol": "Golongan II",
+      "days": 2,
+      "op": 13500000,
+      "ok": 5900000,
+      "alat": 3500000,
+      "obat": 8000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 2397000,
+      "baseTariff": 50337000,
+      "classTariffs": {
+        "KELAS III": 36813000,
+        "KELAS II": 41349000,
+        "KELAS I": 50337000,
+        "VIP": 66654000,
+        "VVIP": 85722000,
+        "PENTHOUSE": 99015000
+      },
+      "sourceSheet": "MOW(STERIL)",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 10000000,
+            "KELAS I": 13500000,
+            "VIP": 20000000,
+            "VVIP": 23000000,
+            "PENTHOUSE": 27000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Operation Room Golongan II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4800000,
+            "KELAS II": 5400000,
+            "KELAS I": 5900000,
+            "VIP": 6500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7600000
+          }
+        },
+        {
+          "name": "Pain management (PNB preop/postop/OutPatient/PCA)",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 0,
+            "KELAS II": 0,
+            "KELAS I": 0,
+            "VIP": 2400000,
+            "VVIP": 2900000,
+            "PENTHOUSE": 2900000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3500000,
+            "KELAS II": 3500000,
+            "KELAS I": 3500000,
+            "VIP": 3500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 8000000,
+            "KELAS I": 8000000,
+            "VIP": 8000000,
+            "VVIP": 8000000,
+            "PENTHOUSE": 8000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Baby room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1000000,
+            "KELAS II": 1000000,
+            "KELAS I": 1000000,
+            "VIP": 1000000,
+            "VVIP": 1000000,
+            "PENTHOUSE": 1000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "administrasi",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 1753000,
+            "KELAS II": 1969000,
+            "KELAS I": 2397000,
+            "VIP": 3174000,
+            "VVIP": 4082000,
+            "PENTHOUSE": 4715000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0020",
+      "name": "Aspirasi Kista Ovarium",
+      "category": "Aspirasi Kista Ovarium",
+      "gol": "Golongan II",
+      "days": 1,
+      "op": 13500000,
+      "ok": 5900000,
+      "alat": 5000000,
+      "obat": 7000000,
+      "kamar": 1750000,
+      "visite": 4440000,
+      "admin": 0,
+      "baseTariff": 42640000,
+      "classTariffs": {
+        "KELAS III": 32510000,
+        "KELAS II": 36030000,
+        "KELAS I": 42640000,
+        "VIP": 53180000,
+        "VVIP": 62340000,
+        "PENTHOUSE": 71300000
+      },
+      "sourceSheet": "Aspirasi Kista Ovarium",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 10000000,
+            "KELAS I": 13500000,
+            "VIP": 20000000,
+            "VVIP": 23000000,
+            "PENTHOUSE": 27000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Operation Room Golongan II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4800000,
+            "KELAS II": 5400000,
+            "KELAS I": 5900000,
+            "VIP": 6500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7600000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 5000000,
+            "KELAS II": 5000000,
+            "KELAS I": 5000000,
+            "VIP": 5000000,
+            "VVIP": 5000000,
+            "PENTHOUSE": 5000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 7000000,
+            "KELAS II": 7000000,
+            "KELAS I": 7000000,
+            "VIP": 7000000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 650000,
+            "KELAS II": 850000,
+            "KELAS I": 1750000,
+            "VIP": 2400000,
+            "VVIP": 6500000,
+            "PENTHOUSE": 9000000
+          }
+        },
+        {
+          "name": "Baby room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1000000,
+            "KELAS II": 1000000,
+            "KELAS I": 1000000,
+            "VIP": 1000000,
+            "VVIP": 1000000,
+            "PENTHOUSE": 1000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "DOKTER OPERATOR",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 10400000,
+            "KELAS II": 13000000,
+            "KELAS I": 17550000,
+            "VIP": 26000000,
+            "VVIP": 29900000,
+            "PENTHOUSE": 35100000
+          }
+        },
+        {
+          "name": "DOKTER ANASTESI",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3120000,
+            "KELAS II": 3900000,
+            "KELAS I": 5265000,
+            "VIP": 7800000,
+            "VVIP": 8970000,
+            "PENTHOUSE": 10530000
+          }
+        },
+        {
+          "name": "KAMAR OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 6300000,
+            "KELAS II": 7020000,
+            "KELAS I": 7670000,
+            "VIP": 8450000,
+            "VVIP": 9100000,
+            "PENTHOUSE": 9880000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0021",
+      "name": "SECTIO CAESAREA (SC)",
+      "category": "Aspirasi Kista Ovarium",
+      "gol": "Golongan II",
+      "days": 2,
+      "op": 13500000,
+      "ok": 5900000,
+      "alat": 3500000,
+      "obat": 8000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 2397000,
+      "baseTariff": 50337000,
+      "classTariffs": {
+        "KELAS III": 36813000,
+        "KELAS II": 41349000,
+        "KELAS I": 50337000,
+        "VIP": 66654000,
+        "VVIP": 85722000,
+        "PENTHOUSE": 99015000
+      },
+      "sourceSheet": "Aspirasi Kista Ovarium",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 10000000,
+            "KELAS I": 13500000,
+            "VIP": 20000000,
+            "VVIP": 23000000,
+            "PENTHOUSE": 27000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Operation Room Golongan II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4800000,
+            "KELAS II": 5400000,
+            "KELAS I": 5900000,
+            "VIP": 6500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7600000
+          }
+        },
+        {
+          "name": "Pain management (PNB preop/postop/OutPatient/PCA)",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 0,
+            "KELAS II": 0,
+            "KELAS I": 0,
+            "VIP": 2400000,
+            "VVIP": 2900000,
+            "PENTHOUSE": 2900000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3500000,
+            "KELAS II": 3500000,
+            "KELAS I": 3500000,
+            "VIP": 3500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 8000000,
+            "KELAS I": 8000000,
+            "VIP": 8000000,
+            "VVIP": 8000000,
+            "PENTHOUSE": 8000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Baby room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1000000,
+            "KELAS II": 1000000,
+            "KELAS I": 1000000,
+            "VIP": 1000000,
+            "VVIP": 1000000,
+            "PENTHOUSE": 1000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "administrasi",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 1753000,
+            "KELAS II": 1969000,
+            "KELAS I": 2397000,
+            "VIP": 3174000,
+            "VVIP": 4082000,
+            "PENTHOUSE": 4715000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0022",
+      "name": "HISTEREKTOMI + KISTA + MIOM",
+      "category": "HISTEREKTOMI + KISTA + MIOM",
+      "gol": "Golongan III",
+      "days": 2,
+      "op": 19000000,
+      "ok": 7750000,
+      "alat": 5000000,
+      "obat": 13000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 0,
+      "baseTariff": 63790000,
+      "classTariffs": {
+        "KELAS III": 54360000,
+        "KELAS II": 58880000,
+        "KELAS I": 63790000,
+        "VIP": 73180000,
+        "VVIP": 90340000,
+        "PENTHOUSE": 103750000
+      },
+      "sourceSheet": "HISTEREKTOMI + KISTA + MIOM",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 15000000,
+            "KELAS II": 17500000,
+            "KELAS I": 19000000,
+            "VIP": 24000000,
+            "VVIP": 30000000,
+            "PENTHOUSE": 35000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4500000,
+            "KELAS II": 5250000,
+            "KELAS I": 5700000,
+            "VIP": 7200000,
+            "VVIP": 9000000,
+            "PENTHOUSE": 10500000
+          }
+        },
+        {
+          "name": "Operation Room Golongan III",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 6500000,
+            "KELAS II": 7250000,
+            "KELAS I": 7750000,
+            "VIP": 8500000,
+            "VVIP": 9000000,
+            "PENTHOUSE": 10250000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 5000000,
+            "KELAS II": 5000000,
+            "KELAS I": 5000000,
+            "VIP": 5000000,
+            "VVIP": 5000000,
+            "PENTHOUSE": 5000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 13000000,
+            "KELAS II": 13000000,
+            "KELAS I": 13000000,
+            "VIP": 13000000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 13000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Baby room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1000000,
+            "KELAS II": 1000000,
+            "KELAS I": 1000000,
+            "VIP": 1000000,
+            "VVIP": 1000000,
+            "PENTHOUSE": 1000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "PA Large",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 4400000,
+            "KELAS II": 4400000,
+            "KELAS I": 4400000,
+            "VIP": 4400000,
+            "VVIP": 4400000,
+            "PENTHOUSE": 4400000
+          }
+        },
+        {
+          "name": "DOKTER OPERATOR",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 19500000,
+            "KELAS II": 22750000,
+            "KELAS I": 24700000,
+            "VIP": 31200000,
+            "VVIP": 39000000,
+            "PENTHOUSE": 45500000
+          }
+        },
+        {
+          "name": "DOKTER ANASTESI",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 5850000,
+            "KELAS II": 6825000,
+            "KELAS I": 7410000,
+            "VIP": 9360000,
+            "VVIP": 11700000,
+            "PENTHOUSE": 13650000
+          }
+        },
+        {
+          "name": "KAMAR OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8450000,
+            "KELAS II": 9425000,
+            "KELAS I": 10075000,
+            "VIP": 11050000,
+            "VVIP": 11700000,
+            "PENTHOUSE": 13325000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0023",
+      "name": "SECTIO CAESAREA (SC)",
+      "category": "HISTEREKTOMI + KISTA + MIOM",
+      "gol": "Golongan II",
+      "days": 2,
+      "op": 19000000,
+      "ok": 7750000,
+      "alat": 3500000,
+      "obat": 8000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 2847000,
+      "baseTariff": 59787000,
+      "classTariffs": {
+        "KELAS III": 48153000,
+        "KELAS II": 53529000,
+        "KELAS I": 59787000,
+        "VIP": 74214000,
+        "VVIP": 97377000,
+        "PENTHOUSE": 112350000
+      },
+      "sourceSheet": "HISTEREKTOMI + KISTA + MIOM",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 15000000,
+            "KELAS II": 17500000,
+            "KELAS I": 19000000,
+            "VIP": 24000000,
+            "VVIP": 30000000,
+            "PENTHOUSE": 35000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4500000,
+            "KELAS II": 5250000,
+            "KELAS I": 5700000,
+            "VIP": 7200000,
+            "VVIP": 9000000,
+            "PENTHOUSE": 10500000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Operation Room Golongan II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 6500000,
+            "KELAS II": 7250000,
+            "KELAS I": 7750000,
+            "VIP": 8500000,
+            "VVIP": 9000000,
+            "PENTHOUSE": 10250000
+          }
+        },
+        {
+          "name": "Pain management (PNB preop/postop/OutPatient/PCA)",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 0,
+            "KELAS II": 0,
+            "KELAS I": 0,
+            "VIP": 2400000,
+            "VVIP": 2900000,
+            "PENTHOUSE": 2900000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3500000,
+            "KELAS II": 3500000,
+            "KELAS I": 3500000,
+            "VIP": 3500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 8000000,
+            "KELAS I": 8000000,
+            "VIP": 8000000,
+            "VVIP": 8000000,
+            "PENTHOUSE": 8000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Baby room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1000000,
+            "KELAS II": 1000000,
+            "KELAS I": 1000000,
+            "VIP": 1000000,
+            "VVIP": 1000000,
+            "PENTHOUSE": 1000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "administrasi",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2293000,
+            "KELAS II": 2549000,
+            "KELAS I": 2847000,
+            "VIP": 3534000,
+            "VVIP": 4637000,
+            "PENTHOUSE": 5000000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0024",
+      "name": "CIRLAGE - LIGASI CERVIX",
+      "category": "CIRLAGE - LIGASI CERVIX",
+      "gol": "Golongan II",
+      "days": 2,
+      "op": 13500000,
+      "ok": 5900000,
+      "alat": 8000000,
+      "obat": 5000000,
+      "kamar": 3500000,
+      "visite": 2960000,
+      "admin": 0,
+      "baseTariff": 42910000,
+      "classTariffs": {
+        "KELAS III": 31940000,
+        "KELAS II": 35620000,
+        "KELAS I": 42910000,
+        "VIP": 53820000,
+        "VVIP": 66860000,
+        "PENTHOUSE": 78100000
+      },
+      "sourceSheet": "CIRLAGE - LIGASI CERVIX",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 10000000,
+            "KELAS I": 13500000,
+            "VIP": 20000000,
+            "VVIP": 23000000,
+            "PENTHOUSE": 27000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Operation Room Golongan II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4800000,
+            "KELAS II": 5400000,
+            "KELAS I": 5900000,
+            "VIP": 6500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7600000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 8000000,
+            "KELAS I": 8000000,
+            "VIP": 8000000,
+            "VVIP": 8000000,
+            "PENTHOUSE": 8000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 5000000,
+            "KELAS II": 5000000,
+            "KELAS I": 5000000,
+            "VIP": 5000000,
+            "VVIP": 5000000,
+            "PENTHOUSE": 5000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "DOKTER OPERATOR",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 10400000,
+            "KELAS II": 13000000,
+            "KELAS I": 17550000,
+            "VIP": 26000000,
+            "VVIP": 29900000,
+            "PENTHOUSE": 35100000
+          }
+        },
+        {
+          "name": "DOKTER ANASTESI",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3120000,
+            "KELAS II": 3900000,
+            "KELAS I": 5265000,
+            "VIP": 7800000,
+            "VVIP": 8970000,
+            "PENTHOUSE": 10530000
+          }
+        },
+        {
+          "name": "KAMAR OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 6300000,
+            "KELAS II": 7020000,
+            "KELAS I": 7670000,
+            "VIP": 8450000,
+            "VVIP": 9100000,
+            "PENTHOUSE": 9880000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0025",
+      "name": "SECTIO CAESAREA (SC)",
+      "category": "CIRLAGE - LIGASI CERVIX",
+      "gol": "Golongan II",
+      "days": 2,
+      "op": 13500000,
+      "ok": 5900000,
+      "alat": 3500000,
+      "obat": 8000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 2347000,
+      "baseTariff": 49287000,
+      "classTariffs": {
+        "KELAS III": 35763000,
+        "KELAS II": 40299000,
+        "KELAS I": 49287000,
+        "VIP": 65604000,
+        "VVIP": 84672000,
+        "PENTHOUSE": 97965000
+      },
+      "sourceSheet": "CIRLAGE - LIGASI CERVIX",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 10000000,
+            "KELAS I": 13500000,
+            "VIP": 20000000,
+            "VVIP": 23000000,
+            "PENTHOUSE": 27000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Operation Room Golongan II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4800000,
+            "KELAS II": 5400000,
+            "KELAS I": 5900000,
+            "VIP": 6500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7600000
+          }
+        },
+        {
+          "name": "Pain management (PNB preop/postop/OutPatient/PCA)",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 0,
+            "KELAS II": 0,
+            "KELAS I": 0,
+            "VIP": 2400000,
+            "VVIP": 2900000,
+            "PENTHOUSE": 2900000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3500000,
+            "KELAS II": 3500000,
+            "KELAS I": 3500000,
+            "VIP": 3500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 8000000,
+            "KELAS I": 8000000,
+            "VIP": 8000000,
+            "VVIP": 8000000,
+            "PENTHOUSE": 8000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "administrasi",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 1703000,
+            "KELAS II": 1919000,
+            "KELAS I": 2347000,
+            "VIP": 3124000,
+            "VVIP": 4032000,
+            "PENTHOUSE": 4665000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0026",
+      "name": "HISTEROSKOPI Resectoscope",
+      "category": "HISTEROSKOPI Resectoscope ",
+      "gol": "Golongan III",
+      "days": 2,
+      "op": 19000000,
+      "ok": 7750000,
+      "alat": 15000000,
+      "obat": 12000000,
+      "kamar": 3500000,
+      "visite": 2960000,
+      "admin": 0,
+      "baseTariff": 65910000,
+      "classTariffs": {
+        "KELAS III": 56740000,
+        "KELAS II": 61220000,
+        "KELAS I": 65910000,
+        "VIP": 75020000,
+        "VVIP": 91960000,
+        "PENTHOUSE": 105150000
+      },
+      "sourceSheet": "HISTEROSKOPI Resectoscope ",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 15000000,
+            "KELAS II": 17500000,
+            "KELAS I": 19000000,
+            "VIP": 24000000,
+            "VVIP": 30000000,
+            "PENTHOUSE": 35000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4500000,
+            "KELAS II": 5250000,
+            "KELAS I": 5700000,
+            "VIP": 7200000,
+            "VVIP": 9000000,
+            "PENTHOUSE": 10500000
+          }
+        },
+        {
+          "name": "Operation Room Golongan III",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 6500000,
+            "KELAS II": 7250000,
+            "KELAS I": 7750000,
+            "VIP": 8500000,
+            "VVIP": 9000000,
+            "PENTHOUSE": 10250000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 15000000,
+            "KELAS II": 15000000,
+            "KELAS I": 15000000,
+            "VIP": 15000000,
+            "VVIP": 15000000,
+            "PENTHOUSE": 15000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 12000000,
+            "KELAS II": 12000000,
+            "KELAS I": 12000000,
+            "VIP": 12000000,
+            "VVIP": 12000000,
+            "PENTHOUSE": 12000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "DOKTER OPERATOR",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 19500000,
+            "KELAS II": 22750000,
+            "KELAS I": 24700000,
+            "VIP": 31200000,
+            "VVIP": 39000000,
+            "PENTHOUSE": 45500000
+          }
+        },
+        {
+          "name": "DOKTER ANASTESI",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 5850000,
+            "KELAS II": 6825000,
+            "KELAS I": 7410000,
+            "VIP": 9360000,
+            "VVIP": 11700000,
+            "PENTHOUSE": 13650000
+          }
+        },
+        {
+          "name": "KAMAR OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8450000,
+            "KELAS II": 9425000,
+            "KELAS I": 10075000,
+            "VIP": 11050000,
+            "VVIP": 11700000,
+            "PENTHOUSE": 13325000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0027",
+      "name": "SECTIO CAESAREA (SC)",
+      "category": "HISTEROSKOPI Resectoscope ",
+      "gol": "Golongan II",
+      "days": 2,
+      "op": 19000000,
+      "ok": 7750000,
+      "alat": 3500000,
+      "obat": 8000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 2797000,
+      "baseTariff": 58737000,
+      "classTariffs": {
+        "KELAS III": 47103000,
+        "KELAS II": 52479000,
+        "KELAS I": 58737000,
+        "VIP": 73164000,
+        "VVIP": 96327000,
+        "PENTHOUSE": 111350000
+      },
+      "sourceSheet": "HISTEROSKOPI Resectoscope ",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 15000000,
+            "KELAS II": 17500000,
+            "KELAS I": 19000000,
+            "VIP": 24000000,
+            "VVIP": 30000000,
+            "PENTHOUSE": 35000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4500000,
+            "KELAS II": 5250000,
+            "KELAS I": 5700000,
+            "VIP": 7200000,
+            "VVIP": 9000000,
+            "PENTHOUSE": 10500000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Operation Room Golongan II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 6500000,
+            "KELAS II": 7250000,
+            "KELAS I": 7750000,
+            "VIP": 8500000,
+            "VVIP": 9000000,
+            "PENTHOUSE": 10250000
+          }
+        },
+        {
+          "name": "Pain management (PNB preop/postop/OutPatient/PCA)",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 0,
+            "KELAS II": 0,
+            "KELAS I": 0,
+            "VIP": 2400000,
+            "VVIP": 2900000,
+            "PENTHOUSE": 2900000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3500000,
+            "KELAS II": 3500000,
+            "KELAS I": 3500000,
+            "VIP": 3500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 8000000,
+            "KELAS I": 8000000,
+            "VIP": 8000000,
+            "VVIP": 8000000,
+            "PENTHOUSE": 8000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "administrasi",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2243000,
+            "KELAS II": 2499000,
+            "KELAS I": 2797000,
+            "VIP": 3484000,
+            "VVIP": 4587000,
+            "PENTHOUSE": 5000000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0028",
+      "name": "AFF Pen Clavicula",
+      "category": "AFF Pen Clavicula",
+      "gol": "Golongan III",
+      "days": 2,
+      "op": 19000000,
+      "ok": 7750000,
+      "alat": 7000000,
+      "obat": 15000000,
+      "kamar": 3500000,
+      "visite": 2960000,
+      "admin": 0,
+      "baseTariff": 60910000,
+      "classTariffs": {
+        "KELAS III": 51740000,
+        "KELAS II": 56220000,
+        "KELAS I": 60910000,
+        "VIP": 70020000,
+        "VVIP": 86960000,
+        "PENTHOUSE": 100150000
+      },
+      "sourceSheet": "AFF Pen Clavicula",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 15000000,
+            "KELAS II": 17500000,
+            "KELAS I": 19000000,
+            "VIP": 24000000,
+            "VVIP": 30000000,
+            "PENTHOUSE": 35000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4500000,
+            "KELAS II": 5250000,
+            "KELAS I": 5700000,
+            "VIP": 7200000,
+            "VVIP": 9000000,
+            "PENTHOUSE": 10500000
+          }
+        },
+        {
+          "name": "Operation Room Golongan III",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 6500000,
+            "KELAS II": 7250000,
+            "KELAS I": 7750000,
+            "VIP": 8500000,
+            "VVIP": 9000000,
+            "PENTHOUSE": 10250000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 7000000,
+            "KELAS II": 7000000,
+            "KELAS I": 7000000,
+            "VIP": 7000000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 15000000,
+            "KELAS II": 15000000,
+            "KELAS I": 15000000,
+            "VIP": 15000000,
+            "VVIP": 15000000,
+            "PENTHOUSE": 15000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "DOKTER OPERATOR",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 19500000,
+            "KELAS II": 22750000,
+            "KELAS I": 24700000,
+            "VIP": 31200000,
+            "VVIP": 39000000,
+            "PENTHOUSE": 45500000
+          }
+        },
+        {
+          "name": "DOKTER ANASTESI",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 5850000,
+            "KELAS II": 6825000,
+            "KELAS I": 7410000,
+            "VIP": 9360000,
+            "VVIP": 11700000,
+            "PENTHOUSE": 13650000
+          }
+        },
+        {
+          "name": "KAMAR OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8450000,
+            "KELAS II": 9425000,
+            "KELAS I": 10075000,
+            "VIP": 11050000,
+            "VVIP": 11700000,
+            "PENTHOUSE": 13325000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0029",
+      "name": "SECTIO CAESAREA (SC)",
+      "category": "AFF Pen Clavicula",
+      "gol": "Golongan II",
+      "days": 2,
+      "op": 19000000,
+      "ok": 7750000,
+      "alat": 3500000,
+      "obat": 8000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 2797000,
+      "baseTariff": 58737000,
+      "classTariffs": {
+        "KELAS III": 47103000,
+        "KELAS II": 52479000,
+        "KELAS I": 58737000,
+        "VIP": 73164000,
+        "VVIP": 96327000,
+        "PENTHOUSE": 111350000
+      },
+      "sourceSheet": "AFF Pen Clavicula",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 15000000,
+            "KELAS II": 17500000,
+            "KELAS I": 19000000,
+            "VIP": 24000000,
+            "VVIP": 30000000,
+            "PENTHOUSE": 35000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4500000,
+            "KELAS II": 5250000,
+            "KELAS I": 5700000,
+            "VIP": 7200000,
+            "VVIP": 9000000,
+            "PENTHOUSE": 10500000
+          }
+        },
+        {
+          "name": "Jasa Medis dokter Anak",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2400000,
+            "KELAS II": 3000000,
+            "KELAS I": 4050000,
+            "VIP": 6000000,
+            "VVIP": 6900000,
+            "PENTHOUSE": 8100000
+          }
+        },
+        {
+          "name": "Operation Room Golongan II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 6500000,
+            "KELAS II": 7250000,
+            "KELAS I": 7750000,
+            "VIP": 8500000,
+            "VVIP": 9000000,
+            "PENTHOUSE": 10250000
+          }
+        },
+        {
+          "name": "Pain management (PNB preop/postop/OutPatient/PCA)",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 0,
+            "KELAS II": 0,
+            "KELAS I": 0,
+            "VIP": 2400000,
+            "VVIP": 2900000,
+            "PENTHOUSE": 2900000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3500000,
+            "KELAS II": 3500000,
+            "KELAS I": 3500000,
+            "VIP": 3500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 8000000,
+            "KELAS I": 8000000,
+            "VIP": 8000000,
+            "VVIP": 8000000,
+            "PENTHOUSE": 8000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "administrasi",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2243000,
+            "KELAS II": 2499000,
+            "KELAS I": 2797000,
+            "VIP": 3484000,
+            "VVIP": 4587000,
+            "PENTHOUSE": 5000000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0030",
+      "name": "LAPAROSCOPY KISTEKTOMI DAN MIOMEKTOMI",
+      "category": "LAPAROSCOPY KISTEKTOMI DAN MIOM",
+      "gol": "Golongan KHUSUS",
+      "days": 2,
+      "op": 25000000,
+      "ok": 10700000,
+      "alat": 16500000,
+      "obat": 12000000,
+      "kamar": 3500000,
+      "visite": 2960000,
+      "admin": 0,
+      "baseTariff": 77560000,
+      "classTariffs": {
+        "KELAS III": 61052500,
+        "KELAS II": 68320000,
+        "KELAS I": 77560000,
+        "VIP": 86320000,
+        "VVIP": 106460000,
+        "PENTHOUSE": 120700000
+      },
+      "sourceSheet": "LAPAROSCOPY KISTEKTOMI DAN MIOM",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 15625000,
+            "KELAS II": 20000000,
+            "KELAS I": 25000000,
+            "VIP": 29000000,
+            "VVIP": 37000000,
+            "PENTHOUSE": 43000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4687500,
+            "KELAS II": 6000000,
+            "KELAS I": 6900000,
+            "VIP": 8700000,
+            "VVIP": 11100000,
+            "PENTHOUSE": 12900000
+          }
+        },
+        {
+          "name": "Operation Room Golongan Khusus",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8500000,
+            "KELAS II": 9600000,
+            "KELAS I": 10700000,
+            "VIP": 11800000,
+            "VVIP": 12900000,
+            "PENTHOUSE": 13900000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 16500000,
+            "KELAS II": 16500000,
+            "KELAS I": 16500000,
+            "VIP": 16500000,
+            "VVIP": 16500000,
+            "PENTHOUSE": 16500000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 12000000,
+            "KELAS II": 12000000,
+            "KELAS I": 12000000,
+            "VIP": 12000000,
+            "VVIP": 12000000,
+            "PENTHOUSE": 12000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "DOKTER OPERATOR",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 20312500,
+            "KELAS II": 26000000,
+            "KELAS I": 32500000,
+            "VIP": 37700000,
+            "VVIP": 48100000,
+            "PENTHOUSE": 55900000
+          }
+        },
+        {
+          "name": "DOKTER ANASTESI",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 6093750,
+            "KELAS II": 7800000,
+            "KELAS I": 8970000,
+            "VIP": 11310000,
+            "VVIP": 14430000,
+            "PENTHOUSE": 16770000
+          }
+        },
+        {
+          "name": "KAMAR OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 11050000,
+            "KELAS II": 12480000,
+            "KELAS I": 13910000,
+            "VIP": 15340000,
+            "VVIP": 16770000,
+            "PENTHOUSE": 18070000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0031",
+      "name": "SECTIO CAESAREA (SC)",
+      "category": "LAPAROSCOPY KISTEKTOMI DAN MIOM",
+      "gol": "Golongan II",
+      "days": 2,
+      "op": 25000000,
+      "ok": 10700000,
+      "alat": 3500000,
+      "obat": 8000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 3102000,
+      "baseTariff": 65142000,
+      "classTariffs": {
+        "KELAS III": 47536125,
+        "KELAS II": 55209000,
+        "KELAS I": 65142000,
+        "VIP": 77154000,
+        "VVIP": 102732000,
+        "PENTHOUSE": 117300000
+      },
+      "sourceSheet": "LAPAROSCOPY KISTEKTOMI DAN MIOM",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 15625000,
+            "KELAS II": 20000000,
+            "KELAS I": 25000000,
+            "VIP": 29000000,
+            "VVIP": 37000000,
+            "PENTHOUSE": 43000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4687500,
+            "KELAS II": 6000000,
+            "KELAS I": 6900000,
+            "VIP": 8700000,
+            "VVIP": 11100000,
+            "PENTHOUSE": 12900000
+          }
+        },
+        {
+          "name": "Operation Room Golongan II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8500000,
+            "KELAS II": 9600000,
+            "KELAS I": 10700000,
+            "VIP": 11800000,
+            "VVIP": 12900000,
+            "PENTHOUSE": 13900000
+          }
+        },
+        {
+          "name": "Pain management (PNB preop/postop/OutPatient/PCA)",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 0,
+            "KELAS II": 0,
+            "KELAS I": 0,
+            "VIP": 2400000,
+            "VVIP": 2900000,
+            "PENTHOUSE": 2900000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3500000,
+            "KELAS II": 3500000,
+            "KELAS I": 3500000,
+            "VIP": 3500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 8000000,
+            "KELAS I": 8000000,
+            "VIP": 8000000,
+            "VVIP": 8000000,
+            "PENTHOUSE": 8000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "administrasi",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2263625,
+            "KELAS II": 2629000,
+            "KELAS I": 3102000,
+            "VIP": 3674000,
+            "VVIP": 4892000,
+            "PENTHOUSE": 5000000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0032",
+      "name": "LAPAROSCOPY LVL - ROBOTIC",
+      "category": "LAPAROS - ROBOTIC",
+      "gol": "Golongan KHUSUS",
+      "days": 2,
+      "op": 25000000,
+      "ok": 10700000,
+      "alat": 8000000,
+      "obat": 36000000,
+      "kamar": 3500000,
+      "visite": 2960000,
+      "admin": 0,
+      "baseTariff": 135560000,
+      "classTariffs": {
+        "KELAS III": 119052500,
+        "KELAS II": 126320000,
+        "KELAS I": 135560000,
+        "VIP": 144320000,
+        "VVIP": 164460000,
+        "PENTHOUSE": 178700000
+      },
+      "sourceSheet": "LAPAROS - ROBOTIC",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 15625000,
+            "KELAS II": 20000000,
+            "KELAS I": 25000000,
+            "VIP": 29000000,
+            "VVIP": 37000000,
+            "PENTHOUSE": 43000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4687500,
+            "KELAS II": 6000000,
+            "KELAS I": 6900000,
+            "VIP": 8700000,
+            "VVIP": 11100000,
+            "PENTHOUSE": 12900000
+          }
+        },
+        {
+          "name": "Operation Room Golongan Khusus",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8500000,
+            "KELAS II": 9600000,
+            "KELAS I": 10700000,
+            "VIP": 11800000,
+            "VVIP": 12900000,
+            "PENTHOUSE": 13900000
+          }
+        },
+        {
+          "name": "Sewa Alat Bedah",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 8000000,
+            "KELAS I": 8000000,
+            "VIP": 8000000,
+            "VVIP": 8000000,
+            "PENTHOUSE": 8000000
+          }
+        },
+        {
+          "name": "BMHP Robotic",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 36000000,
+            "KELAS II": 36000000,
+            "KELAS I": 36000000,
+            "VIP": 36000000,
+            "VVIP": 36000000,
+            "PENTHOUSE": 36000000
+          }
+        },
+        {
+          "name": "Sewa Robotic",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 27500000,
+            "KELAS II": 27500000,
+            "KELAS I": 27500000,
+            "VIP": 27500000,
+            "VVIP": 27500000,
+            "PENTHOUSE": 27500000
+          }
+        },
+        {
+          "name": "BMHP FARMASI",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 15000000,
+            "KELAS II": 15000000,
+            "KELAS I": 15000000,
+            "VIP": 15000000,
+            "VVIP": 15000000,
+            "PENTHOUSE": 15000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "DOKTER OPERATOR",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 20312500,
+            "KELAS II": 26000000,
+            "KELAS I": 32500000,
+            "VIP": 37700000,
+            "VVIP": 48100000,
+            "PENTHOUSE": 55900000
+          }
+        },
+        {
+          "name": "DOKTER ANASTESI",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 6093750,
+            "KELAS II": 7800000,
+            "KELAS I": 8970000,
+            "VIP": 11310000,
+            "VVIP": 14430000,
+            "PENTHOUSE": 16770000
+          }
+        },
+        {
+          "name": "KAMAR OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 11050000,
+            "KELAS II": 12480000,
+            "KELAS I": 13910000,
+            "VIP": 15340000,
+            "VVIP": 16770000,
+            "PENTHOUSE": 18070000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0033",
+      "name": "SECTIO CAESAREA (SC)",
+      "category": "LAPAROS - ROBOTIC",
+      "gol": "Golongan II",
+      "days": 2,
+      "op": 25000000,
+      "ok": 10700000,
+      "alat": 3500000,
+      "obat": 8000000,
+      "kamar": 3500000,
+      "visite": 4440000,
+      "admin": 3102000,
+      "baseTariff": 65142000,
+      "classTariffs": {
+        "KELAS III": 47536125,
+        "KELAS II": 55209000,
+        "KELAS I": 65142000,
+        "VIP": 77154000,
+        "VVIP": 102732000,
+        "PENTHOUSE": 117300000
+      },
+      "sourceSheet": "LAPAROS - ROBOTIC",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 15625000,
+            "KELAS II": 20000000,
+            "KELAS I": 25000000,
+            "VIP": 29000000,
+            "VVIP": 37000000,
+            "PENTHOUSE": 43000000
+          }
+        },
+        {
+          "name": "Jasa Anastesi Operation Procedure",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 4687500,
+            "KELAS II": 6000000,
+            "KELAS I": 6900000,
+            "VIP": 8700000,
+            "VVIP": 11100000,
+            "PENTHOUSE": 12900000
+          }
+        },
+        {
+          "name": "Operation Room Golongan II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8500000,
+            "KELAS II": 9600000,
+            "KELAS I": 10700000,
+            "VIP": 11800000,
+            "VVIP": 12900000,
+            "PENTHOUSE": 13900000
+          }
+        },
+        {
+          "name": "Pain management (PNB preop/postop/OutPatient/PCA)",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 0,
+            "KELAS II": 0,
+            "KELAS I": 0,
+            "VIP": 2400000,
+            "VVIP": 2900000,
+            "PENTHOUSE": 2900000
+          }
+        },
+        {
+          "name": "SEWA ALAT",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 3500000,
+            "KELAS II": 3500000,
+            "KELAS I": 3500000,
+            "VIP": 3500000,
+            "VVIP": 7000000,
+            "PENTHOUSE": 7000000
+          }
+        },
+        {
+          "name": "BMHP/Farmasi OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 8000000,
+            "KELAS II": 8000000,
+            "KELAS I": 8000000,
+            "VIP": 8000000,
+            "VVIP": 8000000,
+            "PENTHOUSE": 8000000
+          }
+        },
+        {
+          "name": "In Patient room",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1300000,
+            "KELAS II": 1700000,
+            "KELAS I": 3500000,
+            "VIP": 4800000,
+            "VVIP": 13000000,
+            "PENTHOUSE": 18000000
+          }
+        },
+        {
+          "name": "Visite - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite dr anak",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "Visite Anastesi - by subspecialist",
+          "quantity": 2,
+          "prices": {
+            "KELAS III": 1220000,
+            "KELAS II": 1260000,
+            "KELAS I": 1480000,
+            "VIP": 1760000,
+            "VVIP": 1980000,
+            "PENTHOUSE": 2200000
+          }
+        },
+        {
+          "name": "administrasi",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 2263625,
+            "KELAS II": 2629000,
+            "KELAS I": 3102000,
+            "VIP": 3674000,
+            "VVIP": 4892000,
+            "PENTHOUSE": 5000000
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0034",
+      "name": "HISTEROSKOPI OPERATIF",
+      "category": "HISTEROSKOPI OPERATIF",
+      "gol": "GOLONGAN 2 + ODC",
+      "days": 1,
+      "op": 19000000,
+      "ok": 7750000,
+      "alat": 16000000,
+      "obat": 5000000,
+      "kamar": 0,
+      "visite": 0,
+      "admin": 2897500,
+      "baseTariff": 0,
+      "classTariffs": {
+        "KELAS III": 0,
+        "KELAS II": 60847500,
+        "KELAS I": 0,
+        "VIP": 0,
+        "VVIP": 0,
+        "PENTHOUSE": 0
+      },
+      "sourceSheet": "HISTEROSKOPI OPERATIF",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 1,
+            "KELAS II": 19000000,
+            "KELAS I": 0,
+            "VIP": 0,
+            "VVIP": 0,
+            "PENTHOUSE": 0
+          }
+        },
+        {
+          "name": "Jasmed dokter anastesi",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 1,
+            "KELAS II": 5700000,
+            "KELAS I": 0,
+            "VIP": 0,
+            "VVIP": 0,
+            "PENTHOUSE": 0
+          }
+        },
+        {
+          "name": "Sewa kamar OK Gol II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 1,
+            "KELAS II": 7750000,
+            "KELAS I": 0,
+            "VIP": 0,
+            "VVIP": 0,
+            "PENTHOUSE": 0
+          }
+        },
+        {
+          "name": "Sewa alat bedah",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 1,
+            "KELAS II": 16000000,
+            "KELAS I": 0,
+            "VIP": 0,
+            "VVIP": 0,
+            "PENTHOUSE": 0
+          }
+        },
+        {
+          "name": "BMHP OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 0,
+            "KELAS II": 5000000,
+            "KELAS I": 0,
+            "VIP": 0,
+            "VVIP": 0,
+            "PENTHOUSE": 0
+          }
+        },
+        {
+          "name": "Penunjang",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 0,
+            "KELAS II": 4500000,
+            "KELAS I": 0,
+            "VIP": 0,
+            "VVIP": 0,
+            "PENTHOUSE": 0
+          }
+        },
+        {
+          "name": "administrasi",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 1,
+            "KELAS II": 2897500,
+            "KELAS I": 0,
+            "VIP": 0,
+            "VVIP": 0,
+            "PENTHOUSE": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-0035",
+      "name": "POLIPEKTOMI (ODC)",
+      "category": "POLIPEKTOMI (ODC)",
+      "gol": "GOLONGAN 2 + ODC",
+      "days": 1,
+      "op": 13500000,
+      "ok": 5900000,
+      "alat": 10000000,
+      "obat": 5000000,
+      "kamar": 0,
+      "visite": 0,
+      "admin": 2147500,
+      "baseTariff": 0,
+      "classTariffs": {
+        "KELAS III": 0,
+        "KELAS II": 45097500,
+        "KELAS I": 0,
+        "VIP": 0,
+        "VVIP": 0,
+        "PENTHOUSE": 0
+      },
+      "sourceSheet": "POLIPEKTOMI (ODC)",
+      "lineItems": [
+        {
+          "name": "Jasmed Dokter Operator",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 1,
+            "KELAS II": 13500000,
+            "KELAS I": 0,
+            "VIP": 0,
+            "VVIP": 0,
+            "PENTHOUSE": 0
+          }
+        },
+        {
+          "name": "Jasmed dokter anastesi",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 1,
+            "KELAS II": 4050000,
+            "KELAS I": 0,
+            "VIP": 0,
+            "VVIP": 0,
+            "PENTHOUSE": 0
+          }
+        },
+        {
+          "name": "Sewa kamar OK Gol II",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 1,
+            "KELAS II": 5900000,
+            "KELAS I": 0,
+            "VIP": 0,
+            "VVIP": 0,
+            "PENTHOUSE": 0
+          }
+        },
+        {
+          "name": "Sewa alat bedah",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 1,
+            "KELAS II": 10000000,
+            "KELAS I": 0,
+            "VIP": 0,
+            "VVIP": 0,
+            "PENTHOUSE": 0
+          }
+        },
+        {
+          "name": "BMHP OK",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 0,
+            "KELAS II": 5000000,
+            "KELAS I": 0,
+            "VIP": 0,
+            "VVIP": 0,
+            "PENTHOUSE": 0
+          }
+        },
+        {
+          "name": "Penunjang",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 0,
+            "KELAS II": 4500000,
+            "KELAS I": 0,
+            "VIP": 0,
+            "VVIP": 0,
+            "PENTHOUSE": 0
+          }
+        },
+        {
+          "name": "administrasi",
+          "quantity": 1,
+          "prices": {
+            "KELAS III": 1,
+            "KELAS II": 2147500,
+            "KELAS I": 0,
+            "VIP": 0,
+            "VVIP": 0,
+            "PENTHOUSE": 0
+          }
+        }
+      ]
+    }
+  ],
+  "procedureCount": 35,
+  "classMultipliers": {
+    "KELAS III": 1,
+    "KELAS II": 1.25,
+    "KELAS I": 1.5,
+    "VIP": 1.75,
+    "VVIP": 2,
+    "PENTHOUSE": 2.5,
+    "ODC": 0.8
+  }
+}

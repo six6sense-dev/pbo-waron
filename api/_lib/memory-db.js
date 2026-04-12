@@ -1,5 +1,9 @@
 // In-Memory Database for Production (Vercel Serverless)
-// Data persists per function execution, resets on redeploy
+// Data persists per function execution, resets on cold start/redeploy
+
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
 const DEFAULT_USERS = [
   {
@@ -28,137 +32,32 @@ const DEFAULT_USERS = [
   },
 ];
 
-const DEFAULT_PROCEDURES = [
-  {
-    id: 'PROC-001',
-    name: 'Operasi Appendix',
-    category: 'Bedah',
-    gol: 'GOL I',
-    days: 3,
-    op: 2500000,
-    ok: 1500000,
-    alat: 800000,
-    obat: 400000,
-    kamar: 300000,
-    visite: 200000,
-    admin: 100000,
-    baseTariff: 6200000,
-  },
-  {
-    id: 'PROC-002',
-    name: 'Operasi Hernia',
-    category: 'Bedah',
-    gol: 'GOL II',
-    days: 2,
-    op: 2000000,
-    ok: 1200000,
-    alat: 600000,
-    obat: 300000,
-    kamar: 200000,
-    visite: 150000,
-    admin: 80000,
-    baseTariff: 4530000,
-  },
-  {
-    id: 'PROC-003',
-    name: 'Operasi Caesar',
-    category: 'Obstetri',
-    gol: 'GOL I',
-    days: 3,
-    op: 3000000,
-    ok: 2000000,
-    alat: 1000000,
-    obat: 500000,
-    kamar: 300000,
-    visite: 250000,
-    admin: 150000,
-    baseTariff: 7200000,
-  },
-  {
-    id: 'PROC-004',
-    name: 'Persalinan Normal',
-    category: 'Obstetri',
-    gol: 'GOL III',
-    days: 1,
-    op: 1000000,
-    ok: 500000,
-    alat: 300000,
-    obat: 200000,
-    kamar: 150000,
-    visite: 100000,
-    admin: 50000,
-    baseTariff: 2300000,
-  },
-  {
-    id: 'PROC-005',
-    name: 'Endoskopi GI',
-    category: 'Gastro',
-    gol: 'GOL II',
-    days: 1,
-    op: 800000,
-    ok: 400000,
-    alat: 300000,
-    obat: 150000,
-    kamar: 100000,
-    visite: 80000,
-    admin: 50000,
-    baseTariff: 1880000,
-  },
-  {
-    id: 'PROC-006',
-    name: 'CT Scan Kepala',
-    category: 'Radiologi',
-    gol: 'GOL III',
-    days: 0,
-    op: 0,
-    ok: 0,
-    alat: 500000,
-    obat: 50000,
-    kamar: 0,
-    visite: 100000,
-    admin: 50000,
-    baseTariff: 700000,
-  },
-  {
-    id: 'PROC-007',
-    name: 'USG Obstetri',
-    category: 'Radiologi',
-    gol: 'GOL III',
-    days: 0,
-    op: 0,
-    ok: 0,
-    alat: 200000,
-    obat: 0,
-    kamar: 0,
-    visite: 50000,
-    admin: 30000,
-    baseTariff: 280000,
-  },
-  {
-    id: 'PROC-008',
-    name: 'Rawat Inap Gawat Darurat',
-    category: 'ICU',
-    gol: 'GOL I',
-    days: 1,
-    op: 500000,
-    ok: 300000,
-    alat: 400000,
-    obat: 300000,
-    kamar: 800000,
-    visite: 200000,
-    admin: 100000,
-    baseTariff: 2600000,
-  },
-];
+function loadExcelMasterData() {
+  try {
+    const fileDir = dirname(fileURLToPath(import.meta.url));
+    const jsonPath = join(fileDir, 'excel-master-data.json');
+    const text = readFileSync(jsonPath, 'utf8');
+    const parsed = JSON.parse(text);
+    return parsed;
+  } catch {
+    return null;
+  }
+}
 
-const DEFAULT_CLASS_MULTIPLIERS = {
+const excelMaster = loadExcelMasterData();
+
+const DEFAULT_PROCEDURES = Array.isArray(excelMaster?.procedures) && excelMaster.procedures.length
+  ? excelMaster.procedures
+  : [];
+
+const DEFAULT_CLASS_MULTIPLIERS = excelMaster?.classMultipliers || {
   'KELAS III': 1.0,
   'KELAS II': 1.25,
   'KELAS I': 1.5,
-  'VIP': 1.75,
-  'VVIP': 2.0,
-  'PENTHOUSE': 2.5,
-  'ODC': 0.8,
+  VIP: 1.75,
+  VVIP: 2.0,
+  PENTHOUSE: 2.5,
+  ODC: 0.8,
 };
 
 // In-memory storage

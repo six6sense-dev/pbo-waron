@@ -221,6 +221,10 @@ export function extractUsers(db) {
 }
 
 export function extractProcedures(db) {
+  if (db.isMemory && Array.isArray(db.sheets?.procedures)) {
+    return db.sheets.procedures;
+  }
+
   const candidateSheets = db.sheetNames.filter((name) =>
     matchSheetName(name, ['tindakan', 'procedure', 'tarif', 'master']),
   );
@@ -242,6 +246,10 @@ export function extractProcedures(db) {
 }
 
 export function extractClassMultipliers(db) {
+  if (db.isMemory && db.classMultipliers) {
+    return db.classMultipliers;
+  }
+
   const classSheets = db.sheetNames.filter((name) => matchSheetName(name, ['kelas', 'class', 'multiplier']));
   const rows = classSheets.flatMap((name) => db.sheets[name] || []);
 
@@ -279,6 +287,34 @@ export function calculatePbo(params, db) {
   const doctorMultiplier = toNumber(params.doctorMultiplier, 1) || 1;
   const days = Math.max(0, Math.round(toNumber(params.days, selectedProcedure.days || 1)));
   const addonsTotal = toNumber(params.addonsTotal, 0);
+
+  // Excel master mode: use direct tariff per class as main reference.
+  const tariffByClass = selectedProcedure.classTariffs?.[className];
+  if (tariffByClass && tariffByClass > 0) {
+    const subtotal = tariffByClass;
+    const afterMultiplier = subtotal * doctorMultiplier;
+    const total = Math.round(afterMultiplier + addonsTotal);
+
+    return {
+      procedure: selectedProcedure,
+      className,
+      classMultiplier: 1,
+      doctorMultiplier,
+      days,
+      breakdown: {
+        operator: selectedProcedure.op || 0,
+        alat: selectedProcedure.alat || 0,
+        obat: selectedProcedure.obat || 0,
+        kamar: selectedProcedure.kamar * days || 0,
+        visite: selectedProcedure.visite * days || 0,
+        admin: selectedProcedure.admin || 0,
+        addons: addonsTotal,
+        subtotal,
+        afterMultiplier,
+        total,
+      },
+    };
+  }
 
   const baseOperator = selectedProcedure.baseTariff > 0 ? selectedProcedure.baseTariff : selectedProcedure.op + selectedProcedure.ok;
   const roomTotal = selectedProcedure.kamar * days;
