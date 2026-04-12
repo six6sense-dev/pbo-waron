@@ -312,6 +312,108 @@ button.hidden {
   font-size: 1.12rem;
 }
 
+.print-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.9rem;
+}
+
+.pbo-a4-report {
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 794px;
+  min-height: 1123px;
+  background: #fff;
+  border: 1px solid #cfdcf8;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: inset 0 0 0 1px #edf3ff;
+}
+
+.pbo-a4-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #1b66d6;
+  padding-bottom: 0.8rem;
+}
+
+.pbo-a4-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.pbo-a4-logo {
+  width: 34px;
+  height: 34px;
+}
+
+.pbo-a4-logo-wrap h3 {
+  font-size: 1.15rem;
+  color: #1b66d6;
+}
+
+.pbo-a4-logo-wrap p {
+  margin-top: 0.2rem;
+  color: var(--ink-500);
+  font-size: 0.86rem;
+}
+
+.pbo-a4-date {
+  color: var(--ink-500);
+  font-size: 0.88rem;
+}
+
+.pbo-a4-title {
+  margin-top: 1rem;
+  font-size: 1.12rem;
+}
+
+.pbo-a4-meta {
+  margin-top: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--ink-700);
+}
+
+.pbo-a4-table {
+  width: 100%;
+  margin-top: 0.9rem;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.pbo-a4-table th,
+.pbo-a4-table td {
+  border: 1px solid #dbe5fb;
+  padding: 0.55rem 0.65rem;
+  text-align: left;
+}
+
+.pbo-a4-table th {
+  background: #f2f7ff;
+  color: var(--ink-700);
+}
+
+.pbo-a4-total {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #bfe4ff;
+  background: #effbff;
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+}
+
+.pbo-a4-total strong {
+  color: #0b4cb3;
+  font-size: 1.15rem;
+}
+
 .muted {
   margin-top: 0.6rem;
   color: var(--ink-500);
@@ -510,10 +612,64 @@ button.hidden {
   .dashboard-shell {
     padding: 1rem 0 1.5rem;
   }
+
+  .pbo-a4-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .print-actions {
+    flex-direction: column;
+  }
 }
 
 hr {
   border: none;
   border-top: 1px solid var(--line);
   margin: 0.8rem 0;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .dashboard-shell > * {
+    display: none !important;
+  }
+
+  .dashboard-shell .main-grid {
+    display: block !important;
+  }
+
+  .dashboard-shell .main-grid .panel:first-child {
+    display: none !important;
+  }
+
+  .dashboard-shell .main-grid .panel:nth-child(2) {
+    display: block !important;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    background: #fff;
+  }
+
+  .print-actions,
+  .result-box {
+    display: none !important;
+  }
+
+  .pbo-a4-report {
+    margin: 0;
+    min-height: auto;
+    max-width: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+  }
 }

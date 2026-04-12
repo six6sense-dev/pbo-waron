@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { ChevronDown, LogOut, Users, BarChart3, Zap, Eye, AlertCircle, Plus, Edit2, X, RefreshCw } from 'lucide-react';
+import { ChevronDown, LogOut, Users, BarChart3, Zap, Eye, AlertCircle, Plus, Edit2, X, RefreshCw, Printer, Download } from 'lucide-react';
 import './App.css';
 
 export default function App() {
@@ -33,6 +33,11 @@ export default function App() {
   // Profile states
   const [profileForm, setProfileForm] = useState({ currentPassword: '', newPassword: '', confirmPassword: '' });
   const [profileLoading, setProfileLoading] = useState(false);
+
+  const formatRupiah = useCallback((value) => {
+    const number = Number(value || 0);
+    return `Rp ${number.toLocaleString('id-ID')}`;
+  }, []);
 
   // API Functions
   const apiCall = useCallback(async (endpoint, options = {}) => {
@@ -225,6 +230,104 @@ export default function App() {
     return user?.permissions?.includes(permission) || false;
   }, [user]);
 
+  const getSelectedProcedure = useCallback(() => {
+    if (!calcResult?.procedure) return null;
+    return calcResult.procedure;
+  }, [calcResult]);
+
+  const handlePrintA4 = useCallback(() => {
+    window.print();
+  }, []);
+
+  const handleDownloadA4 = useCallback(() => {
+    if (!calcResult?.breakdown || !calcResult?.procedure) return;
+
+    const p = calcResult.procedure;
+    const b = calcResult.breakdown;
+    const reportHtml = `<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PBO Report - ${p.name}</title>
+  <style>
+    @page { size: A4; margin: 14mm; }
+    body { font-family: Arial, sans-serif; color: #1f2937; margin: 0; }
+    .page { width: 210mm; min-height: 297mm; padding: 14mm; box-sizing: border-box; }
+    .header { display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #1b66d6; padding-bottom: 10px; }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo img { width: 34px; height: 34px; }
+    .hospital { font-size: 20px; font-weight: 800; color: #1b66d6; }
+    .subtitle { color: #4b5563; margin-top: 2px; font-size: 13px; }
+    h1 { margin: 14px 0 4px; font-size: 20px; }
+    .meta { display: grid; grid-template-columns: 170px 1fr; gap: 6px 10px; margin: 10px 0 14px; font-size: 13px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    th, td { border: 1px solid #d1d5db; padding: 8px; font-size: 12px; }
+    th { background: #eff6ff; text-align: left; }
+    .total { margin-top: 14px; padding: 12px; background: #ecfeff; border: 1px solid #a5f3fc; border-radius: 8px; }
+    .total strong { font-size: 18px; color: #0f172a; }
+    .note { margin-top: 18px; font-size: 11px; color: #6b7280; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="header">
+      <div class="logo">
+        <img src="${window.location.origin}/favicon.svg" alt="Waron Hospital Logo" />
+        <div>
+          <div class="hospital">Waron Hospital</div>
+          <div class="subtitle">Patient Billing Optimization Report</div>
+        </div>
+      </div>
+      <div>${new Date().toLocaleString('id-ID')}</div>
+    </div>
+
+    <h1>Laporan Perkiraan Biaya Operasi (PBO)</h1>
+    <div class="meta">
+      <div><strong>Tindakan</strong></div><div>${p.name}</div>
+      <div><strong>Kategori</strong></div><div>${p.category || '-'}</div>
+      <div><strong>Golongan</strong></div><div>${p.gol || '-'}</div>
+      <div><strong>Kelas Pasien</strong></div><div>${calcResult.className || '-'}</div>
+      <div><strong>Multiplier Dokter</strong></div><div>${calcResult.doctorMultiplier || 1}x</div>
+      <div><strong>Lama Rawat</strong></div><div>${calcResult.days || 0} hari</div>
+    </div>
+
+    <table>
+      <thead><tr><th>Komponen Biaya</th><th>Nominal</th></tr></thead>
+      <tbody>
+        <tr><td>Jasa Operator / Dasar Tindakan</td><td>${formatRupiah(b.operator)}</td></tr>
+        <tr><td>Sewa Alat</td><td>${formatRupiah(b.alat)}</td></tr>
+        <tr><td>BMHP / Farmasi</td><td>${formatRupiah(b.obat)}</td></tr>
+        <tr><td>Tarif Kamar</td><td>${formatRupiah(b.kamar)}</td></tr>
+        <tr><td>Visite</td><td>${formatRupiah(b.visite)}</td></tr>
+        <tr><td>Administrasi</td><td>${formatRupiah(b.admin)}</td></tr>
+        <tr><td>Add-ons</td><td>${formatRupiah(b.addons)}</td></tr>
+        <tr><td>Subtotal</td><td>${formatRupiah(b.subtotal)}</td></tr>
+        <tr><td>Setelah Multiplier</td><td>${formatRupiah(b.afterMultiplier)}</td></tr>
+      </tbody>
+    </table>
+
+    <div class="total">
+      <div>Total Estimasi PBO</div>
+      <strong>${formatRupiah(b.total)}</strong>
+    </div>
+
+    <div class="note">Dokumen ini adalah estimasi biaya berdasarkan data tarif PBO Waron Hospital dan dapat berubah sesuai kondisi klinis pasien.</div>
+  </div>
+</body>
+</html>`;
+
+    const blob = new Blob([reportHtml], { type: 'text/html;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `PBO-${p.name.replace(/[^a-z0-9]+/gi, '-')}-${Date.now()}.html`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+  }, [calcResult, formatRupiah]);
+
   // LOGIN SCREEN
   if (state === 'login') {
     return (
@@ -384,7 +487,7 @@ export default function App() {
                 >
                   <option value="">Select procedure...</option>
                   {bootstrap.procedures?.map((p) => (
-                    <option key={p.name} value={p.name}>{p.name}</option>
+                    <option key={p.id || p.name} value={p.id}>{p.name}</option>
                   ))}
                 </select>
               </label>
@@ -410,8 +513,8 @@ export default function App() {
                   onChange={(e) => setCalcForm({ ...calcForm, doctor: e.target.value })}
                 >
                   <option value="standard">Standard (1x)</option>
-                  <option value="senior">Senior (1.2x)</option>
-                  <option value="specialist">Specialist (1.5x)</option>
+                  <option value="specialist">Specialist (1.3x)</option>
+                  <option value="consultant">Consultant (1.5x)</option>
                 </select>
               </label>
               
@@ -427,14 +530,67 @@ export default function App() {
                 <h2>Result</h2>
               </div>
               <div className="result-box">
-                <p><strong>Procedure:</strong> {calcResult.procedure}</p>
-                <p><strong>Class Multiplier:</strong> {calcResult.classMultiplier}x</p>
+                <p><strong>Procedure:</strong> {getSelectedProcedure()?.name}</p>
+                <p><strong>Class:</strong> {calcResult.className}</p>
                 <p><strong>Doctor Multiplier:</strong> {calcResult.doctorMultiplier}x</p>
                 <hr />
                 <p className="total-line">
-                  Total: Rp {calcResult.total?.toLocaleString('id-ID') || 0}
+                  Total: {formatRupiah(calcResult.breakdown?.total || 0)}
                 </p>
-                <p className="muted">Calculated at {new Date(calcResult.timestamp).toLocaleString()}</p>
+                <p className="muted">Calculated at {new Date(calcResult.calculatedAt).toLocaleString('id-ID')}</p>
+              </div>
+
+              <div className="print-actions">
+                <button type="button" className="secondary" onClick={handleDownloadA4}>
+                  <Download size={16} /> Unduh A4
+                </button>
+                <button type="button" onClick={handlePrintA4}>
+                  <Printer size={16} /> Print A4
+                </button>
+              </div>
+
+              <div className="pbo-a4-report" id="pbo-a4-report">
+                <div className="pbo-a4-header">
+                  <div className="pbo-a4-logo-wrap">
+                    <img src="/favicon.svg" alt="Waron Hospital Logo" className="pbo-a4-logo" />
+                    <div>
+                      <h3>Waron Hospital</h3>
+                      <p>Patient Billing Optimization</p>
+                    </div>
+                  </div>
+                  <div className="pbo-a4-date">{new Date(calcResult.calculatedAt).toLocaleString('id-ID')}</div>
+                </div>
+
+                <h4 className="pbo-a4-title">Laporan Perkiraan Biaya Operasi (PBO)</h4>
+                <div className="pbo-a4-meta">
+                  <span>Tindakan: <strong>{getSelectedProcedure()?.name}</strong></span>
+                  <span>Golongan: <strong>{getSelectedProcedure()?.gol || '-'}</strong></span>
+                  <span>Kelas: <strong>{calcResult.className}</strong></span>
+                  <span>Lama Rawat: <strong>{calcResult.days} hari</strong></span>
+                </div>
+
+                <table className="pbo-a4-table">
+                  <thead>
+                    <tr>
+                      <th>Komponen</th>
+                      <th>Nominal</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Jasa Operator / Dasar Tindakan</td><td>{formatRupiah(calcResult.breakdown?.operator)}</td></tr>
+                    <tr><td>Sewa Alat</td><td>{formatRupiah(calcResult.breakdown?.alat)}</td></tr>
+                    <tr><td>BMHP / Farmasi</td><td>{formatRupiah(calcResult.breakdown?.obat)}</td></tr>
+                    <tr><td>Tarif Kamar</td><td>{formatRupiah(calcResult.breakdown?.kamar)}</td></tr>
+                    <tr><td>Visite</td><td>{formatRupiah(calcResult.breakdown?.visite)}</td></tr>
+                    <tr><td>Administrasi</td><td>{formatRupiah(calcResult.breakdown?.admin)}</td></tr>
+                    <tr><td>Subtotal</td><td>{formatRupiah(calcResult.breakdown?.subtotal)}</td></tr>
+                  </tbody>
+                </table>
+
+                <div className="pbo-a4-total">
+                  <span>Total Estimasi PBO</span>
+                  <strong>{formatRupiah(calcResult.breakdown?.total)}</strong>
+                </div>
               </div>
             </div>
           )}
