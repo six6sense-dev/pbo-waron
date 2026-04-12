@@ -76,7 +76,11 @@ export default function App() {
       setUser(response.user);
       
       // Load bootstrap data
-      const bootstrapData = await apiCall('/bootstrap');
+      const bootstrapData = await apiCall('/bootstrap', {
+        headers: {
+          Authorization: `Bearer ${response.token}`,
+        },
+      });
       setBootstrap(bootstrapData);
       setState('dashboard');
     } catch (err) {
