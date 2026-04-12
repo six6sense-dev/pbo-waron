@@ -1,4 +1,11 @@
 import { getDriveClient, getDriveFolderId, getSheetsClient, getSpreadsheetId } from './google.js';
+import {
+  loadLocalDatabase,
+  extractUsersLocal,
+  extractProceduresLocal,
+  extractClassMultipliersLocal,
+  getDoctorMultiplierLocal,
+} from './local-db.js';
 
 const DEFAULT_CLASSES = ['KELAS III', 'KELAS II', 'KELAS I', 'VIP', 'VVIP', 'PENTHOUSE', 'ODC'];
 
@@ -94,22 +101,49 @@ function simplifyProcedure(row, index) {
 }
 
 export async function loadSpreadsheetDatabase() {
-  const sheets = getSheetsClient();
-  const spreadsheetId = getSpreadsheetId();
+  // Try local database first if enabled
+  if (process.env.USE_LOCAL_DB === 'true') {
+    console.log('📁 Using local database (USE_LOCAL_DB=true)');
+    const localDb = await loadLocalDatabase();
+    if (localDb) {
+      return {
+        isLocal: true,
+        spreadsheetId: 'LOCAL_DB',
+        sheets: {
+          users: extractUsersLocal(localDb),
+          procedures: extractProceduresLocal(localDb),
+        },
+        sheetNames: ['users', 'procedures'],
+        classMultipliers: extractClassMultipliersLocal(localDb),
+        doctorMultipliers: localDb.doctorMultipliers || {},
+      };
+    }
+  }
 
-  const meta = await sheets.spreadsheets.get({ spreadsheetId });
-  const sheetTitles = (meta.data.sheets || []).map((s) => s.properties?.title).filter(Boolean);
+  // Fall back to Google Sheets (production)
+  try {
+    console.log('☁️ Using Google Sheets database');
+    const sheets = getSheetsClient();
+    const spreadsheetId = getSpreadsheetId();
 
-  const reads = await Promise.all(
-    sheetTitles.map(async (title) => {
-      const range = `'${title.replace(/'/g, "''")}'`;
-      const res = await sheets.spreadsheets.values.get({ spreadsheetId, range });
-      return [title, toObjects(res.data.values || [])];
-    }),
-  );
+    const meta = await sheets.spreadsheets.get({ spreadsheetId });
+    const sheetTitles = (meta.data.sheets || []).map((s) => s.properties?.title).filter(Boolean);
 
-  const map = Object.fromEntries(reads);
-  return { spreadsheetId, sheets: map, sheetNames: sheetTitles };
+    const reads = await Promise.all(
+      sheetTitles.map(async (title) => {
+        const range = `'${title.replace(/'/g, "''")}'`;
+        const res = await sheets.spreadsheets.values.get({ spreadsheetId, range });
+        return [title, toObjects(res.data.values || [])];
+      }),
+    );
+
+    const map = Object.fromEntries(reads);
+    return { spreadsheetId, sheets: map, sheetNames: sheetTitles };
+  } catch (error) {
+    console.error('❌ Google Sheets error:', error.message);
+    console.log('💡 Hint: Set USE_LOCAL_DB=true in .env.local to use local database instead');
+    throw new Error('Failed to load database. Set USE_LOCAL_DB=true to use local mode.');
+  }
 }
 
 export async function loadDriveFiles(limit = 20) {
@@ -248,8 +282,17 @@ export function calculatePbo(params, db) {
 }
 
 export function buildBootstrapPayload(db, driveFiles = []) {
-  const procedures = extractProcedures(db);
-  const classMultipliers = extractClassMultipliers(db);
+  let procedures, classMultipliers;
+
+  // Handle local database
+  if (db.isLocal) {
+    procedures = db.sheets.procedures || [];
+    classMultipliers = db.classMultipliers || {};
+  } else {
+    // Handle Google Sheets
+    procedures = extractProcedures(db);
+    classMultipliers = extractClassMultipliers(db);
+  }
 
   const totalTarif = procedures.reduce((acc, p) => acc + (p.baseTariff || p.op + p.ok), 0);
   const avgTarif = procedures.length ? Math.round(totalTarif / procedures.length) : 0;
@@ -265,6 +308,7 @@ export function buildBootstrapPayload(db, driveFiles = []) {
       totalSheets: db.sheetNames.length,
       averageTariff: avgTarif,
       driveFiles: driveFiles.length,
+      dataSource: db.isLocal ? 'Local JSON' : 'Google Sheets',
     },
     driveFiles,
   };

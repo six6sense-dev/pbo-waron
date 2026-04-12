@@ -44,10 +44,17 @@ export default function App() {
     
     const url = `/api${endpoint}`;
     const response = await fetch(url, { ...options, headers });
-    const data = await response.json();
+    
+    let data;
+    try {
+      data = await response.json();
+    } catch (e) {
+      const text = await response.text();
+      throw new Error(`Invalid JSON response: ${text || '(empty response)'}`);
+    }
     
     if (!response.ok) {
-      throw new Error(data.error || `HTTP ${response.status}`);
+      throw new Error(data.error || data.message || `HTTP ${response.status}`);
     }
     return data;
   }, [token]);
