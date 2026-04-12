@@ -24,8 +24,12 @@ export default function App() {
   const [patientForm, setPatientForm] = useState({
     name: '',
     rm: '',
+    birthDate: '',
+    gender: 'Perempuan',
     diagnosis: '',
-    doctor: '',
+    dpjp: '',
+    dokterAnak: '',
+    asisten: 'Tanpa Asisten',
     payer: '',
   });
   const reportRef = useRef(null);
@@ -149,12 +153,16 @@ export default function App() {
         verificationCode,
         generatedAt: response.calculatedAt,
       });
+
+      if (!patientForm.asisten) {
+        setPatientForm((prev) => ({ ...prev, asisten: 'Tanpa Asisten' }));
+      }
     } catch (err) {
       setError(err.message || 'Calculation failed');
     } finally {
       setCalcLoading(false);
     }
-  }, [calcForm, apiCall, generateDocumentNumber]);
+  }, [calcForm, apiCall, generateDocumentNumber, patientForm.asisten]);
 
   const loadAuditLogs = useCallback(async () => {
     setAuditLoading(true);
@@ -279,6 +287,9 @@ export default function App() {
         className: calcResult.className,
         patientName: patientForm.name || '',
         rm: patientForm.rm || '',
+        dpjp: patientForm.dpjp || '',
+        dokterAnak: patientForm.dokterAnak || '',
+        asisten: patientForm.asisten || '',
         total: calcResult.breakdown.total || 0,
       });
 
@@ -542,6 +553,27 @@ export default function App() {
               </label>
 
               <label>
+                Tanggal Lahir
+                <input
+                  type="text"
+                  value={patientForm.birthDate}
+                  onChange={(e) => setPatientForm({ ...patientForm, birthDate: e.target.value })}
+                  placeholder="DD/MM/YYYY"
+                />
+              </label>
+
+              <label>
+                Jenis Kelamin
+                <select
+                  value={patientForm.gender}
+                  onChange={(e) => setPatientForm({ ...patientForm, gender: e.target.value })}
+                >
+                  <option value="Perempuan">Perempuan</option>
+                  <option value="Laki-laki">Laki-laki</option>
+                </select>
+              </label>
+
+              <label>
                 No. Rekam Medis
                 <input
                   type="text"
@@ -562,13 +594,41 @@ export default function App() {
               </label>
 
               <label>
-                Dokter Penanggung Jawab
-                <input
-                  type="text"
-                  value={patientForm.doctor}
-                  onChange={(e) => setPatientForm({ ...patientForm, doctor: e.target.value })}
-                  placeholder="Nama dokter"
-                />
+                Dokter DPJP
+                <select
+                  value={patientForm.dpjp}
+                  onChange={(e) => setPatientForm({ ...patientForm, dpjp: e.target.value })}
+                >
+                  <option value="">Pilih Dokter DPJP...</option>
+                  {(bootstrap.doctors?.dpjp || []).map((name) => (
+                    <option key={name} value={name}>{name}</option>
+                  ))}
+                </select>
+              </label>
+
+              <label>
+                Dokter Anak
+                <select
+                  value={patientForm.dokterAnak}
+                  onChange={(e) => setPatientForm({ ...patientForm, dokterAnak: e.target.value })}
+                >
+                  <option value="">Pilih Dokter Anak...</option>
+                  {(bootstrap.doctors?.anak || []).map((name) => (
+                    <option key={name} value={name}>{name}</option>
+                  ))}
+                </select>
+              </label>
+
+              <label>
+                Dokter Pendamping / Asisten
+                <select
+                  value={patientForm.asisten}
+                  onChange={(e) => setPatientForm({ ...patientForm, asisten: e.target.value })}
+                >
+                  {(bootstrap.doctors?.asisten || ['Tanpa Asisten']).map((name) => (
+                    <option key={name} value={name}>{name}</option>
+                  ))}
+                </select>
               </label>
 
               <label>
@@ -629,16 +689,28 @@ export default function App() {
                 </div>
 
                 <h4 className="pbo-a4-title">Laporan Perkiraan Biaya Operasi (PBO)</h4>
-                <div className="pbo-a4-meta">
-                  <span>Tindakan: <strong>{getSelectedProcedure()?.name}</strong></span>
-                  <span>Golongan: <strong>{getSelectedProcedure()?.gol || '-'}</strong></span>
-                  <span>Kelas: <strong>{calcResult.className}</strong></span>
-                  <span>Lama Rawat: <strong>{calcResult.days} hari</strong></span>
-                  <span>Nama Pasien: <strong>{patientForm.name || '-'}</strong></span>
-                  <span>No. RM: <strong>{patientForm.rm || '-'}</strong></span>
-                  <span>Diagnosa: <strong>{patientForm.diagnosis || '-'}</strong></span>
-                  <span>DPJP: <strong>{patientForm.doctor || '-'}</strong></span>
-                  <span>Penjamin: <strong>{patientForm.payer || '-'}</strong></span>
+                <div className="pbo-sheet-section">
+                  <h5>IDENTITAS PASIEN</h5>
+                  <div className="pbo-sheet-grid">
+                    <span>Nama Pasien</span><span>:</span><strong>{patientForm.name || '-'}</strong>
+                    <span>No. Rekam Medis</span><span>:</span><strong>{patientForm.rm || '-'}</strong>
+                    <span>Tanggal Lahir</span><span>:</span><strong>{patientForm.birthDate || '-'}</strong>
+                    <span>Jenis Kelamin</span><span>:</span><strong>{patientForm.gender || '-'}</strong>
+                    <span>Kelas Perawatan</span><span>:</span><strong>{calcResult.className || '-'}</strong>
+                    <span>Penjamin</span><span>:</span><strong>{patientForm.payer || '-'}</strong>
+                  </div>
+                </div>
+
+                <div className="pbo-sheet-section">
+                  <h5>INFORMASI MEDIS</h5>
+                  <div className="pbo-sheet-grid">
+                    <span>Diagnosa</span><span>:</span><strong>{patientForm.diagnosis || '-'}</strong>
+                    <span>Dokter DPJP</span><span>:</span><strong>{patientForm.dpjp || '-'}</strong>
+                    <span>Dokter Anak</span><span>:</span><strong>{patientForm.dokterAnak || '-'}</strong>
+                    <span>Dokter Pendamping/Asisten</span><span>:</span><strong>{patientForm.asisten || 'Tanpa Asisten'}</strong>
+                    <span>Tindakan yang dilakukan</span><span>:</span><strong>{getSelectedProcedure()?.name || '-'}</strong>
+                    <span>Golongan OP</span><span>:</span><strong>{getSelectedProcedure()?.gol || '-'}</strong>
+                  </div>
                 </div>
 
                 <table className="pbo-a4-table">

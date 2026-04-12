@@ -186,6 +186,49 @@ function toProcedureModel(proc, index, masterGolongan) {
   };
 }
 
+function looksLikeDoctorName(text) {
+  const t = clean(text);
+  if (!t) return false;
+  const low = t.toLowerCase();
+  if (!low.includes('dr')) return false;
+  if (/[+]|estimasi|asha|laparotomi|keterangan|catatan/.test(low)) return false;
+  if (low.includes('jasa') || low.includes('dokter operator') || low.includes('dokter anak') || low.includes('visite')) return false;
+  if (!/^(dr\.?|drg\.?|prof\.?)/i.test(t)) return false;
+  return /(dr\.?\s|sp\.|subsp\.|f-mas|drg\.)/i.test(t);
+}
+
+function classifyDoctor(text) {
+  const t = clean(text).toLowerCase();
+  if (/\bsp\.?\s*a\b|subsp\.?\s*neo|dokter anak/.test(t)) return 'anak';
+  if (/pendamping|asisten/.test(t)) return 'asisten';
+  return 'dpjp';
+}
+
+function extractDoctorDirectory(allRowsBySheet) {
+  const directory = {
+    dpjp: new Set(),
+    anak: new Set(),
+    asisten: new Set(['Tanpa Asisten']),
+  };
+
+  Object.values(allRowsBySheet).forEach((rows) => {
+    rows.forEach((row) => {
+      row.forEach((cell) => {
+        const name = clean(cell);
+        if (!looksLikeDoctorName(name)) return;
+        const group = classifyDoctor(name);
+        directory[group].add(name);
+      });
+    });
+  });
+
+  return {
+    dpjp: Array.from(directory.dpjp).sort(),
+    anak: Array.from(directory.anak).sort(),
+    asisten: Array.from(directory.asisten).sort(),
+  };
+}
+
 function main() {
   if (!fs.existsSync(SOURCE_XLSX)) {
     throw new Error(`Excel file not found: ${SOURCE_XLSX}`);
@@ -201,6 +244,7 @@ function main() {
 
   const masterSheetRows = allRowsBySheet['MASTER DATA'] || [];
   const masterData = parseMasterData(masterSheetRows);
+  const doctors = extractDoctorDirectory(allRowsBySheet);
 
   const procedureBlocks = [];
   wb.SheetNames.forEach((name) => {
@@ -229,6 +273,7 @@ function main() {
     sheetNames: wb.SheetNames,
     roomClasses: masterData.roomClasses,
     golonganTariffs: masterData.golonganTariffs,
+    doctors,
     procedures,
     procedureCount: procedures.length,
     classMultipliers: {

@@ -118,6 +118,7 @@ export async function loadSpreadsheetDatabase() {
       sheetNames: memDb.sheetNames || ['users', 'procedures'],
       classMultipliers: memDb.classMultipliers || {},
       golonganTariffs: memDb.golonganTariffs || {},
+      doctors: memDb.doctors || { dpjp: [], anak: [], asisten: ['Tanpa Asisten'] },
       doctorMultipliers: { standard: 1.0, specialist: 1.3, consultant: 1.5 },
     };
   }
@@ -176,6 +177,7 @@ export async function loadSpreadsheetDatabase() {
         sheetNames: memDb.sheetNames || ['users', 'procedures'],
         classMultipliers: memDb.classMultipliers || {},
         golonganTariffs: memDb.golonganTariffs || {},
+        doctors: memDb.doctors || { dpjp: [], anak: [], asisten: ['Tanpa Asisten'] },
         doctorMultipliers: { standard: 1.0, specialist: 1.3, consultant: 1.5 },
       };
     }
@@ -377,6 +379,7 @@ export function buildBootstrapPayload(db, driveFiles = []) {
     classes: Object.keys(classMultipliers),
     classMultipliers,
     golonganTariffs: db.golonganTariffs || {},
+    doctors: db.doctors || { dpjp: [], anak: [], asisten: ['Tanpa Asisten'] },
     metrics: {
       totalProcedures: procedures.length,
       totalSheets: db.sheetNames.length,
