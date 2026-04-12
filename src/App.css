@@ -365,6 +365,17 @@ button.hidden {
   font-size: 0.88rem;
 }
 
+.pbo-a4-docmeta {
+  display: grid;
+  gap: 0.2rem;
+  text-align: right;
+}
+
+.pbo-a4-docline {
+  font-size: 0.78rem;
+  color: var(--ink-700);
+}
+
 .pbo-a4-title {
   margin-top: 1rem;
   font-size: 1.12rem;
@@ -412,6 +423,43 @@ button.hidden {
 .pbo-a4-total strong {
   color: #0b4cb3;
   font-size: 1.15rem;
+}
+
+.pbo-a4-verify {
+  margin-top: 1rem;
+  border: 1px solid #d9e7ff;
+  border-radius: 10px;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.pbo-a4-verify-text p {
+  margin: 0.1rem 0;
+  font-size: 0.82rem;
+  color: var(--ink-700);
+}
+
+.pbo-a4-qr-wrap {
+  width: 92px;
+  height: 92px;
+  border: 1px solid #d2def6;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+}
+
+.pbo-a4-qr {
+  width: 84px;
+  height: 84px;
+}
+
+.pbo-a4-qr-placeholder {
+  color: var(--ink-500);
+  font-size: 0.8rem;
 }
 
 .pbo-a4-signatures {
@@ -651,6 +699,15 @@ button.hidden {
 
   .pbo-a4-signatures {
     grid-template-columns: 1fr;
+  }
+
+  .pbo-a4-verify {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pbo-a4-docmeta {
+    text-align: left;
   }
 
   .print-actions {

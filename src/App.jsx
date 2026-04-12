@@ -1,7 +1,8 @@
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import { ChevronDown, LogOut, Users, BarChart3, Zap, Eye, AlertCircle, Plus, Edit2, X, RefreshCw, Printer, Download } from 'lucide-react';
 import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
+import QRCode from 'qrcode';
 import './App.css';
 
 export default function App() {
@@ -18,6 +19,8 @@ export default function App() {
   const [calcForm, setCalcForm] = useState({ procedure: '', class: '', doctor: '' });
   const [calcResult, setCalcResult] = useState(null);
   const [calcLoading, setCalcLoading] = useState(false);
+  const [reportMeta, setReportMeta] = useState(null);
+  const [qrDataUrl, setQrDataUrl] = useState('');
   const [patientForm, setPatientForm] = useState({
     name: '',
     rm: '',
@@ -47,6 +50,15 @@ export default function App() {
   const formatRupiah = useCallback((value) => {
     const number = Number(value || 0);
     return `Rp ${number.toLocaleString('id-ID')}`;
+  }, []);
+
+  const generateDocumentNumber = useCallback(() => {
+    const now = new Date();
+    const yyyy = now.getFullYear();
+    const mm = String(now.getMonth() + 1).padStart(2, '0');
+    const serialBase = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+    const serial = String(serialBase).slice(-4).padStart(4, '0');
+    return `PBO/${yyyy}/${mm}/${serial}`;
   }, []);
 
   // API Functions
@@ -130,12 +142,19 @@ export default function App() {
       });
       
       setCalcResult(response);
+      const documentNumber = generateDocumentNumber();
+      const verificationCode = `${documentNumber.replace(/\//g, '-')}-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
+      setReportMeta({
+        documentNumber,
+        verificationCode,
+        generatedAt: response.calculatedAt,
+      });
     } catch (err) {
       setError(err.message || 'Calculation failed');
     } finally {
       setCalcLoading(false);
     }
-  }, [calcForm, apiCall]);
+  }, [calcForm, apiCall, generateDocumentNumber]);
 
   const loadAuditLogs = useCallback(async () => {
     setAuditLoading(true);
@@ -244,6 +263,42 @@ export default function App() {
     if (!calcResult?.procedure) return null;
     return calcResult.procedure;
   }, [calcResult]);
+
+  useEffect(() => {
+    async function buildQrCode() {
+      if (!calcResult?.breakdown || !reportMeta) {
+        setQrDataUrl('');
+        return;
+      }
+
+      const payload = JSON.stringify({
+        documentNumber: reportMeta.documentNumber,
+        verificationCode: reportMeta.verificationCode,
+        generatedAt: reportMeta.generatedAt,
+        procedure: calcResult.procedure?.name,
+        className: calcResult.className,
+        patientName: patientForm.name || '',
+        rm: patientForm.rm || '',
+        total: calcResult.breakdown.total || 0,
+      });
+
+      try {
+        const url = await QRCode.toDataURL(payload, {
+          width: 128,
+          margin: 1,
+          color: {
+            dark: '#0f172b',
+            light: '#ffffff',
+          },
+        });
+        setQrDataUrl(url);
+      } catch {
+        setQrDataUrl('');
+      }
+    }
+
+    buildQrCode();
+  }, [calcResult, reportMeta, patientForm.name, patientForm.rm]);
 
   const handlePrintA4 = useCallback(() => {
     window.print();
@@ -566,7 +621,11 @@ export default function App() {
                       <p>Patient Billing Optimization</p>
                     </div>
                   </div>
-                  <div className="pbo-a4-date">{new Date(calcResult.calculatedAt).toLocaleString('id-ID')}</div>
+                  <div className="pbo-a4-docmeta">
+                    <div className="pbo-a4-docline"><strong>No Dok:</strong> {reportMeta?.documentNumber || '-'}</div>
+                    <div className="pbo-a4-docline"><strong>Kode Verifikasi:</strong> {reportMeta?.verificationCode || '-'}</div>
+                    <div className="pbo-a4-date">{new Date(calcResult.calculatedAt).toLocaleString('id-ID')}</div>
+                  </div>
                 </div>
 
                 <h4 className="pbo-a4-title">Laporan Perkiraan Biaya Operasi (PBO)</h4>
@@ -603,6 +662,21 @@ export default function App() {
                 <div className="pbo-a4-total">
                   <span>Total Estimasi PBO</span>
                   <strong>{formatRupiah(calcResult.breakdown?.total)}</strong>
+                </div>
+
+                <div className="pbo-a4-verify">
+                  <div className="pbo-a4-verify-text">
+                    <p><strong>Verifikasi Dokumen</strong></p>
+                    <p>No Dokumen: {reportMeta?.documentNumber || '-'}</p>
+                    <p>Kode: {reportMeta?.verificationCode || '-'}</p>
+                  </div>
+                  <div className="pbo-a4-qr-wrap">
+                    {qrDataUrl ? (
+                      <img src={qrDataUrl} alt="QR Verifikasi PBO" className="pbo-a4-qr" />
+                    ) : (
+                      <div className="pbo-a4-qr-placeholder">QR</div>
+                    )}
+                  </div>
                 </div>
 
                 <div className="pbo-a4-signatures">
