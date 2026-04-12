@@ -1,0 +1,40 @@
+# Vercel Environment Variables - COPY & PASTE ke Vercel Dashboard
+
+## 🎯 Untuk Deploy Ke Vercel, Copy SEMUA ini:
+
+```
+USE_IN_MEMORY_DB=true
+JWT_SECRET=waron-hospital-pbo-vercel-secret-2026-production
+DEFAULT_ADMIN_USERNAME=admin
+DEFAULT_ADMIN_PASSWORD=admin123
+GOOGLE_DRIVE_FOLDER_ID=
+```
+
+## 📝 Cara Set Environment Variables di Vercel:
+
+1. Go to: https://vercel.com/dashboard
+2. Click project: `pbo-waron`
+3. Go to: Settings → Environment Variables
+4. Paste semua 5 variables di atas
+5. Click "Save"
+6. Redeploy (automatic)
+
+## 🔐 Penjelasan Setiap Variable:
+
+| Variable | Value | Penjelasan |
+|----------|-------|-----------|
+| `USE_IN_MEMORY_DB` | `true` | Gunakan in-memory database (production) |
+| `JWT_SECRET` | `waron-hospital-pbo-vercel-secret-2026-production` | Security token untuk auth |
+| `DEFAULT_ADMIN_USERNAME` | `admin` | Default admin username |
+| `DEFAULT_ADMIN_PASSWORD` | `admin123` | Default admin password |
+| `GOOGLE_DRIVE_FOLDER_ID` | (kosong) | Optional, untuk Google Cloud nanti |
+
+## ✅ Setelah Deploy:
+
+Login dengan:
+```
+Username: admin
+Password: admin123
+```
+
+Selesai! 🎉
