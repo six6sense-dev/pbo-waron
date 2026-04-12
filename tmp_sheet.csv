@@ -1,0 +1,123 @@
+WARON HOSPITAL,,,,,,,,,,Catatan :,
+ Jasa Tindakan Operasi,,,,,,,,,,A,"Waktu untuk Tindakan Operasi : Senin - Sabtu, Jam 07.00 - 20.00"
+Periode 2025 -2026,,,,,,,,,,B,Biaya jasa tindakan operasi tersebut berlaku untuk tindakan operasi direncanakan (Elektif)
+,,,,,,,,,,C,"Biaya Jasa Tindakan Operasi Elektif yang dilakukan di Hari Minggu, Hari Libur Nasional atau Hari Kerja namun di luar Jam Kerja, dikenakan tambahan 30%"
+Category, Kelas III, Kelas II, Kelas I, VIP, VVIP , Penthouse,,,,D,"Tindakan Operasi Emergency (CITO) yang tidak dapat dilakukan penundaan, dikenakan tambahan 30% dengan minimal Rp. 2.000.000"
+Golongan I,  3.500.000 ,  4.500.000 ,  5.500.000 ,  7.500.000 ,  10.000.000 ,  15.000.000 ,,,,E,"Apabila pada saat operasi ditemukan adanya penyulit, maka akan dikenakan tambahan 30%"
+Golongan II,  8.000.000 ,  10.000.000 ,  13.500.000 ,  20.000.000 ,  23.000.000 ,  27.000.000 ,PARTUS ALL TINDAKAN,,,F,Tindakan Operasi Ganda menggunakan perhitungan sebagai berikut:
+Golongan III,  15.000.000 ,  17.500.000 ,  19.000.000 ,  24.000.000 ,  30.000.000 ,  35.000.000 ,,,,,1. Tindakan Operasi Ganda oleh 1 Spesialis pada 1 Lokasi:
+Golongan KHUSUS,  15.625.000 ,  20.000.000 ,  25.000.000 ,  29.000.000 ,  37.000.000 ,  43.000.000 ,,,,, - Tindakan Operasi ke - I (Jenis Operasi terbesar)      : 100%
+Golongan IIA,  10.000.000 ,  13.500.000 ,  17.000.000 ,  20.000.000 ,  23.000.000 ,  27.000.000 ,KHUSUS LIST GOLONGAN DOKTER TERTENTU,,,, - Tindakan Operasi ke - II dst                                             : 50%
+,,,,,,,,,,,2. Tindakan Operasi Ganda oleh 1 Spesialis pada 2 Lokasi
+,,,,,,,,,,, - Tindakan Operasi ke - I               : 100%
+,,,,,,,,,,, - Tindakan Operasi ke - II dst     : 100%
+ Jasa Asisten Tindakan Operasi,,,,,,,,,,,3. Tindakan Operasi Ganda oleh 2 Spesialis pada 1 Lokasi atau lebih
+Category, Kelas III, Kelas II, Kelas I, VIP, VVIP , Penthouse,,,,, - Tindakan Operasi ke - I                  : 100%
+,,,,,,,,,,, - Tindakan Operasi ke - II dst       : 100%
+TANPA ASISTEN,  -   ,  -   , -, -, -, -,,,,H,Operasi ulang (Re-open) pada hari yang sama dikenakan biaya 50%
+Jasa Asisten Perawat,  625.000 ,  625.000 ,  625.000 ,  625.000 ,  625.000 ,  625.000 ,,,,I,Rawat Jalan/Day Surgery biaya pemakaian kamar operasi mengkuti pasien kelas II
+Jasa Dokter Konsultan,  1.250.000 ,  1.250.000 ,  1.250.000 ,  1.250.000 ,  1.250.000 ,  1.250.000 ,,,,J,Jasa Tindakan Operasi ditetapkan berdasarkan kelas perawatan tertinggi yang diambil oleh pasien dalam 1 kali masa perawatan
+Jasa Dokter Asisten,  2.500.000 ,  2.500.000 ,  2.500.000 ,  2.500.000 ,  2.500.000 ,  2.500.000 ,,,,K,Jasa Tindakan Operasi tidak termasuk biaya visite rawat inap dan biaya tindakan lain yang tidak termasuk dalam Tabel di atas
+,,,,,,,,,,L,Biaya tindakan operasi tidak termasuk biaya sewa alat yang dibawa oleh operator karena fasilitas alat rumah sakit yang tidak ada/kurang lengkap
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,A,Waktu Operasional Kamar Operasi : Senin s/d Sabtu : 07.00 - 20.00
+WARON HOSPITAL,,,,,,,,,,B,Biaya pemakaian Kamar Operasi berlaku untuk tindakan operasi yang direncanakan (elektif)
+BIAYA SEWA KAMAR OPERASI,,,,,,,,,,C,"Tindakan Operasi Elektif yang dilakukan di Hari Minggu, Hari Libur Nasional atau pada Hari Kerja tetapi di luar waktu Operasional Kamar Operasi, maka biaya pemakaian Kamar Operasi akan dikenakan tambahan 40% dengan minimal Rp 1.500.000 (satu juta lima ratus ribu rupiah)."
+Periode 2025 -2026,,,,,,,,,,D,"Untuk Tindakan Operasi Emergency (CITO) yang tidak dapat dilakukan penundaan, biaya pemakaian kamar operasi dikenakan tambahan 30% dengan minimal Rp1.000.000 (satu juta rupiah)."
+Category, Kelas III, Kelas II, Kelas I, VIP, VVIP , Penthouse, ODC ,,,F,"Tindakan Operasi Rawat Jalan/Day Surgery, biaya pemakaian Kamar Operasi mengikuti harga kelas I"
+Operation Room Golongan I,  2.200.000 ,  2.500.000 ,  2.800.000 ,  3.300.000 ,  3.900.000 ,  4.400.000 ,        2.000.000,,,G,"Apabila diperlukan Tindakan Operasi Ganda (lebih dari 1 tindakan operasi), maka perhitungannya:"
+Operation Room Golongan II,  4.800.000 ,  5.400.000 ,  5.900.000 ,  6.500.000 ,  7.000.000 ,  7.600.000 ,,  2.325.000 ,,,- Tindakan Operasi ke - I (Dipilih Jenis Operasi terbesar) : 100%
+Operation Room Golongan IIA,  5.800.000 ,  6.400.000 ,  6.900.000 ,  7.500.000 ,  8.000.000 ,  8.600.000 ,,,,,- Tindakan Operasi ke - II dst : 50%
+Operation Room Golongan III,  6.500.000 ,  7.250.000 ,  7.750.000 ,  8.500.000 ,  9.000.000 ,  10.250.000 ,,,,H,"Operasi ulang (Re-open) pada hari yang sama dikenakan 50% biaya pemakaian kamar operasi, bila dikerjakan hari berikutnya dikenakan biaya penuh (100%)."
+Operation Room Golongan Khusus,  8.500.000 ,  9.600.000 ,  10.700.000 ,  11.800.000 ,  12.900.000 ,  13.900.000 ,,,,I,"Biaya pemakaian Kamar Operasi belum termasuk biaya pemakaian alat-alat khusus, bahan-bahan habis pakai (medical consumables) dan jasa dokter"
+TIDAK PAKAI,,,,,,,,,,J,Pemakaian Operasi untuk day surgery hanya terkena 50% dari tarif
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+WARON HOSPITAL,,,,,,,,,,,
+Jasa Dokter Anak Pendamping,,,,,,,,,,,
+Periode 2025 -2026,,,,,,,,,,,
+,,,,,,,,,,,
+Category, KELAS III, KELAS II, KELAS I, VIP, VVIP, Penthouse,,,,,
+Golongan III,"  2.400.000,00 ","  3.000.000,00 ","  4.050.000,00 ","  6.000.000,00 ","  6.900.000,00 ","  8.100.000,00 ", NB CUMA BUAT RUMUS BIAR KE LINK ,,,,
+Golongan IIA,"  2.400.000,00 ","  3.000.000,00 ","  4.050.000,00 ","  6.000.000,00 ","  6.900.000,00 ","  8.100.000,00 ",,,,,
+Golongan II,"  2.400.000,00 ","  3.000.000,00 ","  4.050.000,00 ","  6.000.000,00 ","  6.900.000,00 ","  8.100.000,00 ",,,,,
+TIDAK ADA, - , - , - , - , - , - ,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+ Jasa Tindakan Anastesi untuk pembedahan,,,,,,,,,,Catatan :,
+Kategori,kelas III,Kelas II,Kelas I,VIP,VVIP,Penthouse,,,,A,Waktu untuk tindakan operasi : Senin-Sabtu 07.00-20.00 
+Golongan I,"  1.050.000,00 ","  1.350.000,00 ","  1.650.000,00 ","  2.250.000,00 ","  3.000.000,00 ","  4.500.000,00 ",,,,B,Biaya jasa tindakan anastesi untuk operasi tersebut berlaku untuk tindakan operasi direncanakan (Elektif)
+Golongan II,"  2.400.000,00 ","  3.000.000,00 ","  4.050.000,00 ","  6.000.000,00 ","  6.900.000,00 ","  8.100.000,00 ",,,,C,"Biaya Jasa Tindakan Anastesi untuk Operasi Elektif yang dilakukan di Hari Minggu, Hari Libur Nasional atau Hari Kerja namun di luar Jam Kerja, dikenakan tambahan 30%"
+Golongan III,"  4.500.000,00 ","  5.250.000,00 ","  5.700.000,00 ","  7.200.000,00 ","  9.000.000,00 ","  10.500.000,00 ",,,,D,"Tindakan Operasi Emergency (CITO) yang tidak dapat dilakukan penundaan, dikenakan tambahan jasa anestesi 30% dengan minimal Rp. 1.000.000"
+Golongan Khusus,"  4.687.500,00 ","  6.000.000,00 ","  6.900.000,00 ","  8.700.000,00 ","  11.100.000,00 ","  12.900.000,00 ",,,,E,"Apabila pada saat operasi ditemukan adanya penyulit, maka akan dikenakan tambahan 30%"
+Golongan IIA,"  2.400.000,00 ","  3.000.000,00 ","  4.050.000,00 ","  6.000.000,00 ","  6.900.000,00 ","  8.100.000,00 ",,,,F,Tindakan Operasi Ganda menggunakan perhitungan sebagai berikut:
+GOLONGAN II NORMAL,,,,,,,,,,,1. Tindakan Operasi Ganda oleh 1 Spesialis pada 1 Lokasi:
+Pain management (PNB preop/postop/OutPatient/PCA),"  2.200.000,00 ","  2.200.000,00 ","  2.200.000,00 ","  2.400.000,00 ","  2.400.000,00 ","  2.900.000,00 ",,,,, - Tindakan Operasi ke - I (Jenis Operasi terbesar)      : 100%
+,,,,,,,,,,, - Tindakan Operasi ke - II dst                                             : 50%
+,,,,,,,,,,,2. Tindakan Operasi Ganda oleh 1 Spesialis pada 2 Lokasi
+,,,,,,,,,,, - Tindakan Operasi ke - I               : 100%
+,,,,,,,,,,, - Tindakan Operasi ke - II dst     : 100%
+In Patient Visite,,,,,,,,,,,3. Tindakan Operasi Ganda oleh 2 Spesialis pada 1 Lokasi atau lebih
+,,,,,,,,,,, - Tindakan Operasi ke - I                  : 100%
+Keterangan, Kelas III, Kelas II, Kelas I, VIP, VVIP , Penthouse," ICU, PICU, NICU",,,, - Tindakan Operasi ke - II dst       : 100%
+Visite - By GP,100.000,100.000,100.000,100.000,100.000,100.000,100.000,,,G,Operasi ulang (Re-open) pada hari yang sama dikenakan biaya 50%
+Visite - by Specialist,  470.000 ,  500.000 ,  610.000 ,  770.000 ,  880.000 ,  990.000 ,  610.000 ,,,H,Rawat Jalan/Day Surgery biaya pemakaian kamar operasi mengkuti pasien kelas II
+Visite - by subspecialist,  610.000 ,  630.000 ,  740.000 ,  880.000 ,  990.000 ,  1.100.000 ,  740.000 ,,,I,Jasa Tindakan Anastesi untuk Operasi ditetapkan berdasarkan kelas perawatan tertinggi yang diambil oleh pasien dalam 1 kali masa perawatan
+Visite - by Professor,  700.000 ,  800.000 ,  900.000 ,  1.000.000 ,  1.100.000 ,  1.500.000 ,  900.000 ,,,J,"Jasa Tindakan Anastesi untuk Operasi tidak termasuk biaya visite rawat inap dan biaya tindakan lain yang tidak termasuk dalam Tabel di atas. Misalkan jasa tindakan Pain Management preop atau postop, jasa pemasangan CVC/ CDL Hemodialisa, arterial line."
+,,,,,,,,,,K,Biaya tindakan operasi tidak termasuk biaya sewa alat yang dibawa oleh operator karena fasilitas alat rumah sakit yang tidak ada/kurang lengkap
+,,,,,,,,,,,
+Keterangan, Kelas III, Kelas II, Kelas I, VIP, VVIP , Penthouse," ICU, PICU, NICU",,,,
+Visite Anastesi - by Specialist,  470.000 ,  500.000 ,  610.000 ,  770.000 ,  880.000 ,  990.000 ,  610.000 ,,,Note :,
+Visite Anastesi - by subspecialist,  610.000 ,  630.000 ,  740.000 ,  880.000 ,  990.000 ,  1.100.000 ,  740.000 ,,,1. Waktu cut off untuk perhitungan sewa kamar adalah jam 12.00 WIB,
+Visite Anastesi - by Professor,  700.000 ,  800.000 ,  900.000 ,  1.000.000 ,  1.100.000 ,  1.500.000 ,  900.000 ,,,2. Pasien pulang antara jam 12.00 - 18.00 tidak dikenakan tambahan biaya sewa kamar (Apabila karena visite dokter terlambat),
+,,,,,,,,,,3. Pasien masuk dan keluar di hari yang sama dikenakan tarif maksimal 1 hari biaya sewa kamar,
+,,,,,,,,,,4. Pasien menempati Bed kurang dari 6 jam akan kena tarif 50% dari biaya sewa kamar,
+,,,,,,,,,,"5. Apabila pasien meminta extend kamar antara jam 12.00 - 18.00 dan telah diberikan rekomendasi pulang, ",
+,,,,,,,,,,      Maka dikenakan tambahan charge 50% dari harga kamar,
+WARON HOSPITAL,,,,,,,,,,,
+Bed Rental,,,,,,,,,,,
+Periode 2025 -2026,,,,,,,,,,,
+,,,,,,,,,,,
+,Others Room,,,,,,,,,,
+No,Item detail, Kelas III, Kelas II, Kelas I, VIP, VVIP , Penthouse,ODC,,,
+1,Baby room,500.000,500.000,500.000,500.000,500.000,500.000,,,,
+2,Labor & delivery Room,5.000.000,5.000.000,5.000.000,5.000.000,5.000.000,5.000.000,,,,
+3,Perina room,750.000,750.000,750.000,750.000,750.000,750.000,,,,
+4,Observation Room <6 jam,400.000,400.000,400.000,400.000,400.000,400.000,,,,
+5,Observation Room >6 jam,700.000,700.000,700.000,700.000,700.000,700.000,,,,
+6,In Patient room,  650.000 ,  850.000 ,  1.750.000 ,  2.400.000 ,  6.500.000 ,  9.000.000 ,,,,
+7,ICU,2.000.000,2.000.000,2.000.000,2.000.000,2.000.000,2.000.000,,,,
+8,NICU,2.000.000,2.000.000,2.000.000,2.000.000,2.000.000,2.000.000,,,,
+9,PICU,2.000.000,2.000.000,2.000.000,2.000.000,2.000.000,2.000.000,,,,
+10,Isolation Room,1.750.000,1.750.000,1.750.000,1.750.000,1.750.000,1.750.000,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Tindakan dokter anestesi Outpatient/Inpatient diluar operasi,,,,,,,,,,,
+Kategori,kelas III,Kelas II,Kelas I,VIP,VVIP,Penthouse,Outpatient,,,,
+ , , , , , , , ,,,,
+Pain management (PNB preop/postop/OutPatient/PCA),         2.200.000 ,         2.200.000 ,          2.400.000 ,       2.400.000 ,      2.900.000 ,         2.900.000 ,         2.200.000 ,,,,
+Intra labour analgesia / Epidural labour analgesia,         2.200.000 ,         2.200.000 ,          2.400.000 ,       2.400.000 ,      2.900.000 ,         2.900.000 ,         2.200.000 ,,,,
+Intubation,         2.100.000 ,         2.100.000 ,          2.500.000 ,       2.500.000 ,      2.900.000 ,         2.900.000 ,         2.100.000 ,,,,
+Extubation,"  800.000,00 ","  800.000,00 ","  900.000,00 ","  900.000,00 ",      1.000.000 ,         1.000.000 ,"  800.000,00 ",,,,
+CVC 1 lumen /cavafix insertion,         1.600.000 ,         1.600.000 ,          1.900.000 ,       1.900.000 ,      2.200.000 ,         2.200.000 ,         1.600.000 ,,,,
+CVC 2-3 lumen dewasa,         3.400.000 ,         3.400.000 ,          4.000.000 ,       4.000.000 ,      4.600.000 ,         4.600.000 ,         3.400.000 ,,,,
+CVC 2-3 lumen anak dan bayi,         4.000.000 ,         4.000.000 ,          4.300.000 ,       4.300.000 ,      4.700.000 ,         4.700.000 ,         4.000.000 ,,,,
+CDL Hemodialisa,         4.000.000 ,         4.000.000 ,          4.300.000 ,       4.300.000 ,      4.700.000 ,         4.700.000 ,         4.000.000 ,,,,
+Arterial line,         1.600.000 ,         1.600.000 ,          1.900.000 ,       1.900.000 ,      2.200.000 ,         2.200.000 ,         1.600.000 ,,,,
+Infus/NGT ,"  600.000,00 ","  600.000,00 ","  800.000,00 ","  800.000,00 ",      1.200.000 ,         1.200.000 ,"  600.000,00 ",,,,
+Narkose untuk tindakan MRI dan Ctscan,         2.200.000 ,         2.200.000 ,          2.600.000 ,       2.600.000 ,      2.900.000 ,         2.900.000 ,         2.200.000 ,,,,
+"Narkose untuk tindakan radiologi, Retcam, BERA","  800.000,00 ","  800.000,00 ",          1.100.000 ,       1.100.000 ,      1.200.000 ,         1.200.000 ,"  800.000,00 ",,,,
+Pendampingan/backup tindakan radiologi,"  700.000,00 ","  700.000,00 ",          1.000.000 ,       1.000.000 ,      1.200.000 ,         1.200.000 ,"  700.000,00 ",,,,
+Tanpa Pain management (PNB preop/postop/OutPatient/PCA),0,0,0,0,0,0,0,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+PEMERIKSAAN OAE SAAT RANAP,,,,,,,,,,,
+TINDAKAN, Kelas III, Kelas II, Kelas I, VIP, VVIP, Penthouse,,,,,
+OAE (Oto Acoustic Emission),"  520.000,00 ","  530.000,00 ","  540.000,00 ","  550.000,00 ","  560.000,00 ","  570.000,00 ",,,,,
+Sewa Alat OAE,"  500.000,00 ","  500.000,00 ","  500.000,00 ","  500.000,00 ","  500.000,00 ","  500.000,00 ",,,,,
+Visite dokter THT (Hanya 1 Kali Visite),"  470.000,00 ","  500.000,00 ","  610.000,00 ","  770.000,00 ","  880.000,00 ","  990.000,00 ",,,,,
