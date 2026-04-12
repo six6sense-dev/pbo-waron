@@ -414,6 +414,38 @@ button.hidden {
   font-size: 1.15rem;
 }
 
+.pbo-a4-signatures {
+  margin-top: 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.sig-box {
+  border: 1px dashed #d8e3fb;
+  border-radius: 10px;
+  padding: 0.75rem;
+  min-height: 120px;
+  display: grid;
+  align-content: space-between;
+}
+
+.sig-box p {
+  color: var(--ink-700);
+  font-size: 0.88rem;
+}
+
+.sig-line {
+  margin-top: 2rem;
+  border-bottom: 1px solid #1f2937;
+}
+
+.sig-box span {
+  margin-top: 0.3rem;
+  color: var(--ink-500);
+  font-size: 0.8rem;
+}
+
 .muted {
   margin-top: 0.6rem;
   color: var(--ink-500);
@@ -614,6 +646,10 @@ button.hidden {
   }
 
   .pbo-a4-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .pbo-a4-signatures {
     grid-template-columns: 1fr;
   }
 

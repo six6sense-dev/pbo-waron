@@ -1,5 +1,7 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import { ChevronDown, LogOut, Users, BarChart3, Zap, Eye, AlertCircle, Plus, Edit2, X, RefreshCw, Printer, Download } from 'lucide-react';
+import { jsPDF } from 'jspdf';
+import html2canvas from 'html2canvas';
 import './App.css';
 
 export default function App() {
@@ -16,6 +18,14 @@ export default function App() {
   const [calcForm, setCalcForm] = useState({ procedure: '', class: '', doctor: '' });
   const [calcResult, setCalcResult] = useState(null);
   const [calcLoading, setCalcLoading] = useState(false);
+  const [patientForm, setPatientForm] = useState({
+    name: '',
+    rm: '',
+    diagnosis: '',
+    doctor: '',
+    payer: '',
+  });
+  const reportRef = useRef(null);
   
   // Audit states
   const [auditLogs, setAuditLogs] = useState([]);
@@ -239,94 +249,42 @@ export default function App() {
     window.print();
   }, []);
 
-  const handleDownloadA4 = useCallback(() => {
-    if (!calcResult?.breakdown || !calcResult?.procedure) return;
+  const handleDownloadA4 = useCallback(async () => {
+    if (!reportRef.current || !calcResult?.procedure) return;
 
-    const p = calcResult.procedure;
-    const b = calcResult.breakdown;
-    const reportHtml = `<!doctype html>
-<html lang="id">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PBO Report - ${p.name}</title>
-  <style>
-    @page { size: A4; margin: 14mm; }
-    body { font-family: Arial, sans-serif; color: #1f2937; margin: 0; }
-    .page { width: 210mm; min-height: 297mm; padding: 14mm; box-sizing: border-box; }
-    .header { display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #1b66d6; padding-bottom: 10px; }
-    .logo { display: flex; align-items: center; gap: 10px; }
-    .logo img { width: 34px; height: 34px; }
-    .hospital { font-size: 20px; font-weight: 800; color: #1b66d6; }
-    .subtitle { color: #4b5563; margin-top: 2px; font-size: 13px; }
-    h1 { margin: 14px 0 4px; font-size: 20px; }
-    .meta { display: grid; grid-template-columns: 170px 1fr; gap: 6px 10px; margin: 10px 0 14px; font-size: 13px; }
-    table { width: 100%; border-collapse: collapse; margin-top: 8px; }
-    th, td { border: 1px solid #d1d5db; padding: 8px; font-size: 12px; }
-    th { background: #eff6ff; text-align: left; }
-    .total { margin-top: 14px; padding: 12px; background: #ecfeff; border: 1px solid #a5f3fc; border-radius: 8px; }
-    .total strong { font-size: 18px; color: #0f172a; }
-    .note { margin-top: 18px; font-size: 11px; color: #6b7280; }
-  </style>
-</head>
-<body>
-  <div class="page">
-    <div class="header">
-      <div class="logo">
-        <img src="${window.location.origin}/favicon.svg" alt="Waron Hospital Logo" />
-        <div>
-          <div class="hospital">Waron Hospital</div>
-          <div class="subtitle">Patient Billing Optimization Report</div>
-        </div>
-      </div>
-      <div>${new Date().toLocaleString('id-ID')}</div>
-    </div>
+    const canvas = await html2canvas(reportRef.current, {
+      scale: 2,
+      useCORS: true,
+      backgroundColor: '#ffffff',
+    });
 
-    <h1>Laporan Perkiraan Biaya Operasi (PBO)</h1>
-    <div class="meta">
-      <div><strong>Tindakan</strong></div><div>${p.name}</div>
-      <div><strong>Kategori</strong></div><div>${p.category || '-'}</div>
-      <div><strong>Golongan</strong></div><div>${p.gol || '-'}</div>
-      <div><strong>Kelas Pasien</strong></div><div>${calcResult.className || '-'}</div>
-      <div><strong>Multiplier Dokter</strong></div><div>${calcResult.doctorMultiplier || 1}x</div>
-      <div><strong>Lama Rawat</strong></div><div>${calcResult.days || 0} hari</div>
-    </div>
+    const imgData = canvas.toDataURL('image/png');
+    const pdf = new jsPDF('p', 'mm', 'a4');
+    const pageWidth = 210;
+    const pageHeight = 297;
+    const margin = 10;
+    const imgWidth = pageWidth - margin * 2;
+    const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-    <table>
-      <thead><tr><th>Komponen Biaya</th><th>Nominal</th></tr></thead>
-      <tbody>
-        <tr><td>Jasa Operator / Dasar Tindakan</td><td>${formatRupiah(b.operator)}</td></tr>
-        <tr><td>Sewa Alat</td><td>${formatRupiah(b.alat)}</td></tr>
-        <tr><td>BMHP / Farmasi</td><td>${formatRupiah(b.obat)}</td></tr>
-        <tr><td>Tarif Kamar</td><td>${formatRupiah(b.kamar)}</td></tr>
-        <tr><td>Visite</td><td>${formatRupiah(b.visite)}</td></tr>
-        <tr><td>Administrasi</td><td>${formatRupiah(b.admin)}</td></tr>
-        <tr><td>Add-ons</td><td>${formatRupiah(b.addons)}</td></tr>
-        <tr><td>Subtotal</td><td>${formatRupiah(b.subtotal)}</td></tr>
-        <tr><td>Setelah Multiplier</td><td>${formatRupiah(b.afterMultiplier)}</td></tr>
-      </tbody>
-    </table>
+    if (imgHeight <= pageHeight - margin * 2) {
+      pdf.addImage(imgData, 'PNG', margin, margin, imgWidth, imgHeight);
+    } else {
+      let position = 0;
+      let heightLeft = imgHeight;
+      pdf.addImage(imgData, 'PNG', margin, margin + position, imgWidth, imgHeight);
+      heightLeft -= pageHeight - margin * 2;
 
-    <div class="total">
-      <div>Total Estimasi PBO</div>
-      <strong>${formatRupiah(b.total)}</strong>
-    </div>
+      while (heightLeft > 0) {
+        position -= pageHeight - margin * 2;
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', margin, margin + position, imgWidth, imgHeight);
+        heightLeft -= pageHeight - margin * 2;
+      }
+    }
 
-    <div class="note">Dokumen ini adalah estimasi biaya berdasarkan data tarif PBO Waron Hospital dan dapat berubah sesuai kondisi klinis pasien.</div>
-  </div>
-</body>
-</html>`;
-
-    const blob = new Blob([reportHtml], { type: 'text/html;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `PBO-${p.name.replace(/[^a-z0-9]+/gi, '-')}-${Date.now()}.html`;
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    URL.revokeObjectURL(url);
-  }, [calcResult, formatRupiah]);
+    const fileName = `PBO-${calcResult.procedure.name.replace(/[^a-z0-9]+/gi, '-')}-${Date.now()}.pdf`;
+    pdf.save(fileName);
+  }, [calcResult]);
 
   // LOGIN SCREEN
   if (state === 'login') {
@@ -517,6 +475,56 @@ export default function App() {
                   <option value="consultant">Consultant (1.5x)</option>
                 </select>
               </label>
+
+              <label>
+                Nama Pasien
+                <input
+                  type="text"
+                  value={patientForm.name}
+                  onChange={(e) => setPatientForm({ ...patientForm, name: e.target.value })}
+                  placeholder="Contoh: Ny. Monica Amelia"
+                />
+              </label>
+
+              <label>
+                No. Rekam Medis
+                <input
+                  type="text"
+                  value={patientForm.rm}
+                  onChange={(e) => setPatientForm({ ...patientForm, rm: e.target.value })}
+                  placeholder="Nomor RM"
+                />
+              </label>
+
+              <label>
+                Diagnosa
+                <input
+                  type="text"
+                  value={patientForm.diagnosis}
+                  onChange={(e) => setPatientForm({ ...patientForm, diagnosis: e.target.value })}
+                  placeholder="Diagnosa utama"
+                />
+              </label>
+
+              <label>
+                Dokter Penanggung Jawab
+                <input
+                  type="text"
+                  value={patientForm.doctor}
+                  onChange={(e) => setPatientForm({ ...patientForm, doctor: e.target.value })}
+                  placeholder="Nama dokter"
+                />
+              </label>
+
+              <label>
+                Penjamin
+                <input
+                  type="text"
+                  value={patientForm.payer}
+                  onChange={(e) => setPatientForm({ ...patientForm, payer: e.target.value })}
+                  placeholder="Tunai / Asuransi"
+                />
+              </label>
               
               <button type="submit" disabled={calcLoading}>
                 {calcLoading ? 'Calculating...' : 'Calculate'}
@@ -542,14 +550,14 @@ export default function App() {
 
               <div className="print-actions">
                 <button type="button" className="secondary" onClick={handleDownloadA4}>
-                  <Download size={16} /> Unduh A4
+                  <Download size={16} /> Unduh PDF A4
                 </button>
                 <button type="button" onClick={handlePrintA4}>
                   <Printer size={16} /> Print A4
                 </button>
               </div>
 
-              <div className="pbo-a4-report" id="pbo-a4-report">
+              <div className="pbo-a4-report" id="pbo-a4-report" ref={reportRef}>
                 <div className="pbo-a4-header">
                   <div className="pbo-a4-logo-wrap">
                     <img src="/favicon.svg" alt="Waron Hospital Logo" className="pbo-a4-logo" />
@@ -567,6 +575,11 @@ export default function App() {
                   <span>Golongan: <strong>{getSelectedProcedure()?.gol || '-'}</strong></span>
                   <span>Kelas: <strong>{calcResult.className}</strong></span>
                   <span>Lama Rawat: <strong>{calcResult.days} hari</strong></span>
+                  <span>Nama Pasien: <strong>{patientForm.name || '-'}</strong></span>
+                  <span>No. RM: <strong>{patientForm.rm || '-'}</strong></span>
+                  <span>Diagnosa: <strong>{patientForm.diagnosis || '-'}</strong></span>
+                  <span>DPJP: <strong>{patientForm.doctor || '-'}</strong></span>
+                  <span>Penjamin: <strong>{patientForm.payer || '-'}</strong></span>
                 </div>
 
                 <table className="pbo-a4-table">
@@ -590,6 +603,19 @@ export default function App() {
                 <div className="pbo-a4-total">
                   <span>Total Estimasi PBO</span>
                   <strong>{formatRupiah(calcResult.breakdown?.total)}</strong>
+                </div>
+
+                <div className="pbo-a4-signatures">
+                  <div className="sig-box">
+                    <p>Petugas Rumah Sakit</p>
+                    <div className="sig-line" />
+                    <span>(.......................................)</span>
+                  </div>
+                  <div className="sig-box">
+                    <p>Pasien / Keluarga Pasien</p>
+                    <div className="sig-line" />
+                    <span>(.......................................)</span>
+                  </div>
                 </div>
               </div>
             </div>
