@@ -108,13 +108,13 @@ export default function App() {
       const response = await apiCall('/calculate', {
         method: 'POST',
         body: JSON.stringify({
-          procedure: calcForm.procedure,
-          class: calcForm.class,
-          doctor: calcForm.doctor || 'standard',
+          procedureId: calcForm.procedure,
+          className: calcForm.class,
+          doctorMultiplier: calcForm.doctor === 'specialist' ? 1.3 : calcForm.doctor === 'consultant' ? 1.5 : 1,
         }),
       });
       
-      setCalcResult(response.result);
+      setCalcResult(response);
     } catch (err) {
       setError(err.message || 'Calculation failed');
     } finally {

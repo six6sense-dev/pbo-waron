@@ -65,6 +65,8 @@ let memoryDB = {
   users: JSON.parse(JSON.stringify(DEFAULT_USERS)),
   procedures: JSON.parse(JSON.stringify(DEFAULT_PROCEDURES)),
   classMultipliers: JSON.parse(JSON.stringify(DEFAULT_CLASS_MULTIPLIERS)),
+  sheetNames: Array.isArray(excelMaster?.sheetNames) ? excelMaster.sheetNames : ['MEMORY_DB'],
+  golonganTariffs: excelMaster?.golonganTariffs || {},
   auditLogs: [],
 };
 
@@ -77,6 +79,8 @@ export function resetMemoryDB() {
     users: JSON.parse(JSON.stringify(DEFAULT_USERS)),
     procedures: JSON.parse(JSON.stringify(DEFAULT_PROCEDURES)),
     classMultipliers: JSON.parse(JSON.stringify(DEFAULT_CLASS_MULTIPLIERS)),
+    sheetNames: Array.isArray(excelMaster?.sheetNames) ? excelMaster.sheetNames : ['MEMORY_DB'],
+    golonganTariffs: excelMaster?.golonganTariffs || {},
     auditLogs: [],
   };
   return memoryDB;
